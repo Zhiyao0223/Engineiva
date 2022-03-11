@@ -2,14 +2,40 @@
 <head>
     <title>My Favourite</title>
     <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="fav-title">Favourite</div>
+        <div class="fav-title">My Favourite</div>
+        <!-- If no favourite before -->
+        <div class="no-fav">
+            <img src="img/noResult.jpg">
+            <div class="no-fav-description">
+                Seem like you dont have favourtite yet
+            </div>
+            <button class="no-fav-search" onclick="window.location.href = '../carCategory/carCategory.html'">Search Now!</button>
+        </div>
+
+        <!-- Have favourite -->
+        <table class="favourite-table">
+            <tr>
+                <td>
+                    <img src="../CarCategory/img/protonPreve.jpg">
+                </td>
+                <td>
+                    <div class="car-name">Proton Preve</div>
+                    <div class="car-description">
+                        Description here<br>
+                        Letsss goooo
+                    </div>
+                </td>
+            </tr>
+        </table>
         
     </div>
 
+    <!-- Footer -->
     <footer class="new_footer_area">
         <div class="new_footer_top">
             <div class="footer-top-container">

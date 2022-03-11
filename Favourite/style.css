@@ -2,20 +2,82 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
     height: 90%;
-    width: 100%;
+    width: 90%;
     display: flexbox;
     margin: 0 auto;
+    margin-bottom: 2%;
 }
 
 .fav-title {
-    font-size: 30px;
-    font-weight: bold;
+    margin-top: 2%;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+    border-bottom: 1px solid black;
 
 }
+
+/* With Result */
+.favourite-table{
+    border-spacing: 20px 0;
+    margin-bottom: 10%;
+    display: none;
+}
+
+.favourite-table td {
+    padding-right: 50px;
+    vertical-align: top;
+}
+
+.favourite-table .car-name {
+    top: 0%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.favourite-table .car-name:hover {
+    color: darkblue;
+    cursor: pointer;
+}
+
+.car-description {
+    top: 0%;
+}
+
+
+
+
+
+
+/* No result */
+.no-fav {
+    padding-top: 5%;  
+    height: 500px;
+    text-align: center;
+    display: none;
+}
+
+.no-fav-search {
+    width: 15%;
+    margin-top: 20px;
+    padding: 10px 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.container .no-fav img {
+    width: 150px;
+    height: 150px;
+}
+
 
 /* Footer  */
 footer {
