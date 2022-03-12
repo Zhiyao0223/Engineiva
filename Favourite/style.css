@@ -61,7 +61,7 @@
     padding-top: 5%;  
     height: 500px;
     text-align: center;
-    display: none;
+    display: block;
 }
 
 .no-fav-search {
