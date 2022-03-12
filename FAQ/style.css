@@ -67,6 +67,16 @@
     width: 100%;
 }
 
+.container .btm-container .row .col2 .subCategory {
+    margin-bottom: 5rem;
+}
+
+.container .btm-container .row .col2 .col2-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+ 
 .container .btm-container .row .col2 .question-box {
     margin-bottom: 2rem;
     height: 50px;
@@ -127,11 +137,11 @@
     padding: 20px;
     font-size: 20px;
     color: whitesmoke;
-    font-weight: 600;
+    font-weight: 550;
     text-shadow: 1px 1px ;
     border-radius: 30px;
     background-color: #fda172;
-    width: 20%;
+    width: 15%;
     text-align: center;
     display: inline-block;
     cursor: pointer;
