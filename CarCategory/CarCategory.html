@@ -1,54 +1,110 @@
 <!DOCTYPE html>
 <head>
-    <title>Support Ticket</title>
+    <title>Car Category</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="main-container">
         <div class="top-container">
-            <div class="cs-title">
-                Customer Service Team
+            <div class="search-bar">
+                <input type="text" name="search-name" class="fas fa-search input-name" id="search-name" placeholder="&#xf002; Search Your Car Here.." maxlength="50">
             </div>
-            <div class="cs-description">
-                Have a question / problem? Please tell us and we will get back to you as soonest
+            
+            <div class="row">
+                <!-- Filter bar -->
+                <div class="col1">
+                    <div class="filter-title">
+                        Filter: 
+                    </div>
+                    <div class="filter-brand">
+                        <div class="brand">
+                            Brand 1
+                        </div>
+                        <div class="brand">
+                            Brand 2
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sort Bar  -->  
+                <div class="col2">
+                    <div class="sort-by">
+                        <button>Sort By</button>
+                        <div class="sort-expand-box">
+                            <div class="price">
+                                Price
+                            </div>
+                            <div class="Year">
+                                Year
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+
         </div>
-        
-        <form action="#" method="post">
-            <div class="btm-container">
-                <div class="category">
-                    Issue category <span style="color: red;">*</span><br>
-                    <select name="categories" id="selectCategories" required>
-                        <option value="" disabled selected="selected">Please select</option>
-                        <option value="account">Accounts</option>
-                        <option value="appointment">Appointments</option>
-                        <option value="refund">Refund</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="emailBox">
-                    Email Address <span style="color: red;">*</span><br>
-                    <input type="text" id="email" name="email" required>
-                </div>
-                <div class="titleBox">
-                    Title <span style="color: red;">*</span><br>
-                    <input type="text" id="title" name="title" required>
-                </div>
-                <div class="description-box">
-                    Description <span style="color: red;">*</span><br>
-                    <textarea id="description" name="description" maxlength="300" required></textarea>
-                </div>
-                <div class="uploadBox">
-                    Upload Attachment<br>
-                    <input type="file" id="file" name="file">
-                </div>
-                <div class="submitBtn">
-                    <input type="submit" id="submit" name="submit">
-                </div>
-            </div>
-        </form>
+
+        <div class="bottom-container">
+            <table class="car-table">
+                <td>
+                    <tr>
+                        <img src="img/protonPreve.jpg" class="image">
+                        <div class="image-description">
+                            Description1
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <img src="img/protonPreve.jpg" class="image">
+                        <div class="image-description">
+                            Description1
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <img src="img/protonPreve.jpg" class="image">
+                        <div class="image-description">
+                            Description1
+                        </div>
+                    </tr>
+                </td>
+                <td>
+                    <tr>
+                        <img src="img/protonPreve.jpg" class="image">
+                        <div class="image-description">
+                            Description1
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <img src="img/protonPreve.jpg" class="image">
+                        <div class="image-description">
+                            Description1
+                        </div>
+                    </tr>
+
+                    <tr>
+                        <img src="img/protonPreve.jpg" class="image">
+                        <div class="image-description">
+                            Description1
+                        </div>
+                    </tr>
+                </td>
+            </table>
+        </div>
     </div>
+
+
+
+
+
+
+
+
 
     <!-- Footer  -->
     <footer class="new_footer_area">
@@ -61,7 +117,7 @@
                             <ul class="f_list">
                                 <li><div class="footer-phone">
                                     <i class="fas fa-phone-alt footer-icon"></i> 
-                                    : <a href="tel:+6011-1234567">+60 11-123 4567</a>
+                                    : <a href="tel:+6011-1234566">+60 11-123 4566</a>
                                 </div></li>
 
                                 <li><div class="footer-email">
