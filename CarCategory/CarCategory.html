@@ -40,69 +40,101 @@
                 
                 <!-- Sort Bar  -->  
                 <div class="col2">
-                    <div class="sort-by">
-                        <button>Sort By</button>
-                        <div class="sort-expand-box">
-                            <div class="price">
-                                Price
-                            </div>
-                            <div class="Year">
-                                Year
-                            </div>
+                    <div class="sort-bar">
+                        <!-- Sort Type  -->
+                        <div class="sort-by">
+                            Sort By:
+                        </div>
+
+                        <!-- Range High Low -->
+                        <div class="sort-range">
+                            <select class="range" name="rangeSize" id="rangeSize">
+                                <option value="default" selected="selected">No Filter<span><i class="fas fa-angle-down"></i></span></option>
+                                <option value="priceHigh">Price : High > Low</option>
+                                <option value="priceLow">Price : Low  > High</option>
+                                <option value="transmissionHigh">Transmission : High  > Low</option>
+                                <option value="transmissionLow">Transmission : Low  > High</option>
+                                <option value="yearHigh">Year : High  > Low</option>
+                                <option value="yearLow">Year: Low > High</option>
+                                <option value="gearAuto">Gear: Automatic</option>
+                                <option value="gearManual">Gear: Manual</option>
+
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-            
-
         </div>
 
         <div class="bottom-container">
             <table class="car-table">
-                <td>
-                    <tr>
+                <tr>
+                    <td>
                         <img src="img/protonPreve.jpg" class="image">
                         <div class="image-description">
+                            <span>Brand 1</span><br>
                             Description1
+                            <div class="price">
+                                RM 30,000
+                            </div>
                         </div>
-                    </tr>
+                    </td>
 
-                    <tr>
+                    <td>
                         <img src="img/protonPreve.jpg" class="image">
                         <div class="image-description">
-                            Description1
+                            <span>Brand 2</span><br>
+                            Description2
+                            <div class="price">
+                                RM 30,000
+                            </div>
                         </div>
-                    </tr>
+                    </td>
 
-                    <tr>
+                    <td>
                         <img src="img/protonPreve.jpg" class="image">
                         <div class="image-description">
-                            Description1
+                            <span>Brand 3</span><br>
+                            Description 3
+                            <div class="price">
+                                RM 30,000
+                            </div>
                         </div>
-                    </tr>
-                </td>
-                <td>
-                    <tr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <img src="img/protonPreve.jpg" class="image">
                         <div class="image-description">
-                            Description1
+                            <span>Brand 4</span><br>
+                            Description 4
+                            <div class="price">
+                                RM 30,000
+                            </div>
                         </div>
-                    </tr>
+                    </td>
 
-                    <tr>
+                    <td>
                         <img src="img/protonPreve.jpg" class="image">
                         <div class="image-description">
-                            Description1
+                            <span>Brand 5</span><br>
+                            Description 5
+                            <div class="price">
+                                RM 30,000
+                            </div>
                         </div>
-                    </tr>
-
-                    <tr>
+                    </td>
+                    <td>
                         <img src="img/protonPreve.jpg" class="image">
                         <div class="image-description">
-                            Description1
+                            <span>Brand 6</span><br>
+                            Description 6
+                            <div class="price">
+                                RM 30,000
+                            </div>
                         </div>
-                    </tr>
-                </td>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>

@@ -7,7 +7,9 @@
 
 .main-container {
     width: auto;
-    margin: 0 2rem;
+    margin: 0;
+    /* background-color: rgb(247, 247, 247); */
+    background-color: white;
 }
 
 .main-container .top-container {
@@ -17,7 +19,7 @@
 .main-container .top-container .input-name {
     border: 1px solid;
     border-radius: 20px;
-    background-color: rgba(0, 0 ,0 , 0.05);
+    background-color: rgba(0, 0 ,0 , 0.03);
     width: 35%;
     padding: 10px 20px;
     margin-bottom: 2rem;
@@ -39,7 +41,7 @@
 }
 
 .main-container .row .col1 {
-    width: 60%;
+    width: 100%;
     justify-content: space-evenly;
 }
 
@@ -59,6 +61,7 @@
     padding: 10px;
     text-align: center;
     cursor: pointer;
+    box-shadow: 1px 1px lightgray;
 }
 
 .main-container .row .col1 .filter-brand:hover {
@@ -67,18 +70,97 @@
 }
 
 
+
 .main-container .row .col2 {
-    width: 50%;
+    width: 30%;
+    display: flex;
 }
 
+.main-container .row .col2 .sort-bar {
+    align-self: flex-end;
+    display: inline-block;
+}
 
+.main-container .row .col2 .sort-bar .sort-by {
+    width: auto;
+    margin-right: 1rem;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.main-container .row .col2 .sort-bar .sort-by .sort-button {
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0 ,0 , 0.4);
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.main-container .row .col2 .sort-bar .sort-range{
+    display: inline-block;
+    padding: 8px 10px;
+    border: 1px solid rgba(0, 0 ,0 , 0.4);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.main-container .row .col2 .sort-bar .sort-range .range {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Car Table  */
 .main-container .bottom-container {
     margin: 3rem 5rem;
 }
 
 .main-container .bottom-container .car-table {
-    /* border-style: collapse; */
+    border-style: collapse;
+    border-spacing: 3rem;
+    text-align: center;
+    width: 95%;
+    justify-content: space-evenly;
+}
+
+.main-container .bottom-container .car-table tr {
+    width: max-content;
+}
+
+.main-container .bottom-container .car-table td {
     border: 1px solid;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.main-container .bottom-container .car-table td:hover {
+    box-shadow: 2px 2px lightgray;
+}
+
+/* '>' apply for item inside container. 
+    Reference: https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
+.main-container .bottom-container .car-table td:hover > .image-description span {
+    color: darkblue;
+}
+
+.main-container .bottom-container .car-table td .image-description {
+    font-size: 15px;
+    text-align: left;
+    margin: 1rem;
+    margin-top: 0;
+    line-height: 2.0;
+}
+
+.main-container .bottom-container .car-table td .image-description span {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1338BE;
+}
+
+.main-container .bottom-container .car-table td .image-description .price {
+    color: red;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 
