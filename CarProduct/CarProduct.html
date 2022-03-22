@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
+<body onload="getDeposit()">
     <div class="main-container">
         <div class="title-container">
             Proton Preve
@@ -14,26 +14,110 @@
         <div class="picture-container">
             <table class="picture-table">
                 <tr>
-                    <td rowspan="2">Picture 1</td>
-                    <td>Picture 2</td>
-                    <td>Picture 3</td>
+                    <td rowspan="2">
+                        <img class='first-img' src="img/proton-preve-1.jpg">
+                    </td>
+                    <td>
+                        <img class='img' src="img/proton-preve-2.jpg">
+                    </td>
+                    <td>
+                        <img class='img' src="img/proton-preve-3.jpg">
+                    </td>
                 </tr>
                 <tr>
-                    <td>Picture 4</td>
-                    <td>Picture 5</td>
+                    <td>
+                        <img class='img' src="img/proton-preve-4.jpg">
+                    </td>
+                    <td>
+                        <img class='img last-image' src="img/proton-preve-5.jpg">
+                        <div class="square">
+                            <div class="extra-pic">+10</div>
+                        </div>
+                        
+                    </td>
                 </tr>
             </table>
         </div>
         <div class="bottom-container">
             <div class="description-box">
-
+                <div class="description-title">
+                    Seller Notes
+                </div>
+                <div class="description">
+                    <ul>
+                        <li>2014</li>
+                        <li>Very nice plate number PATRIOT5397</li>
+                        <li>Careful owner</li>
+                        <li>White Colour</li>
+                        <li>Multifunction Steering</li>
+                        <li>Original BMW leather seats</li>
+                        <li>Full Service record</li>
+                        <li>Bluetooth/GPS Navigation System</li>
+                        <li>90% 4 tyres</li>
+                        <li>On time service</li>
+                        <li>Tidy interior</li>
+                        <li>Engine part well</li>
+                        <li>100% accident free</li>
+                        <li>Careful use & keep well maintained by owner</li>
+                        <li>Excellent maintained, tip-top condition & all original condition , accept trade-in.</li>
+                    </ul>
+                </div>
+                
             </div>
             <div class="checkout-box">
-                <button class="full-payment">Full Payment</button>
-                <button class="checkout-button"></button>
+                <div class="calculator">
+                    <div class="calculator-title">
+                        Loan Calculator
+                    </div>                
+                    <div class="form-title">
+                            Deposit Amount (10% of Vehicle Price)<br/>
+                            <input type="text" disabled class="form-text" id="deposit">
+                    </div>
+                    <div class="form-title">
+                        Bank Rates (%)<br/>
+                        <input type="number" 
+                            min="1" 
+                            max="99"
+                            oninput=checkRates()
+                            class="form-text" 
+                            id="rates">
+                    </div>
+                    <div class="form-title">
+                        Repayment Period<br/>
+                        <select class="repayment" name="repayment">
+                            <option selected="selected" id="7y" value="7">7 years</option>
+                            <option id="5y" value="5">5 years</option>
+                            <option id="9y" value="9">9 years</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="price-range">
+                    <div class="price">
+                        RM30, 000
+                    </div>
+                    <div class="or">OR</div>
+                    <div class="price1">
+                        <div id="calculator-price">RM 800</div> / Month
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <!-- <button class="full-payment">Full Payment</button> -->
+
+                    <button class="checkout-button">Book Now !</button>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
 
 
     <!-- Footer  -->

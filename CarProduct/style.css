@@ -5,6 +5,211 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.main-container .title-container {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px lightgray;
+    margin-bottom: 1rem;
+}
+
+/* Car table  */
+.main-container .picture-container .picture-table {
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    width: 100%;
+    justify-content: space-evenly;
+    border-spacing: 100;
+    padding: 0;
+    /* text-align: center; */
+}
+
+.main-container .picture-container .picture-table td  {
+    border: 1px solid;
+    width: 30%;
+    height: 200px;
+    cursor: pointer;
+}
+
+
+.main-container .picture-container .picture-table td .img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.main-container .picture-container .picture-table tr td .first-img {
+    height: 200%;
+    width: 100%;
+    display: block;
+} 
+
+.main-container .picture-container .picture-table tr:nth-child(2) :nth-child(2) img {
+    filter: brightness(45%);
+}
+
+.main-container .picture-container .picture-table .square {
+    position: absolute;
+    top: 47%;
+    width: 30%;
+    padding: 0px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main-container .picture-container .picture-table .extra-pic {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px lightgray;
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+}
+
+/* Bottom Container  */
+.main-container .bottom-container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.main-container .bottom-container .description-box {
+    width: 75%;
+    border: 1px solid;
+    margin-right: 5%;
+    height: auto;
+    box-shadow: 1px 1px 1px 2px lightgray;
+}
+
+.main-container .bottom-container .description-box .description-title {
+    text-align: center;
+    padding: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid;
+}
+
+.main-container .bottom-container .description-box .description {
+    font-weight: 350;
+    padding: 1rem 0;
+    padding-left: 4rem;
+}
+
+.main-container .bottom-container .checkout-box {
+    width: 20%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+/* Loan calculator */
+.main-container .bottom-container .checkout-box .calculator {
+    border: 1px solid;
+    margin-right: 5%;
+    height: 100%;
+    box-shadow: 1px 1px 1px 2px lightgray;
+    width: 100%;
+}
+
+.main-container .bottom-container .checkout-box .calculator .calculator-title {
+    text-align: center;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.main-container .bottom-container .checkout-box .calculator .form-title {
+    font-size: 14px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.main-container .bottom-container .checkout-box .calculator .form-title .info {
+    display: inline-block;
+}
+
+.main-container .bottom-container .checkout-box .calculator .form-text {
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    width: 60%;
+    border: 2px solid lightgray;
+    box-shadow: 1px 1px lightgray;
+}
+
+.main-container .bottom-container .checkout-box .calculator .repayment{
+    /* width: 75%; */
+    border-radius: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid lightgray;
+    box-shadow: 1px 1px lightgray;
+}
+
+.main-container .bottom-container .checkout-box .price-range {
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    /* border: 1px solid;
+    box-shadow: 1px 1px 1px 2px lightgray; */
+    
+}
+
+.main-container .bottom-container .checkout-box .or {
+    margin: 0 0;
+    font-weight: 500;
+}
+
+
+.main-container .bottom-container .checkout-box .price{
+    color: red;
+    font-weight: 600;
+}
+
+.main-container .bottom-container .checkout-box .price1 {
+    font-weight: 400;
+}
+
+.main-container .bottom-container .checkout-box #calculator-price {
+    color: red;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.main-container .bottom-container .checkout-box .checkout-button {
+    background-color: #263b5e;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.main-container .bottom-container .checkout-box .checkout-button:hover {
+    background-color: #FEC34D;
+    box-shadow: 2px 2px 1px 1px lightgray;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
