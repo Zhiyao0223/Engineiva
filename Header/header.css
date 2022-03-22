@@ -134,30 +134,6 @@
   text-align: justify;
 }
 
-/*when mouse rest on each sub category*/
-.column a:hover {
-  font-weight: 600;
-}
-
-/*clear floats after the columns*/
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/*For a responsive layout - make the columns stack on each other*/
-@media screen and (max-width: 1300px) {
-  .column {
-    width: 100%;
-    height: auto;
-  }
-}
-
 .inner_header ul ul {
   position: absolute;
-}
-
-.dropdown:hover .dropdown_content {
-  display: block;
 }
