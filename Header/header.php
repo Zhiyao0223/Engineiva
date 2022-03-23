@@ -17,9 +17,11 @@
             
             <div class="navigation">
                 <a href ="home.php" class="logoStyle"><li>Engineiva</li></a>
-                <a href="home.php"><li>
-                    <button href="buy_car.php" class="dropdown_button" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()' id="buy_btn">Buy</button>
-                </li></a>  
+                <a href="home.php">
+                    <li>
+                        <button href="buy_car.php" class="dropdown_button" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()' id="buy_btn">Buy</button>
+                    </li>
+                </a>  
                 <a href="home.php"><li>Sell</li></a>    
                 <a href="faq.php"><li>FAQ</li></a>
                 <a href="about_us.php"><li>About Engineiva</li></a>

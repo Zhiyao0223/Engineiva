@@ -3,7 +3,463 @@
     padding: 0;
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
 }
+
+/* Header  */
+.header {
+    width: 100%;
+    height: 60px;
+    display: block;
+    background-color: lightblue;
+  }
+  
+  .inner_header {
+    width: 1440px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .logoStyle {
+    font-family: "Chivo", sans-serif;
+  }
+  
+  .navigation {
+    float: left;
+    height: 100%;
+    color: black;
+  }
+  
+  .navigation a {
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0px 30px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .navigation a li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .signin_up {
+    float: right;
+    display: table;
+    height: 100%;
+    padding-right: 30px;
+  }
+  
+  #profile_style {
+    height: 25px;
+    width: 25px;
+    margin-top: 15px;
+    margin-right: 19px;
+    color: black;
+  }
+  #signtext {
+    display: inline;
+    display: table-cell;
+    vertical-align: middle;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+  }
+  
+  #buy_btn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 21px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .dropdown_content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: 200px;
+    display: none;
+  }
+  
+  .dropdown_content a {
+    float: none;
+    color: black;
+    padding: 4px 16px 2px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+  }
+  
+  .dropdown_content a:hover {
+    background-color: #ddd;
+  }
+  
+  /*the column for each item category*/
+  .column {
+    float: left;
+    width: 100px;
+    padding: 8px;
+    height: auto;
+  }
+  
+  /*first column of item category*/
+  #car_column2 {
+    width: 100px;
+  }
+  
+  /*sub categories*/
+  .column a {
+    float: none;
+    padding: 8px;
+    display: block;
+    font-size: 16px;
+    font-family: inherit;
+    text-align: justify;
+  }
+  
+  .inner_header ul ul {
+    position: absolute;
+  }
+
+
+/* Main Container  */
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.main-container .title-container {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px lightgray;
+    margin-bottom: 1rem;
+}
+
+/* Car table  */
+.main-container .picture-container .picture-table {
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    width: 100%;
+    justify-content: space-evenly;
+    border-spacing: 100;
+    padding: 0;
+    /* text-align: center; */
+}
+
+.main-container .picture-container .picture-table td  {
+    border: 1px solid;
+    width: 30%;
+    height: 200px;
+    cursor: pointer;
+}
+
+
+.main-container .picture-container .picture-table td .img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.main-container .picture-container .picture-table tr td .first-img {
+    height: 200%;
+    width: 100%;
+    display: block;
+} 
+
+.main-container .picture-container .picture-table tr:nth-child(2) :nth-child(2) img {
+    filter: brightness(45%);
+}
+
+.main-container .picture-container .picture-table .square {
+    position: absolute;
+    top: 58%;
+    width: 30%;
+    padding: 0px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.main-container .picture-container .picture-table .extra-pic {
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px lightgray;
+    font-weight: bold;
+    font-size: 30px;
+    user-select: none;
+}
+
+/* Bottom Container  */
+.main-container .bottom-container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5rem;
+}
+
+.main-container .bottom-container .description-box {
+    width: 75%;
+    border: 1px solid;
+    margin-right: 5%;
+    height: auto;
+    box-shadow: 1px 1px 1px 2px lightgray;
+}
+
+.main-container .bottom-container .description-box .description-title {
+    text-align: center;
+    padding: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid;
+}
+
+.main-container .bottom-container .description-box .description {
+    font-weight: 350;
+    padding: 1rem 0;
+    padding-left: 4rem;
+}
+
+.main-container .bottom-container .checkout-box {
+    width: 20%;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+/* Loan calculator */
+.main-container .bottom-container .checkout-box .calculator {
+    border: 1px solid;
+    margin-right: 5%;
+    height: 100%;
+    box-shadow: 1px 1px 1px 2px lightgray;
+    width: 100%;
+}
+
+.main-container .bottom-container .checkout-box .calculator .calculator-title {
+    text-align: center;
+    font-weight: 500;
+    border-bottom: 2px solid lightgray;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.main-container .bottom-container .checkout-box .calculator .form-title {
+    font-size: 14px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.main-container .bottom-container .checkout-box .calculator .form-title .info {
+    display: inline-block;
+}
+
+.main-container .bottom-container .checkout-box .calculator .form-text {
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    width: 60%;
+    border: 2px solid lightgray;
+    box-shadow: 1px 1px lightgray;
+}
+
+.main-container .bottom-container .checkout-box .calculator .repayment{
+    /* width: 75%; */
+    border-radius: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid lightgray;
+    box-shadow: 1px 1px lightgray;
+}
+
+.main-container .bottom-container .checkout-box .price-range {
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    /* border: 1px solid;
+    box-shadow: 1px 1px 1px 2px lightgray; */
+    
+}
+
+.main-container .bottom-container .checkout-box .or {
+    margin: 0 0;
+    font-weight: 500;
+}
+
+
+.main-container .bottom-container .checkout-box .price{
+    color: red;
+    font-weight: 600;
+}
+
+.main-container .bottom-container .checkout-box .price1 {
+    font-weight: 400;
+}
+
+.main-container .bottom-container .checkout-box #calculator-price {
+    color: red;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.main-container .bottom-container .checkout-box .checkout-button {
+    background-color: #263b5e;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.main-container .bottom-container .checkout-box .checkout-button:hover {
+    background-color: #FEC34D;
+    box-shadow: 2px 2px 1px 1px lightgray;
+}
+
+/* Image Popup  */
+#imageModal {
+    display: none;
+}
+
+
+/* Checkout Popup */
+#checkoutModal {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 2px 2px lightgray;
+}
+
+.modal .modalContent {
+    display: flexbox;
+    width: 50%;
+    height: max-content;
+    margin: 10% auto;
+    padding: 0;
+    border: 1px solid #888;
+    background-color: white;
+    text-align: center;
+}
+
+.modal .modalContent #close {
+    width: 5%;
+    float:right;
+    color: black;
+    font-size: 25px;
+}
+
+.modal .modalContent #close:hover, 
+.modal .modalContent #close:focus {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modalContent .modalHeader {
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 1rem;
+}
+
+.modal .modalContent .modalDescription {
+    font-size: 15px;
+    font-style: italic;
+}
+
+
+.modal .modalContent .checkout-table {
+    justify-content: space-evenly;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 100%;
+    height: 70%;
+}
+
+.modal .modalContent .checkout-table td {
+    width: 40%;
+    height: 100%
+}
+
+.modal .modalContent .checkout-table tr:nth-child(1) td {
+    border-top: 1px solid;
+    text-align: center;
+}
+
+.modal .modalContent .checkout-table tr:nth-child(2) td {
+    vertical-align: top;
+}
+
+.modal .modalContent .checkout-table td:nth-child(1) {
+    border-right: 1px solid;
+}
+
+.modal .modalContent .checkout-table .option-title {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 1rem 0;
+}
+
+.modal .modalContent .checkout-table .option-description {
+    text-align: left;
+    margin: 0 1rem;
+    font-size: 15px
+}
+
+.modal .modalContent .checkout-table .option-description a {
+    color: #1338BE;
+}
+
+
+
+.modalSubmit {
+    color: white;
+    margin: 2rem 0;
+    font-size: 20px;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #263b5e;
+}
+
+.modalSubmit:hover {
+    background-color: #FEC34D;
+    box-shadow: 2px 2px 1px 1px lightgray;
+}
+
+
+
+
+
+
 
 
 
