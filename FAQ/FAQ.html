@@ -9,6 +9,51 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <!-- Header  -->
+    <div class="header">
+        <div class="inner_header">
+            
+            <div class="navigation">
+                <a href ="home.php" class="logoStyle"><li>Engineiva</li></a>
+                <a href="home.php"><li>
+                    <button href="buy_car.php" class="dropdown_button" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()' id="buy_btn">Buy</button>
+                </li></a>  
+                <a href="home.php"><li>Sell</li></a>    
+                <a href="faq.php"><li>FAQ</li></a>
+                <a href="about_us.php"><li>About Engineiva</li></a>
+            </div>
+            <div class="signin_up">
+                <a href ="signin.php"><img src="user.png" alt="User" id="profile_style"><div id="signtext">Sign Up/Login</div></a> 
+            </div>
+        </div>
+        <div class="dropdown_content" id="buy_content" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()'>
+            <a href="buy_car.php"><h2>View All Cars ></h2></a>
+            <div class="column" id="car_column1">
+                <a href="buy_car.php">BMW</a>
+                <a href="buy_car.php">Honda</a>
+                <a href="buy_car.php">Isuzu</a>
+                <a href="buy_car.php">Mazda</a>
+                <a href="buy_car.php">Mini</a>
+                <a href="buy_car.php">Perodua</a>
+                <a href="buy_car.php">Proton</a>
+                <a href="buy_car.php">Suzuki</a>
+                <a href="buy_car.php">Toyota</a>
+                <a href="buy_car.php">Volkswagen</a>
+            </div>
+            <div class="column" id="car_column2">
+                <a href="buy_car.php">Ford</a>
+                <a href="buy_car.php">Hyundai</a>
+                <a href="buy_car.php">Kia</a>
+                <a href="buy_car.php">Mercedes</a>
+                <a href="buy_car.php">Nissan</a>
+                <a href="buy_car.php">Peugeot</a>
+                <a href="buy_car.php">Subaru</a>
+                <a href="buy_car.php">Tesla</a>
+                <a href="buy_car.php">Volve</a>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Title Box  -->
         <div class="top-container">
@@ -74,7 +119,7 @@
                             </div>
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('1')">
+                            <div class="question" onclick="toggleAnsBox('2')">
                                 How do I get in touch with someone from Enginieva?
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
@@ -94,19 +139,19 @@
                             Account
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('2')">
-                                Order Question 2
+                            <div class="question" onclick="toggleAnsBox('3')">
+                                How to change an email address that is not being used anymore?
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
                                     <i class="fas fa-angle-up"></i>
                                 </div>
                             </div>
                             <div class="answer">
-                                Answer 1
+                                For this issue, kindly scroll down to the ticket section and create a ticket listing the details. Our support teams will assist you in changing your email address.
                             </div>
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('3')">
+                            <div class="question" onclick="toggleAnsBox('4')">
                                 Order Question 3
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
@@ -125,7 +170,7 @@
                             Orders & Payment
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('2')">
+                            <div class="question" onclick="toggleAnsBox('5')">
                                 Order Question 2
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
@@ -137,7 +182,7 @@
                             </div>
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('3')">
+                            <div class="question" onclick="toggleAnsBox('6')">
                                 Order Question 3
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
@@ -157,7 +202,7 @@
                             Refund
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('4')">
+                            <div class="question" onclick="toggleAnsBox('7')">
                                 Refund Question 4
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
@@ -169,7 +214,7 @@
                             </div>
                         </div>
                         <div class="question-box">
-                            <div class="question" onclick="toggleAnsBox('5')">
+                            <div class="question" onclick="toggleAnsBox('8')">
                                 Refund Question 5
                                 <div class="arrow-down">
                                     <i class="fas fa-angle-down"></i>
@@ -196,14 +241,7 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-    <!-- Footer  -->
+    <!-- Footer -->
     <footer class="new_footer_area">
         <div class="new_footer_top">
             <div class="footer-top-container">
@@ -288,7 +326,7 @@
             <div class="footer-bottom-container">
                 <div class="row align-items-center">
                     <div class="footer-bottom-column">
-                        <p class="copyright">© Engineiva Sdn Bhd 2022 All rights reserved.</p>
+                        <p class="copyright">&#169; Engineiva Sdn Bhd 2022 All rights reserved.</p>
                     </div>
                 </div>
             </div>

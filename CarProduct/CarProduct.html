@@ -7,7 +7,128 @@
     <script src="script.js"></script>
 </head>
 <body onload="getDeposit()">
+    <!-- Header  -->
+    <div class="header">
+        <div class="inner_header">
+            
+            <div class="navigation">
+                <a href ="home.php" class="logoStyle"><li>Engineiva</li></a>
+                <a href="home.php"><li>
+                    <button href="buy_car.php" class="dropdown_button" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()' id="buy_btn">Buy</button>
+                </li></a>  
+                <a href="home.php"><li>Sell</li></a>    
+                <a href="faq.php"><li>FAQ</li></a>
+                <a href="about_us.php"><li>About Engineiva</li></a>
+            </div>
+            <div class="signin_up">
+                <a href ="signin.php"><img src="user.png" alt="User" id="profile_style"><div id="signtext">Sign Up/Login</div></a> 
+            </div>
+        </div>
+        <div class="dropdown_content" id="buy_content" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()'>
+            <a href="buy_car.php"><h2>View All Cars ></h2></a>
+            <div class="column" id="car_column1">
+                <a href="buy_car.php">BMW</a>
+                <a href="buy_car.php">Honda</a>
+                <a href="buy_car.php">Isuzu</a>
+                <a href="buy_car.php">Mazda</a>
+                <a href="buy_car.php">Mini</a>
+                <a href="buy_car.php">Perodua</a>
+                <a href="buy_car.php">Proton</a>
+                <a href="buy_car.php">Suzuki</a>
+                <a href="buy_car.php">Toyota</a>
+                <a href="buy_car.php">Volkswagen</a>
+            </div>
+            <div class="column" id="car_column2">
+                <a href="buy_car.php">Ford</a>
+                <a href="buy_car.php">Hyundai</a>
+                <a href="buy_car.php">Kia</a>
+                <a href="buy_car.php">Mercedes</a>
+                <a href="buy_car.php">Nissan</a>
+                <a href="buy_car.php">Peugeot</a>
+                <a href="buy_car.php">Subaru</a>
+                <a href="buy_car.php">Tesla</a>
+                <a href="buy_car.php">Volve</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container  -->
     <div class="main-container">
+        <!-- Pop Up Image Box -->
+        <!-- <div id='imageModal' class=''>
+            <div class='imageContent'>
+                <a id='close' name='email' onclick="verification('close', 'image')">&times</a>
+                <div id='image-modal-container'>
+                    <div id='row-1'>
+                        <img class='modal-image'src="img/proton-preve-1.jpg";
+                    </div>
+                    <div id='row-2'>
+                        <div class='img-list'>
+                            <img class='modal-image'src="img/proton-preve-1.jpg";
+                        </div>
+                        <div class='img-list'>
+                            <img class='modal-image'src="img/proton-preve-1.jpg";
+                        </div>
+                        <div class='img-list'>
+                            <img class='modal-image'src="img/proton-preve-1.jpg";
+                        </div>
+                        <div class='img-list'>
+                            <img class='modal-image'src="img/proton-preve-1.jpg";
+                        </div>
+                        <div class='img-list'>
+                            <img class='modal-image'src="img/proton-preve-1.jpg";
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Popup Checkout Box  -->
+        <div id='checkoutModal' class='modal'>
+            <div class='modalContent'>
+                <a id='close' name='email' onclick="verification('close', 'checkout')">&times</a>
+                <div class='modalHeader'>Buy option </div>
+                <div class="modalDescription">Please select your prefer option to buy car</div>
+                <table class="checkout-table">
+                    <tr>
+                        <td>
+                            <div class="option-title">Book Car</div>
+                        </td>
+                        <td>
+                            <div class='option-title'>Full Payment</div>
+                        </td>
+                    </tr>
+                    <tr>  
+                        <td>
+                            <div class="option-description">
+                                Pay minimum of 10% deposit for the car price and the rest will be handle by bank loan.
+                            </div>
+                        </td>
+                        <td>
+                            <div class="option-description">
+                                Pay 100% of the Car Price and get your dream car immediately ! <br/>
+                                Refund will be available if car has issues. <br/>
+                                For more refund details, check <a href="../FAQ/FAQ.html" target="_blank">Q&A</a></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class='modalSubmit' value="half">Select</button>
+                        </td>
+                        <td>
+                            <button class='modalSubmit' value="full">Select</button>
+                        </td>
+                    </tr>    
+                            
+                            
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Content -->
         <div class="title-container">
             Proton Preve
         </div>
@@ -70,22 +191,22 @@
                         Loan Calculator
                     </div>                
                     <div class="form-title">
-                            Deposit Amount (10% of Vehicle Price)<br/>
-                            <input type="text" disabled class="form-text" id="deposit">
+                            Deposit Amount (RM)<br/>
+                            <input type="number" class="form-text" id="deposit" onblur="validateDeposit()">
                     </div>
                     <div class="form-title">
                         Bank Rates (%)<br/>
                         <input type="number" 
                             min="1" 
                             max="99"
-                            value="0"
+                            value="1"
                             oninput=checkRates()
                             class="form-text" 
                             id="rates">
                     </div>
                     <div class="form-title">
                         Repayment Period<br/>
-                        <select class="repayment" name="repayment">
+                        <select class="repayment" name="repayment" onchange="calculateRates()">
                             <option selected="selected" id="7y" value="7">7 years</option>
                             <option id="5y" value="5">5 years</option>
                             <option id="9y" value="9">9 years</option>
@@ -103,9 +224,7 @@
                 </div>
 
                 <div class="button-section">
-                    <!-- <button class="full-payment">Full Payment</button> -->
-
-                    <button class="checkout-button">Book Now !</button>
+                    <button class="checkout-button" onclick="verification('open', 'checkout')">Buy Now !</button>
                 </div>
             </div>
         </div>
