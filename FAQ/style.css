@@ -142,7 +142,10 @@
 /* Top container  */
 .container .top-container {
     height: 200px;
-    background-color: #fda172;
+    /* background-color: #fda172; */
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     text-align: center;
     margin-bottom: 2rem;
@@ -152,7 +155,8 @@
     font-size: 35px;
     color: whitesmoke;
     font-weight: 500;
-    text-shadow: 1px 1px #4b505e;
+    /* text-shadow: 1px 1px #4b505e; */
+    text-shadow: 3.5px 2px navy;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -247,7 +251,6 @@
 
 .container .btm-container .row .col2 .question-box .answer {
     padding: 10px;
-    cursor: pointer;
     font-weight: 320;
     transition: 5s ease-out;
 }
