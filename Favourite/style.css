@@ -159,14 +159,48 @@
 /* With Result */
 .favourite-table{
     border-spacing: 20px 0;
+    margin: 0 auto;
     margin-bottom: 10%;
     display: block;
+    width: 100%;
+}
+
+.favourite-table td {
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.favourite-table td:nth-child(1) {
+  width: 20%;
+}
+
+
+.favourite-table tr:hover {
+  box-shadow: 1px 1px 2px 2px lightgray;
 }
 
 .favourite-table td {
     padding-right: 50px;
     vertical-align: top;
 }
+
+.favourite-table .table-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favourite-table .table-row .col2 .delete-btn {
+  margin: 0 auto;
+  top: 30%;
+  font-size: 25px;
+}
+
+.favourite-table .table-row .col2 .delete-btn .fa-trash-alt:hover {
+  color: red;
+  text-shadow: 2px 1px lightgray;
+}
+
+
 
 .favourite-table .car-name {
     top: 0%;
