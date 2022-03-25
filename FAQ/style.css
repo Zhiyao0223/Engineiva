@@ -303,7 +303,7 @@ footer {
 }
 
 .new_footer_top {
-    padding: 50px 0px 270px;
+    padding: 50px 0px 300px;
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -328,21 +328,6 @@ footer {
     color: #6a7695;
     margin-bottom: 20px;
 }
-.new_footer_top .company_widget .f_subscribe_two .btn_get {
-    border-width: 1px;
-    margin-top: 20px;
-}
-.btn_get_two:hover {
-    background: transparent;
-    color: #5e2ced;
-}
-.btn_get:hover {
-    color: #fff;
-    background: #6754e2;
-    border-color: #6754e2;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
 
 .new_footer_top .f_widget.about-widget .f_list li a:hover {
     color: #5e2ced;
@@ -363,7 +348,6 @@ footer {
 .f_social_icon {
     z-index: 2;
 }
-
 
 .new_footer_top .f_social_icon a {
     width: 44px;
@@ -390,18 +374,6 @@ footer {
     -webkit-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
-}
-.ti-facebook:before {
-    content: "\e741";
-}
-.ti-twitter-alt:before {
-    content: "\e74b";
-}
-.ti-vimeo-alt:before {
-    content: "\e74a";
-}
-.ti-pinterest:before {
-    content: "\e731";
 }
 
 .btn_get_two {

@@ -55,69 +55,90 @@
     <!-- Main Container  -->
     <div class="main-container">
         <!-- Pop Up Image Box -->
-        <!-- <div id='imageModal' class=''>
-            <div class='imageContent'>
-                <a id='close' name='email' onclick="verification('close', 'image')">&times</a>
-                <div id='image-modal-container'>
-                    <div id='row-1'>
-                        <img class='modal-image'src="img/proton-preve-1.jpg";
+        <div id="imageModal">
+            <div class="modal-width">
+                <div class="row">
+                    <div class="left-panel" onclick="arrowChangeImage('prev')">
+                        <div class="left-arrow">
+                            <i class="fas fa-angle-double-left"></i>
+                        </div>
+                        
                     </div>
-                    <div id='row-2'>
-                        <div class='img-list'>
-                            <img class='modal-image'src="img/proton-preve-1.jpg";
-                        </div>
-                        <div class='img-list'>
-                            <img class='modal-image'src="img/proton-preve-1.jpg";
-                        </div>
-                        <div class='img-list'>
-                            <img class='modal-image'src="img/proton-preve-1.jpg";
-                        </div>
-                        <div class='img-list'>
-                            <img class='modal-image'src="img/proton-preve-1.jpg";
-                        </div>
-                        <div class='img-list'>
-                            <img class='modal-image'src="img/proton-preve-1.jpg";
+                    <div class="imageContent">
+                        <img id='currentImg' src="img/proton-preve-1.jpg">
+                        <a id='close' name='image' onclick="verification('close', 'image')">&times</a>
+                    </div>
+                    <div class="right-panel" onclick="arrowChangeImage('next')">
+                        <div class="right-arrow">                 	
+                            <i class="fas fa-angle-double-right"></i>
                         </div>
                     </div>
                 </div>
+                <div class="bottom-row">
+                    <table class="bottom-row-image">
+                        <tr>
+                            <td>
+                                <img class='bottom-image' src="img/proton-preve-1.jpg" onclick="changeImage('0')">
+                            </td>
+                            <td>
+                                <img class='bottom-image' src="img/proton-preve-2.jpg" onclick="changeImage('1')">
+                            </td>
+                            <td>
+                                <img class='bottom-image' src="img/proton-preve-3.jpg" onclick="changeImage('2')">
+                            </td>
+                            <td>
+                                <img class='bottom-image' src="img/proton-preve-4.jpg" onclick="changeImage('3')">
+                            </td>
+                            <td>
+                                <img class='bottom-image' src="img/proton-preve-5.jpg" onclick="changeImage('4')">
+                            </td>
+                            <td>
+                                <img class='bottom-image' src="img/proton-preve-5.jpg" onclick="changeImage('5')">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-        </div> -->
+
+
+        </div>
 
         <!-- Popup Checkout Box  -->
         <div id='checkoutModal' class='modal'>
             <div class='modalContent'>
-                <a id='close' name='email' onclick="verification('close', 'checkout')">&times</a>
+                <a id='close' name='checkout' onclick="verification('close', 'checkout')">&times</a>
                 <div class='modalHeader'>Buy option </div>
                 <div class="modalDescription">Please select your prefer option to buy car</div>
                 <table class="checkout-table">
                     <tr>
                         <td>
-                            <div class="option-title">Book Car</div>
+                            <div class="option-title">Schedule a Test Drive</div>
                         </td>
                         <td>
-                            <div class='option-title'>Full Payment</div>
+                            <div class='option-title'>Book & Secure Your Car</div>
                         </td>
                     </tr>
                     <tr>  
                         <td>
                             <div class="option-description">
-                                Pay minimum of 10% deposit for the car price and the rest will be handle by bank loan.
+                                Test Drive at Our Inspection Centre which available at numerous major cities in West Malaysia. 
+                                For those could not attend physically or not fully vacinnated, our company will provide a virtual tour for you.
                             </div>
                         </td>
                         <td>
                             <div class="option-description">
-                                Pay 100% of the Car Price and get your dream car immediately ! <br/>
-                                Refund will be available if car has issues. <br/>
-                                For more refund details, check <a href="../FAQ/FAQ.html" target="_blank">Q&A</a></a>
+                                Pay minimum of 1% deposit of the car price to secure your car. You could head to the inspection center or create a
+                                <a href="../SupportCust/SupportCust.html" target="_blank">support ticket</a> to discuss and settle the documents signing.
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <button class='modalSubmit' value="half">Select</button>
+                            <button class='modalSubmit' value="half" onclick="verification('open', 'testDrive')">Select</button>
                         </td>
                         <td>
-                            <button class='modalSubmit' value="full">Select</button>
+                            <button class='modalSubmit' value="full" onclick="alert('Redirecting to Payment Page...');
+                                                                                    window.location.href = '../Payment/payment.php'">Select</button>
                         </td>
                     </tr>    
                             
@@ -125,6 +146,89 @@
                         </td>
                     </tr>
                 </table>
+            </div>
+        </div>
+
+        <!-- Popup TestDrive Box -->
+        <div id='testDriveModal' class='modal'>
+            <div class='modalContent'>
+                <a id='close' name='checkout' onclick="verification('close', 'testDrive')">&times</a>
+                <div class='modalHeader'>Test Drive Appointment Form </div>
+                <div class="modalDescription">Please fill in your information</div>
+                
+                <form action="#" class='test-drive-form' method="post">
+                    <input type="text" id="custID" hidden>
+
+                    <table class="form-table">
+                        <!-- Appointment Type  -->
+                        <tr>
+                            <td>
+                                <div class="title" name="appointmentMode">
+                                    Type
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-input">
+                                    <select id='appointmentType' name="appointmentType" required onchange="displayLocationBox()">
+                                        <option value="" disabled selected>Please Select</option>
+                                        <option value="physical">Physical</option>
+                                        <option value="virtual">Virtual</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Location -->
+                        <tr>
+                            <td>
+                                <div class="title" id="location-box" name="location">
+                                    Location
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-input">
+                                    <select id="location" name="location">
+                                        <option value="" disabled selected>Please Select</option>
+                                        <option value="kl">Kuala Lumpur</option>
+                                        <option value="melaka">Melaka</option>
+                                        <option value="perak">Perak</option>
+                                        <option value="pahang">Pahang</option>
+                                        <option value="selangor">Selangor</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Date  -->
+                        <tr>
+                            <td>
+                                <div class="title">
+                                    Appointment Date
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-input">
+                                    <input type="date" id="date" name="date" required onchange="checkDate()">
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Time  -->
+                        <tr>
+                            <td>
+                                <div class="title" name="appointmentMode">
+                                    Time
+                                </div>
+                            </td>
+                            <td>
+
+                                <div class="form-input">
+                                    <input type="time" id="time" name="time" onchange="checkHour()" required>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="submit-box">
+                        <input type="submit" class="submit-btn" value="Submit" name="testDriveSubmit">
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -136,21 +240,21 @@
             <table class="picture-table">
                 <tr>
                     <td rowspan="2">
-                        <img class='first-img' src="img/proton-preve-1.jpg">
+                        <img class='first-img' src="img/proton-preve-1.jpg" onclick="changeImage('0')">
                     </td>
                     <td>
-                        <img class='img' src="img/proton-preve-2.jpg">
+                        <img class='img' src="img/proton-preve-2.jpg" onclick="changeImage('1')">
                     </td>
                     <td>
-                        <img class='img' src="img/proton-preve-3.jpg">
+                        <img class='img' src="img/proton-preve-3.jpg" onclick="changeImage('2')">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <img class='img' src="img/proton-preve-4.jpg">
+                        <img class='img' src="img/proton-preve-4.jpg" onclick="changeImage('3')">
                     </td>
-                    <td>
-                        <img class='img last-image' src="img/proton-preve-5.jpg">
+                    <td onclick="changeImage('4')">
+                        <img class='img last-image' src="img/proton-preve-5.jpg" >
                         <div class="square">
                             <div class="extra-pic">+10</div>
                         </div>
@@ -162,7 +266,7 @@
         <div class="bottom-container">
             <div class="description-box">
                 <div class="description-title">
-                    Seller Notes
+                    Specifications
                 </div>
                 <div class="description">
                     <ul>
@@ -224,7 +328,7 @@
                 </div>
 
                 <div class="button-section">
-                    <button class="checkout-button" onclick="verification('open', 'checkout')">Buy Now !</button>
+                    <button class="checkout-button" onclick="verification('open', 'checkout')">Get Started !</button>
                 </div>
             </div>
         </div>
@@ -256,14 +360,14 @@
 
                                 <li><div class="footer-email">
                                     <i class="fas fa-envelope footer-icon"></i> 
-                                    : <a href="mailto:sample@gmail.com">sample@gmail.com</a>
+                                    : <a href="mailto:support@engineiva.com">support@engineiva.com</a>
                                 </div></li>
                                 <li><div class="footer-address">
                                     <div class="footer-address-container">
                                         <i class="fas fa-map-marker footer-icon"></i> :
                                     </div>
                                     <div class="footer-address-box"> 
-                                        No 123, Jalan ABC,<br> 
+                                        Jalan Pelukis U1/46<br> 
                                         Kawasan Perindustrian Temasya<br> 
                                         40150 Shah Alam, Selangor
                                     </div>
@@ -282,14 +386,12 @@
                         <div class="f_widget about-widget" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
                             <h3 class="f-title">Quick Links</h3>
                             <ul class="f_list">
-                                <li><a href="#">About Us</a></li>
-
-                                <li><a href="#">Support Ticket</a></li>
-                                <li><a href="#">Term &amp; conditions</a></li>
-                                <li><a href="#">Documentation</a></li>
+                                <li><a href="../AboutUs/aboutUs.php">About Us</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="../SupportCust/SupportCust.html">Support Ticket</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Locate Us</a></li>
-                                <li><a href="#">FAQ</a></li>
+                                <li><a href="https://goo.gl/maps/EDoSVuic3zT8mrMj8" onclick="alert('Redirecting to Google Map...')" target="_blank">Locate Us</a></li>
+                                <li><a href="../FAQ/FAQ.html">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -325,7 +427,7 @@
             <div class="footer-bottom-container">
                 <div class="row align-items-center">
                     <div class="footer-bottom-column">
-                        <p class="copyright">© Engineiva Sdn Bhd 2022 All rights reserved.</p>
+                        <p class="copyright">&#169; Engineiva Sdn Bhd 2022 All rights reserved.</p>
                     </div>
                 </div>
             </div>

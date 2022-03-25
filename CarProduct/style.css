@@ -182,7 +182,7 @@
     display: block;
 } 
 
-.main-container .picture-container .picture-table tr:nth-child(2) :nth-child(2) img {
+.main-container .picture-container .picture-table tr:nth-child(2) td:nth-child(2) img {
     filter: brightness(45%);
 }
 
@@ -336,13 +336,112 @@
 
 /* Image Popup  */
 #imageModal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px lightgray;
     display: none;
 }
+
+#imageModal .modal-width {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#imageModal .row {
+    display: flex;
+    margin-top: 3rem;
+}
+
+#imageModal .row .left-panel,
+#imageModal .row .right-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: auto;
+    width: 7%;
+    cursor: pointer;
+}
+
+
+#imageModal .row .left-panel .left-arrow,
+#imageModal .row .right-panel .right-arrow {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    color: white;
+}
+
+#imageModal .row .imageContent {
+    display: inline-block;
+    width: 80%;
+    height: max-content;
+    /* margin: 4% 0; */
+    border: 1px solid #888;
+    background-color: white;
+    text-align: center;
+    box-shadow: 1px 1px gray;
+    transition: ease-in;
+}
+
+#imageModal .row .imageContent img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#imageModal .row .imageContent #close {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 1000;
+    top: 1%;
+    right: 15%;
+    cursor: pointer;
+}
+
+#imageModal .row .imageContent #close:hover,
+#imageModal .row .imageContent #close:focus {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#imageModal .bottom-row {
+    width: 94%;
+    justify-content: space-evenly;
+    background-color: white;
+    height: fit-content;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#image .bottom-row .bottom-row-image {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+#image .bottom-container .bottom-row-image td {
+    border: 2px solid;
+    width: 25%;
+}
+
+#imageModal .bottom-row .bottom-row-image img{
+    width: 250px;
+    height: 100px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+}
+
 
 
 /* Checkout Popup */
 #checkoutModal {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in-out;
 }
 
 .modal {
@@ -353,7 +452,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-    box-shadow: 2px 2px 2px 2px lightgray;
+    box-shadow: 3px 3px 3px 3px lightgray;
 }
 
 .modal .modalContent {
@@ -427,9 +526,10 @@
 }
 
 .modal .modalContent .checkout-table .option-description {
-    text-align: left;
+    text-align: justify;
     margin: 0 1rem;
-    font-size: 15px
+    font-size: 15px;
+    text-justify: inter-word;
 }
 
 .modal .modalContent .checkout-table .option-description a {
@@ -455,13 +555,73 @@
     box-shadow: 2px 2px 1px 1px lightgray;
 }
 
+#testDriveModal {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
 
+#testDriveModal .modal {
+    width: 50%;
+}
 
+#testDriveModal .test-drive-form {
+    text-align: left;
+    margin: 3rem auto;
+}
 
+#testDriveModal .test-drive-form .form-table {
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 1rem;
+}
 
+#testDriveModal .test-drive-form .form-table td {
+    padding: 10px;
+}
 
+#testDriveModal .test-drive-form .form-table td:nth-child(1) {
+    width: 80%;
+}
 
+#testDriveModal .test-drive-form .form-table .title {
+    font-weight: 500;
+    font-size: 18px;
+}
 
+#testDriveModal .test-drive-form .form-table .form-input select,
+#testDriveModal .test-drive-form .form-table .form-input input {
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+#testDriveModal .test-drive-form .form-table tr:nth-child(2) {
+    display: none;
+}
+
+#testDriveModal .submit-box {
+    width: 15%;
+    margin: 0 auto;
+}
+
+#testDriveModal .submit-box .submit-btn {
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    background-color: #263b5e;
+    color: white;
+}
+
+#testDriveModal .submit-box .submit-btn:hover {
+    background-color: #FEC34D;
+    box-shadow: 2px 2px 1px 1px lightgray;
+}
 
 
 /* Footer */
@@ -479,14 +639,14 @@ footer {
 }
 
 .new_footer_top {
-    padding: 50px 0px 270px;
+    padding: 50px 0px 300px;
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
     justify-content: space-evenly;
 }
 .new_footer_area .footer_bottom {
-    margin-top: -2%;
+    margin-top: 0;
     padding-top: 0px;
     padding-bottom: 10px;
 }
@@ -504,21 +664,6 @@ footer {
     color: #6a7695;
     margin-bottom: 20px;
 }
-.new_footer_top .company_widget .f_subscribe_two .btn_get {
-    border-width: 1px;
-    margin-top: 20px;
-}
-.btn_get_two:hover {
-    background: transparent;
-    color: #5e2ced;
-}
-.btn_get:hover {
-    color: #fff;
-    background: #6754e2;
-    border-color: #6754e2;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
 
 .new_footer_top .f_widget.about-widget .f_list li a:hover {
     color: #5e2ced;
@@ -535,6 +680,11 @@ footer {
 .f_widget.about-widget .f_list {
     margin-bottom: 0px;
 }
+
+.f_social_icon {
+    z-index: 2;
+}
+
 .new_footer_top .f_social_icon a {
     width: 44px;
     height: 44px;
@@ -543,8 +693,10 @@ footer {
     border: 1px solid #e2e2eb;
     font-size: 24px;
     margin-top: 10%;
+
 }
 .f_social_icon a {
+    cursor: pointer;
     width: 46px;
     height: 46px;
     border-radius: 50%;
@@ -558,18 +710,6 @@ footer {
     -webkit-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
-}
-.ti-facebook:before {
-    content: "\e741";
-}
-.ti-twitter-alt:before {
-    content: "\e74b";
-}
-.ti-vimeo-alt:before {
-    content: "\e74a";
-}
-.ti-pinterest:before {
-    content: "\e731";
 }
 
 .btn_get_two {
@@ -588,7 +728,7 @@ footer {
 .new_footer_top .f_social_icon a:hover {
     background: #5e2ced;
     border-color: #5e2ced;
-  color:white;
+    color:white;
 }
 .new_footer_top .f_social_icon a + a {
     margin-left: 4px;
@@ -619,13 +759,13 @@ footer {
     bottom: 0;
     background: url("http://droitthemes.com/html/saasland/img/seo/footer_bg.png") no-repeat scroll center 0;
     width: 100%;
-    height: 350px;
+    height: 300px;
 }
 
 .new_footer_top .footer_bg .footer_bg_one {
     background: url("https://1.bp.blogspot.com/-mvKUJFGEc-k/XclCOUSvCnI/AAAAAAAAUAE/jnBSf6Fe5_8tjjlKrunLBXwceSNvPcp3wCLcBGAsYHQ/s1600/volks.gif") no-repeat center center;
     width: 330px;
-    height: 250px;
+    height: 200px;
     background-size:100%;
     position: absolute;
     bottom: 0;
@@ -637,7 +777,7 @@ footer {
 .new_footer_top .footer_bg .footer_bg_two {
     background: url("https://1.bp.blogspot.com/-hjgfxUW1o1g/Xck--XOdlxI/AAAAAAAAT_4/JWYFJl83usgRFMvRfoKkSDGd--_Sv04UQCLcBGAsYHQ/s1600/cyclist.gif") no-repeat center center;
     width: 88px;
-    height: 250px;
+    height: 200px;
     background-size:100%;
     bottom: 0%;
     left: 38%;
