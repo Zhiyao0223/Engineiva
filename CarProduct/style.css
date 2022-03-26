@@ -233,6 +233,34 @@
     padding-left: 4rem;
 }
 
+.main-container .bottom-container .description-box .description .description-container {
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.main-container .bottom-container .description-box .description .carID {
+    display: none;
+}
+
+.main-container .bottom-container .description-box .description .specification-box {
+    margin-bottom: 1rem;
+}
+
+.main-container .bottom-container .description-box .description .specification-box .specification-title,
+.main-container .bottom-container .description-box .description .additional-feature .specification-title {
+    font-weight: 500;
+}
+
+.main-container .bottom-container .description-box .description .additional-feature ul {
+    margin-left: 1rem;
+}
+
+.main-container .bottom-container .description-box .description .specification-box .specification-content {
+    font-weight: 300;
+}
+
 .main-container .bottom-container .checkout-box {
     width: 20%;
     height: 100%;
