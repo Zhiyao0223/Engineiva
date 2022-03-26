@@ -204,6 +204,9 @@
     border: solid 1px #1338BE;
 }
 
+.main-container .row .col1 .more-brand {
+    border-radius: 40px;
+}
 
 
 .main-container .row .col2 {
@@ -292,6 +295,103 @@
     font-weight: 600;
     font-size: 18px;
 }
+
+/* Brand Popup Box  */
+.main-container .brand-modal #close {
+    position: absolute;
+    font-size: 30px;
+    font-weight: 1000;
+    top: 10%;
+    right: 23%;
+    cursor: pointer;
+}
+
+.main-container .brand-modal #close:hover,
+.main-container .brand-modal #close:focus {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.main-container .brand-modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 2px 2px lightgray;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.main-container .brand-modal .brand-box {
+    width: 50%;
+    position: relative;
+    top: 15%;
+    margin: 0 auto;
+    background-color: white;
+    height: fit-content;
+    border-radius: 30px;
+    box-shadow: 1px 1px 1px 1px lightgray;
+}
+
+.main-container .brand-modal .brand-box .brand-title {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    text-shadow: 1px 1px lightgray;
+    padding: 1.5rem 0;
+}
+
+.main-container .brand-modal .brand-box .brand-row {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+}
+
+.main-container .brand-modal .brand-box .brand-row .brand-col1,
+.main-container .brand-modal .brand-box .brand-row .brand-col2{
+    height: auto;
+    font-size: 18px;
+    font-weight: 350;
+    text-shadow: 1px 1px lightgray;
+}
+
+.main-container .brand-modal .brand-box .brand-row .brand-col1 .brand-name, 
+.main-container .brand-modal .brand-box .brand-row .brand-col2 .brand-name{
+    margin-bottom: 2rem;
+}
+
+.main-container .brand-modal .brand-box .brand-row .brand-col1 .brand-name:hover,
+.main-container .brand-modal .brand-box .brand-row .brand-col2 .brand-name:hover {
+    text-shadow: 1px 1px lightgray;
+    color: darkblue;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.main-container .brand-modal .brand-box .brand-row .brand-col1 .brand-name .brand-img,
+.main-container .brand-modal .brand-box .brand-row .brand-col2 .brand-name .brand-img {
+    width: 50px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.main-container .brand-modal .brand-box .brand-row .brand-col1 .brand-name .brands,
+.main-container .brand-modal .brand-box .brand-row .brand-col2 .brand-name .brands {
+    display: inline-block;
+}
+
+
+
+
+
+
+
 
 
 /* Footer */
