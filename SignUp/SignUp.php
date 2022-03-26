@@ -54,6 +54,16 @@ margin-bottom: 15px;
 width:100%;
 float:left;
 }
+#left{
+    float:left;
+    width: 50%;
+	padding-right:10px;
+    }
+#right{
+    float:left;
+    width: 50%;
+	padding-left:10px;
+}
 
 .label {
 float: left;
@@ -146,22 +156,23 @@ opacity: 1;
   
 <div class="container">
 <h1>Sign Up</h1>
-	<div class="section">
-		<div class="label">
-			First Name
+		<div id="left">
+			<div class="label">
+				First Name
+			</div>
+			<div class="field">
+				<input id="partitioned" type="text" name="FirstName" required>
+			</div>
 		</div>
-		<div class="field">
-			<input id="partitioned" type="text" name="FirstName" required>
+		
+		<div id="right">
+			<div class="label">
+				Last Name
+			</div>
+			<div class="field">
+				<input id="partitioned" type="text" name="LastName" required>
+			</div>
 		</div>
-	</div>
-	<div class="section">
-		<div class="label">
-			Last Name
-		</div>
-		<div class="field">
-			<input id="partitioned" type="text" name="LastName" required>
-		</div>
-	</div>
 	<div class="section">
 		<div class="label">
 			Email Address
