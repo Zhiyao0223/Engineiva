@@ -158,7 +158,7 @@
 
 /* With Result */
 .favourite-table{
-    border-spacing: 20px 0;
+    border-spacing: 20px 30px;
     margin: 0 auto;
     margin-bottom: 10%;
     display: block;
@@ -173,7 +173,6 @@
 .favourite-table td:nth-child(1) {
   width: 20%;
 }
-
 
 .favourite-table tr:hover {
   box-shadow: 1px 1px 2px 2px lightgray;
@@ -217,10 +216,6 @@
 .car-description {
     top: 0%;
 }
-
-
-
-
 
 
 /* No result */
