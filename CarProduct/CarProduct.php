@@ -1,15 +1,61 @@
 <?php
     include("../conn.php");
 
+    // Check for carID in URL
     if (isset($_GET['carID'])) {
         $carID = $_GET['carID'];
-        echo "<script>alert('$carID')</script>";
+        
+    }
+    // Return error if no carID include in URL
+    else {
+        echo "  <script>
+                    alert('Error on retrieving car details. Please contact admin immediately ><')
+                    window.location.href = '../CarCategory/CarCategory.php';
+                </script>";
+    }
+
+    // Retrieve car info from db
+    $sqlCar = "SELECT * FROM car WHERE carID = '$carID'";
+    $resultCar= mysqli_query($con, $sqlCar);
+    $arrayCar = mysqli_fetch_array($resultCar);
+
+    // Return error if car is sold out or not available
+    if ($arrayCar['sellStatus'] == "Sold") {
+        echo    "<script>
+                    alert('This car is being sold out.')
+                    window.location.href = '../CarCategory/CarCategory.php';
+                </script>";
+    }
+    else if($arrayCar['sellStatus'] == "Not Available") {
+        echo    "<script>
+                    alert('This car is not available at the moment.')
+                    window.location.href = '../CarCategory/CarCategory.php';
+                </script>";
+    }
+    $brand = $arrayCar['brand'];
+    $model = $arrayCar['model'];
+    $variant = $arrayCar['variant'];
+    $carName = $brand ." " .$model ." " .$variant;
+    echo "<script>alert('$carName')</script>";
+
+    $year = $arrayCar['year'];
+    $engine = $arrayCar['engine'];
+    $transmission = $arrayCar['transmission'];
+    $price = $arrayCar['price'];
+
+
+    // Retrieve image from db and store in array
+    $image = array();
+    $sqlImage = "SELECT * FRom car_image WHERE carID = '$carID'";
+    $resultImage = mysqli_query($con, $sqlImage);
+    while($arrayImage = mysqli_fetch_assoc($resultImage)) {
+        array_push($image, $arrayImage['image']);
     }
 ?>
 
 <!DOCTYPE html>
 <head>
-    <title>Proton Preve</title>
+    <title><?php echo $carName; ?></title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -74,7 +120,7 @@
                         
                     </div>
                     <div class="imageContent">
-                        <img id='currentImg' src="img/proton-preve-1.jpg">
+                        <img id='currentImg' src="<?php echo "data:image/png;base64," .base64_encode($image[0]) ?>">
                         <a id='close' name='image' onclick="verification('close', 'image')">&times</a>
                     </div>
                     <div class="right-panel" onclick="arrowChangeImage('next')">

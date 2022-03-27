@@ -117,7 +117,7 @@
                         $image = $arrayImage['image'];
                         $urlAddress = "../CarProduct/CarProduct.php?carID=$carID";
 
-                        $favRow = "<tr onclick=\"window.location.href= '$urlAddress'\">
+                        $favRow = "<tr onclick=\"window.open('$urlAddress')\">
                                         <td>
                                             <img src=\"data:image/png;base64,".base64_encode($image) ."\" height='200px' width='300px'>
                                         </td>
