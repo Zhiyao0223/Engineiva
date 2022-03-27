@@ -30,9 +30,10 @@
 
 .main-container .button-row .statusBtn {
     float: right;
+    display: flex;
 }
 
-.main-container .button-row .statusBtn .status {
+/* .main-container .button-row .statusBtn .status {
     background-color: none;
     padding: 10px 30px;
     display: inline-block;
@@ -41,12 +42,39 @@
     border: 1px solid;
     box-shadow: 1px 1px lightgray;
     border-radius: 30px;
+    margin-left: 1rem;
+} */
+
+.main-container .button-row .statusBtn #pending {
+    background-color: none;
+    padding: 10px 30px;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    box-shadow: 1px 1px lightgray;
+    border-radius: 30px;
+    margin-left: 1rem;
 }
 
-.main-container .button-row .statusBtn .status:hover {
-    color:green;
+.main-container .button-row .statusBtn .status {
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    box-shadow: 1px 1px lightgray;
+    border-radius: 30px;
+    margin-left: 1rem;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 15px;
+}
+
+.main-container .button-row .statusBtn #done:hover {
+    color:red;
     font-weight: 500;
-    box-shadow: 1px 1px limegreen;
+    box-shadow: 2px 1px lightcoral;
 }
 
 .main-container .top-container {

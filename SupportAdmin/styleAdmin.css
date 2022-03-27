@@ -26,6 +26,11 @@
     height: fit-content;
 }
 
+.main-container .no-ticket {
+    margin: 2rem;
+    display: none;
+}
+
 .main-container .table-container tr {
     height: 50px;
 }
@@ -86,6 +91,8 @@
 .main-container .table-container tr td .reply {
     font-weight: 500;
     text-decoration: underline;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 .main-container .table-container tr td .reply:hover {

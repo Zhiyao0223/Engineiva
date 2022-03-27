@@ -1,3 +1,29 @@
+<?php
+    include("../conn.php");
+    session_start();
+
+    $userID = '1';
+    if (isset($_SESSION['mysession'])) {
+        $userID = $_SESSION['id'];
+
+        // Autofill email
+        $sql_email = "SELECT email FROM customer WHERE custID = '$userID'";
+        $result_email = mysqli_query($con, $sql_email);
+        $array_email = mysqli_fetch_array($result_email);
+
+        // Get latest ticket ID
+        $sql_support = "SELECT * FROM support_ticket ORDER BY ticketID DESC LIMIT 1";
+        $result_support = mysqli_query($con, $sql_support);
+        $array_support = mysqli_fetch_array($result_support);
+        $new_ticket = $array_support['ticketID'] + 1;    
+    }
+    else {
+        echo "<script>alert('You need to login to create a ticket.');
+                        window.location.href='../Login/userlogin.php';
+                </script>";
+    }
+?>
+
 <!DOCTYPE html>
 <head>
     <title>Support Ticket</title>
@@ -62,7 +88,7 @@
             </div>
         </div>
         
-        <form action="#" method="post">
+        <form method="post" name="supportTicket" id="supportTicket" enctype="multipart/form-data">
             <div class="btm-container">
                 <div class="category">
                     Issue category <span style="color: red;">*</span><br>
@@ -89,7 +115,7 @@
                 </div>
                 <div class="uploadBox">
                     Upload Attachment<br>
-                    <input type="file" id="file" name="file">
+                    <input type="file" id="image" name="image">
                 </div>
                 <div class="submitBtn">
                     <input type="submit" id="submit" name="submit">
@@ -188,3 +214,75 @@
         </div>
     </footer>
 </body>
+
+<?php 
+    // Auto fill email address
+    if(isset($_SESSION['id'])) {
+        echo "<script>
+        document.getElementById('email').value = '$array_email';
+            </script>";
+    }
+
+    // Detect Form Submission
+    if(isset($_POST['submit'])) {
+        $category = $_POST['categories'];
+        $email = $_POST['email'];
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+
+        // Detect if uploading files
+        $is_uploading = $_FILES["image"]["error"];
+        if ($is_uploading == 0) {
+            $pictureStatus = 0;
+        }
+        else if ($is_uploading == 1) {
+            echo "<script>alert('Error: Your file size has exceed 2MB.')</script>";
+            exit(-1);
+        }
+        else if ($is_uploading == 4) {
+            $pictureStatus = 2;
+        }
+        else
+        {
+            echo $is_uploading;
+            echo "<script>alert('Sorry there was an error uploading your file.')</script>";
+            $pictureStatus = 2;
+        }
+        // echo "<script>alert('$is_uploading')</script>";
+
+        // No issue on uploading
+        if ($pictureStatus == 0) {
+            // Process Image
+            $target_dir = "img/";
+            $target_file = $target_dir.basename($_FILES["image"] ["name"]);
+                
+            if (move_uploaded_file($_FILES["image"] ["tmp_name"], $target_file)) {
+                // To get file name
+                $file_name = basename($_FILES["image"] ["name"]);
+            }
+        }
+        else {
+            $pictureStatus = -1;
+        }
+
+        $sql_insert = "INSERT INTO support_ticket (custID, ticketStatus, category, title, explaination) 
+                        VALUES(
+                        '$userID', 'T', '$category', '$title' , '$description')";
+        
+
+        if(!mysqli_query($con, $sql_insert)) {
+            echo"<script>alert('Error: ".mysqli_error($con) ."')</script>";
+        }
+        else {
+            echo"<script>alert('Ticket Successfully Created !')</script>";
+        };
+
+        if ($pictureStatus == 0) {
+            $new_ticket = $array_support[0] + 1;
+            // echo "<script>alert('$new_ticket')</script>";
+            $sql_update_image = "UPDATE support_ticket SET picture = '$file_name' WHERE ticketID = '$new_ticket'";
+            mysqli_query($con, $sql_update_image);
+            
+        }
+    }
+?>
