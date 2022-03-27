@@ -115,8 +115,9 @@
                         $resultImage = mysqli_query($con, $sqlImage);
                         $arrayImage = mysqli_fetch_assoc($resultImage);
                         $image = $arrayImage['image'];
+                        $urlAddress = "../CarProduct/CarProduct.html?carID=$carID";
 
-                        $favRow = "<tr>
+                        $favRow = "<tr onclick=\"window.location.href= '$urlAddress'\">
                                         <td>
                                             <img src=\"data:image/png;base64,".base64_encode($image) ."\" height='200px' width='300px'>
                                         </td>
