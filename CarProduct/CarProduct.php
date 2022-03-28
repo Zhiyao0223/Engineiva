@@ -36,13 +36,30 @@
     $model = $arrayCar['model'];
     $variant = $arrayCar['variant'];
     $carName = $brand ." " .$model ." " .$variant;
-    echo "<script>alert('$carName')</script>";
+    // echo "<script>alert('$carName')</script>";
 
     $year = $arrayCar['year'];
     $engine = $arrayCar['engine'];
     $transmission = $arrayCar['transmission'];
+    $mileage = $arrayCar['mileage'];
+    
+    // Get price and add ',' to it
     $price = $arrayCar['price'];
+    $length = strlen($price);
 
+    if ($length > 6) {
+        $firstPart = substr($price, 0, -6);
+        $secondPart = substr($price, -6);
+
+        $newPrice = "RM" .$firstPart .", " .$secondPart;
+        $firstPart = substr($price, 0, -3);
+        $secondPart = substr($price, -3);
+    }
+    else if ($length > 3) {
+        $firstPart = substr($price, 0, -3);
+        $secondPart = substr($price, -3); 
+    }
+    $newPrice = "RM" .$firstPart .", " .$secondPart;
 
     // Retrieve image from db and store in array
     $image = array();
@@ -51,6 +68,12 @@
     while($arrayImage = mysqli_fetch_assoc($resultImage)) {
         array_push($image, $arrayImage['image']);
     }
+
+    // Get remark and split it by ';'
+    $remark = $arrayCar['remark'];
+    $remarkArray = explode(";", $remark);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -132,24 +155,18 @@
                 <div class="bottom-row">
                     <table class="bottom-row-image">
                         <tr>
-                            <td>
-                                <img class='bottom-image' src="img/proton-preve-1.jpg" onclick="changeImage('0')">
-                            </td>
-                            <td>
-                                <img class='bottom-image' src="img/proton-preve-2.jpg" onclick="changeImage('1')">
-                            </td>
-                            <td>
-                                <img class='bottom-image' src="img/proton-preve-3.jpg" onclick="changeImage('2')">
-                            </td>
-                            <td>
-                                <img class='bottom-image' src="img/proton-preve-4.jpg" onclick="changeImage('3')">
-                            </td>
-                            <td>
-                                <img class='bottom-image' src="img/proton-preve-5.jpg" onclick="changeImage('4')">
-                            </td>
-                            <td>
-                                <img class='bottom-image' src="img/proton-preve-5.jpg" onclick="changeImage('5')">
-                            </td>
+                            <?php 
+                                $arraySize = sizeof($image);
+                                
+                                for ($i = 0; $i < $arraySize; $i++) {
+                                    $rowData = "<td>
+                                                    <img class='bottom-image' src=\"data:image/png;base64," .base64_encode($image[$i]) ."\" onclick=\"changeImage('0')\">
+                                                </td>";
+
+                                    echo $rowData;
+                                }
+                            ?>
+
                         </tr>
                     </table>
                 </div>
@@ -289,27 +306,43 @@
 
         <!-- Content -->
         <div class="title-container">
-            Proton Preve
+            <?php echo $carName; ?>
         </div>
         <div class="picture-container">
             <table class="picture-table">
                 <tr>
                     <td rowspan="2">
-                        <img class='first-img' src="img/proton-preve-1.jpg" onclick="changeImage('0')">
+                        <img class='first-img' <?php 
+                                                    $data = "src=\"data:image/png;base64," .base64_encode($image[0])  ."\"";
+                                                    echo $data;
+                                                ?>    
+                                                onclick="changeImage('0')">
                     </td>
                     <td>
-                        <img class='img' src="img/proton-preve-2.jpg" onclick="changeImage('1')">
+                        <img class='img' <?php 
+                                            $data = "src=\"data:image/png;base64," .base64_encode($image[1])  ."\"";
+                                            echo $data;
+                                        ?>     onclick="changeImage('1')">
                     </td>
                     <td>
-                        <img class='img' src="img/proton-preve-3.jpg" onclick="changeImage('2')">
+                        <img class='img' <?php 
+                                            $data = "src=\"data:image/png;base64," .base64_encode($image[2])  ."\"";
+                                            echo $data;
+                                        ?>  onclick="changeImage('2')">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <img class='img' src="img/proton-preve-4.jpg" onclick="changeImage('3')">
+                        <img class='img' <?php 
+                                            $data = "src=\"data:image/png;base64," .base64_encode($image[3])  ."\"";
+                                            echo $data;
+                                        ?>  onclick="changeImage('3')">
                     </td>
                     <td onclick="changeImage('4')">
-                        <img class='img last-image' src="img/proton-preve-5.jpg" >
+                        <img class='img last-image' <?php 
+                                            $data = "src=\"data:image/png;base64," .base64_encode($image[4])  ."\"";
+                                            echo $data;
+                                            ?>  >
                         <div class="square">
                             <div class="extra-pic">+10</div>
                         </div>
@@ -335,17 +368,7 @@
                                     Year
                                 </div>
                                 <div class="specification-content">
-                                    2017
-                                </div>
-                            </div>
-                        </div>
-                        <div class="specification-box">
-                            <div class="variant">
-                                <div class="specification-title">
-                                    Variant
-                                </div>
-                                <div class="specification-content">
-                                    30I
+                                    <?php echo $year; ?>
                                 </div>
                             </div>
                         </div>
@@ -355,7 +378,7 @@
                                     Engine
                                 </div>
                                 <div class="specification-content">
-                                    2017
+                                    <?php echo $engine; ?>
                                 </div>
                             </div>
                         </div>
@@ -365,7 +388,7 @@
                                     Transmission
                                 </div>
                                 <div class="specification-content">
-                                    2017
+                                    <?php echo $transmission; ?>
                                 </div>
                             </div>
                         </div>
@@ -375,7 +398,7 @@
                                     Mileage
                                 </div>
                                 <div class="specification-content">
-                                    81944
+                                    <?php echo $mileage ?>
                                 </div>
                             </div>
                         </div>
@@ -386,20 +409,12 @@
                             Remark
                         </div>
                         <ul>
-                            <li>Very nice plate number PATRIOT5397</li>
-                            <li>Careful owner</li>
-                            <li>White Colour</li>
-                            <li>Multifunction Steering</li>
-                            <li>Original BMW leather seats</li>
-                            <li>Full Service record</li>
-                            <li>Bluetooth/GPS Navigation System</li>
-                            <li>90% 4 tyres</li>
-                            <li>On time service</li>
-                            <li>Tidy interior</li>
-                            <li>Engine part well</li>
-                            <li>100% accident free</li>
-                            <li>Careful use & keep well maintained by owner</li>
-                            <li>Excellent maintained, tip-top condition & all original condition , accept trade-in.</li>
+                            <?php
+                                for ($i = 0; $i < sizeof($remarkArray); $i++) {
+                                    $remarkData = "<li>" .$remarkArray[$i] ."</li>";
+                                    echo $remarkData;
+                                }
+                            ?>
                         </ul>
                     </div>
 
@@ -436,7 +451,7 @@
                 </div>
                 <div class="price-range">
                     <div class="price">
-                        RM30, 000
+                        <?php echo $newPrice; ?>
                     </div>
                     <div class="or">OR</div>
                     <div class="price1">
@@ -450,16 +465,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <!-- Footer  -->
     <footer class="new_footer_area">
