@@ -143,7 +143,7 @@
                         
                     </div>
                     <div class="imageContent">
-                        <img id='currentImg' src="<?php echo "data:image/png;base64," .base64_encode($image[0]) ?>">
+                        <img id='currentImg' src="<?php echo "data:image/png;base64," .base64_encode($image[0]) ?>" height='500px' width='500px'>
                         <a id='close' name='image' onclick="verification('close', 'image')">&times</a>
                     </div>
                     <div class="right-panel" onclick="arrowChangeImage('next')">
@@ -160,7 +160,7 @@
                                 
                                 for ($i = 0; $i < $arraySize; $i++) {
                                     $rowData = "<td>
-                                                    <img class='bottom-image' src=\"data:image/png;base64," .base64_encode($image[$i]) ."\" onclick=\"changeImage('0')\">
+                                                    <img class='bottom-image' src=\"data:image/png;base64," .base64_encode($image[$i]) ."\" onclick=\"changeImage('$i')\">
                                                 </td>";
 
                                     echo $rowData;
@@ -395,7 +395,7 @@
                         <div class="specification-box">
                             <div class="mileage">
                                 <div class="specification-title">
-                                    Mileage
+                                    Mileage (KM)
                                 </div>
                                 <div class="specification-content">
                                     <?php echo $mileage ?>
@@ -555,4 +555,5 @@
             </div>
         </div>
     </footer>
+
 </body>
