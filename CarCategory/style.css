@@ -270,6 +270,14 @@
     box-shadow: 2px 2px lightgray;
 }
 
+.main-container .bottom-container .car-table td img {
+    width: 100%;
+    overflow: hidden;
+    height: 200px;
+    border-radius: 20px;
+}
+
+
 /* '>' apply for item inside container. 
     Reference: https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
 .main-container .bottom-container .car-table td:hover > .image-description span {
@@ -290,10 +298,11 @@
     color: #1338BE;
 }
 
-.main-container .bottom-container .car-table td .image-description .price {
+.main-container .bottom-container .car-table td .price {
     color: red;
     font-weight: 600;
     font-size: 18px;
+    margin-bottom: 1rem;
 }
 
 /* Brand Popup Box  */
