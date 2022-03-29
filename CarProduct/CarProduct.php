@@ -210,7 +210,8 @@
                         </td>
                         <td>
                             <button class='modalSubmit' value="full" onclick="alert('Redirecting to Payment Page...');
-                                                                                    window.location.href = '../Payment/payment.php'">Select</button>
+                                                                                document.getElementById('carIDSubmit').submit();
+                                                                                window.location.href = '../Payment/payment.php'">Select</button>
                         </td>
                     </tr>    
                             
@@ -358,9 +359,10 @@
                     Specifications
                 </div>
                 <div class="description">
-                    <div class="carID">
-                        1
-                    </div>
+                    <form action='../Payment/payment.php' id='carIDSubmit'>
+                        <input class="carID" name='carID'>
+                            1
+                    </form>
                     <div class="description-container">
                         <div class="specification-box">
                             <div class="year">

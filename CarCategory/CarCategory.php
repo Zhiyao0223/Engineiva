@@ -156,16 +156,16 @@
                     <div class="filter-title">
                         Brands
                     </div>
-                    <div class="filter-brand">
+                    <div class="filter-brand" onclick="filterBrand('BMW')">
                         BMW
                     </div>
-                    <div class="filter-brand">
+                    <div class="filter-brand" onclick="filterBrand('Honda')">
                         Honda
                     </div>
-                    <div class="filter-brand">
+                    <div class="filter-brand" onclick="filterBrand('Mazda')">
                         Mazda
                     </div>
-                    <div class="filter-brand">
+                    <div class="filter-brand" onclick="filterBrand('Mercedes')">
                         Mercedes
                     </div>
                     <div class="filter-brand more-brand" onclick="verification('open')">
@@ -207,10 +207,6 @@
                         $resultCar = mysqli_query($con, $sqlCar);
                         
                         while($arrayCar = mysqli_fetch_array($resultCar)) {
-                            if ($counter % 3 == 0 && $counter != 0) {
-                                echo "</tr><tr>";
-                            }
-
                             $carID = $arrayCar['carID'];
                             $brand = $arrayCar['brand'];
                             $model = $arrayCar['model'];
@@ -258,6 +254,7 @@
                                         </div>
                                     </td>";
                             echo $data;
+                            echo "<div class='trPlacement' id='tr$carID'></div>";
                             
                             $counter++;
                         }
@@ -356,4 +353,6 @@
             </div>
         </div>
     </footer>
+    <!-- Add tr tag to table  -->
 </body>
+<script>addTr()</script>;
