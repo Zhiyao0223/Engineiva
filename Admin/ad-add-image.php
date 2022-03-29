@@ -101,7 +101,7 @@
      <!-- End of main content -->
 
     <script>
-        // function for image preview 
+        // Function for image preview 
         function ImagePreview(){
             previewImage.src=URL.createObjectURL(event.target.files[0]);
         }
