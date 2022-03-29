@@ -46,17 +46,18 @@ function addTr() {
     
     var trBox = document.getElementsByClassName("trPlacement");
     var trID, trElement;
-
     for (let i = 0; i < trBox.length; i++) {
-        trElement = "tr" + i+1;
+        tmp = parseInt(i) + parseInt(1);
+        trElement = "tr" + tmp;
         trElement.toString();
         // alert(trElement);
-        trID = document.getElementById(trElement);
-        alert(trID);
-        // if ((i+1) % 3 == 0) {
-        //     alert(i);
-        // }
-        // document.getElementsByClassName("trPlacement")[i].innerHTML = "</tr><tr>";
+        trID = document.getElementById(trElement).innerHTML;
+        // alert(trElement + " " + trID);/
+        if (parseInt(tmp) % 3 == 0) {
+            document.getElementById(trElement).innerHTML = '</tr><tr>';
+            // alert(trID);
+        }
+        
         // alert(document.getElementsByClassName("trPlacement")[i].innerHTMLL);
     }
 }

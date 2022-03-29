@@ -1,47 +1,51 @@
 <?php
 ///include("session.php")
+  include("../conn.php");
 ?>
-<?php $car = "SELECT * FROM car where carID" = $_POST['nameFrom ZY']
-$record = mqli_query ...($conn. $SQL)
-while fetch query
---->
-<!-- if isset() 
-include conn
+<?php 
+  if (isset($_POST['carID'])) {
+    $carID = $_POST['carID'];
+    echo "<script>alert('$carID')</script>";
+  }
 
-$SQL = "SELECT * FROM promotion"
-$record = mqli_query ...($conn. $SQL)
-while fetch query
-if ($POST[promo] == $record['promocode']{​
-  fetch
+  // $car = "SELECT * FROM car where carID = $carID";
+// $record = mqli_query ...($conn. $SQL)
+// while fetch query
+// if isset() 
+// include conn
+
+// $SQL = "SELECT * FROM promotion"
+// $record = mqli_query ...($conn. $SQL)
+// while fetch query
+// if ($POST[promo] == $record['promocode']{​
+//   fetch
   
-$price = $car[price] - 2000;
-
-}​
--->
+// $price = $car[price] - 2000;
+?>
   
 
 <?php
- if (isset($_POST['submitBtn'])) {
-	include("conn.php");
+//  if (isset($_POST['submitBtn'])) {
+// 	include("conn.php");
 
-	$sql="INSERT INTO cust_buy () 
+// 	$sql="INSERT INTO cust_buy () 
   
-  VALUES ('$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]'";
+//   VALUES ('$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]'";
 
-  $sql = "UPDATE FROM ??";
+//   $sql = "UPDATE FROM ??";
     
 
-	if (!mysqli_query($con,$sql)){
-		die('Error: ' . mysqli_error($con));
-	}
-	else {
-		echo '<script>alert("Payment Successful!");
-    window.location.href= "homepage.php";
-    </script>';
-	}
+// 	if (!mysqli_query($con,$sql)){
+// 		die('Error: ' . mysqli_error($con));
+// 	}
+// 	else {
+// 		echo '<script>alert("Payment Successful!");
+//     window.location.href= "homepage.php";
+//     </script>';
+// 	}
 
-	mysqli_close($con);
- }
+// 	mysqli_close($con);
+//  }
 ?>
 
 
