@@ -14,6 +14,8 @@
     </style>
 </head>
 <body>
+    <?php include "ad-session.php"?>
+    
     <?php   
         include 'admin-header.php';
     ?>
@@ -33,7 +35,7 @@
         // If admin click the upload image button 
         if(isset($_POST['uploadImage'])){
             // Connect engineiva database 
-            include 'db.php';
+            include 'conn.php';
             // Retrieve carID from the from
             $carID = $_POST['carID']; 
 
@@ -83,7 +85,7 @@
         <div class="title-container">
             <?php 
                 // Connect engineiva database 
-                include 'db.php';
+                include 'conn.php';
                 // Get carID from the URL
                 $carID=intval($_GET['carID']);
                 // Create SQL code that display all car details and images

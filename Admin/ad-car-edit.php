@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="ad-car-edit.css">
 </head>
 <body>
+    <?php include "ad-session.php"?>
+
     <?php   
         include 'admin-header.php';
     ?>
@@ -24,7 +26,7 @@
         // If admin click the upload button       
         if(isset($_POST["updateBtn"])){ 
             // Connect engineiva database 
-            include("db.php");
+            include("conn.php");
             
             // Retrieve carID from url
             $carID = intval($_GET['carID']); 
@@ -72,12 +74,12 @@
                 <form action="" method="POST">
                     <?php
                         // Connect engineiva database  
-                        include("db.php");
+                        include("conn.php");
         
                          // Retrieve carID from url
                         $carID = intval($_GET['carID']); 
-                        // Create SQL code that display car display
-                        $result = mysqli_query($con,"SELECT * FROM car WHERE carid = '$carID'");
+                        // Create SQL code that display car 
+                        $result = mysqli_query($con,"SELECT * FROM car WHERE carID = '$carID'");
                     
                         // Fetch the car record and display
                         while($car = mysqli_fetch_array($result)){
@@ -235,7 +237,7 @@
         
         <?php 
             // Connect engineiva database  
-            include("db.php");
+            include("conn.php");
 
             // Retrieve carID from url
             $carID = intval($_GET['carID']); 

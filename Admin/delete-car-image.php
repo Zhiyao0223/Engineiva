@@ -1,6 +1,6 @@
 <?php
     // Connect engineiva database   
-    include("db.php");
+    include("conn.php");
 
     // Retrieve carID, imageID and path from URL
     $carID = intval($_GET['carID']);

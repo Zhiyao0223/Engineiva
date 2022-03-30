@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="ad-add-image.css">
 </head>
 <body>
+    <?php include "ad-session.php"?>
+
     <?php 
         include 'admin-header.php';
     ?>
@@ -23,7 +25,7 @@
         // If admin click the add button    
         if(isset($_POST['addButton'])){
             // Connect engineiva database 
-            include 'db.php';
+            include 'conn.php';
             // Retrieve carID from the URL
             $carID = intval($_GET['carID']);
             

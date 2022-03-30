@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="ad-add-new-car.css">
 </head>
 <body>
+    <?php include "ad-session.php"?>
+
     <?php 
         include 'admin-header.php';
     ?>
@@ -23,7 +25,7 @@
          // If user click the upload button      
         if(isset($_POST["uploadBtn"])){ 
             // Connect engineiva database   
-            include("db.php");
+            include("conn.php");
             // Create SQL code that insert all the input into car table
             $sql="INSERT INTO car (brand, model, year, variant, engine, transmission, mileage, price, sellStatus, remark) VALUE
             ('$_POST[brand]','$_POST[model]','$_POST[year]','$_POST[variant]','$_POST[engine]','$_POST[transmission]','$_POST[mileage]','$_POST[price]','$_POST[status]','$_POST[remark]')";
@@ -42,7 +44,7 @@
                 // Close engineiva database connection
                 mysqli_close($con);
                 // Display insert success and direact to purchase record page
-                echo '<script>alert("New car added successfully!");
+                echo '<script>alert("New car successfully added!");
                 window.location.href= "ad-buy-record.php?carID='.$last_id.'";
                 </script>';
             }
@@ -165,7 +167,7 @@
                         Status: <select name="status" required>
                                     <option value="" selected disabled>Please Select</option>
                                     <option value="Available">Available</option>
-                                    <option value="NotAvailable">Not Available</option>
+                                    <option value="Not Available">Not Available</option>
                                 </select>
                     </div>
                 </div>
