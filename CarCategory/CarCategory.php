@@ -3,10 +3,10 @@
 
     session_start();
     if(isset($_SESSION['mysession'])) {
-    include("header_login.php");
+        include("header_login.php");
     } 
     else {
-    include("header_cust.php");
+        include("header_cust.php");
     }
 ?>
 
@@ -262,7 +262,7 @@
                                         </div>
                                     </td>";
                             echo $data;
-                            echo "<div class='trPlacement' id='tr$carID'></div>";
+                            // echo "<div class='trPlacement' id='tr$carID'></div>";
                             
                             $counter++;
                         }
