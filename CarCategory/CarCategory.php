@@ -30,37 +30,37 @@
                 </div>
                 <div class="brand-row">
                     <div class="brand-col1">
-                        <div class="brand-name" id='brandCol1' onclick="filterBrand('BMW', this)">
+                        <div class="brand-name" id='brandCol1' onclick="filterBrandTop('BMW', this)">
                             <img class='brand-img' src="img/bmw-logo.png">
                             <div class="brands">
                                 BMW
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol2' onclick="filterBrand('Mazda', this)">
+                        <div class="brand-name" id='brandCol2' onclick="filterBrandTop('Mazda', this)">
                             <img class="brand-img" src="img/mazda.jpg">
                             <div class="brands">
                                 Mazda
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol3' onclick="filterBrand('Mini', this)">
+                        <div class="brand-name" id='brandCol3' onclick="filterBrandTop('Mini', this)">
                             <img class="brand-img" src="img/mini.jpg">
                             <div class="brands">
                                 Mini
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol4' onclick="filterBrand('Perodua', this)">
+                        <div class="brand-name" id='brandCol4' onclick="filterBrandTop('Perodua', this)">
                             <img class="brand-img" src="img/perodua.jpg">
                             <div class="brands">
                                 Perodua
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol5' onclick="filterBrand('Subaru', this)">
+                        <div class="brand-name" id='brandCol5' onclick="filterBrandTop('Subaru', this)">
                             <img class="brand-img" src="img/subaru.png">
                             <div class="brands">
                                 Subaru
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol6' onclick="filterBrand('Volkswagen', this)">
+                        <div class="brand-name" id='brandCol6' onclick="filterBrandTop('Volkswagen', this)">
                             <img class="brand-img" src="img/volkswagen.jpg">
                             <div class="brands">
                                 Volkswagen
@@ -68,31 +68,31 @@
                         </div>
                     </div>
                     <div class="brand-col2">
-                        <div class="brand-name" id='brandCol7' onclick="filterBrand('Honda', this)">
+                        <div class="brand-name" id='brandCol7' onclick="filterBrandTop('Honda', this)">
                             <img class="brand-img" src="img/honda.jpg">
                             <div class="brands">
                                 Honda
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol8' onclick="filterBrand('Mercedes', this)">
+                        <div class="brand-name" id='brandCol8' onclick="filterBrandTop('Mercedes', this)">
                             <img class="brand-img" src="img/mercedes.jpg">
                             <div class="brands">
                                 Mercedes
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol9' onclick="filterBrand('Nissan', this)">
+                        <div class="brand-name" id='brandCol9' onclick="filterBrandTop('Nissan', this)">
                             <img class="brand-img" src="img/nissan.png">
                             <div class="brands">
                                 Nissan
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol10' onclick="filterBrand('Proton', this)">
+                        <div class="brand-name" id='brandCol10' onclick="filterBrandTop('Proton', this)">
                             <img class="brand-img" src="img/proton.png">
                             <div class="brands">
                                 Proton
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol11' onclick="filterBrand('Toyota', this)">
+                        <div class="brand-name" id='brandCol11' onclick="filterBrandTop('Toyota', this)">
                             <img class="brand-img" src="img/toyota.png">
                             <div class="brands">
                                 Toyota
@@ -117,16 +117,16 @@
                     <div class="filter-title">
                         Brands
                     </div>
-                    <div class="filter-brand" id='filterBrand1' onclick="filterBrand('BMW', this)">
+                    <div class="filter-brand" id='filterBrand1' onclick="filterBrandBottom('BMW', this)">
                         BMW
                     </div>
-                    <div class="filter-brand" id='filterBrand7' onclick="filterBrand('Honda', this)">
+                    <div class="filter-brand" id='filterBrand7' onclick="filterBrandBottom('Honda', this)">
                         Honda
                     </div>
-                    <div class="filter-brand" id='filterBrand2' onclick="filterBrand('Mazda', this)">
+                    <div class="filter-brand" id='filterBrand2' onclick="filterBrandBottom('Mazda', this)">
                         Mazda
                     </div>
-                    <div class="filter-brand" id='filterBrand8' onclick="filterBrand('Mercedes', this)">
+                    <div class="filter-brand" id='filterBrand8' onclick="filterBrandBottom('Mercedes', this)">
                         Mercedes
                     </div>
                     <div class="filter-brand more-brand" onclick="verification('open')">

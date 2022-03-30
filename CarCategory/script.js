@@ -1,5 +1,4 @@
-var originalTableContent;
-var filterTopPreviousMark;
+var originalTableContent, filterTopPreviousMark, filterBtmPreviousMark;
 
 // Header
 function mouseOverToggle() {
@@ -29,16 +28,37 @@ function verification(option) {
 
 // Filter brands (Top section)
 function filterBrandTop(brand, classNames) {
-    var resetStatus = false;
+    var resetStatus = false, btmFilterStatus = false;
     var relatedClass = classNames.className;
+    var loopID, btmFilterID;
+
     var thisID = classNames.id;
-    var loopID;
+    var newTopID = parseInt(thisID.slice(8));
+    // alert(newTopID);
+    var btmFilterBrand = document.getElementsByClassName("filter-brand");
+    for (let x = 0; x < btmFilterBrand.length; x++) {
+        btmFilterID = btmFilterBrand[x].id;
+        btmFilterID = btmFilterID.slice(11);
+        // alert(btmFilterID + " " + newTopID);
+
+        if (btmFilterID == newTopID) {
+            btmFilterID = x;
+            btmFilterStatus = true;
+            // alert(btmFilterID);
+            break;
+        }
+    }
 
     var filterBrandArray = document.getElementsByClassName(relatedClass);
+    
+
     for (let i = 0; i < filterBrandArray.length; i++) {
         if (filterBrandArray[i].style.border == "2px solid blue") {
             loopID = filterBrandArray[i].id;       
             filterBrandArray[i].style.border = "";
+            if (btmFilterStatus) {
+                btmFilterBrand[filterBtmPreviousMark].style.border = "";
+            }
 
             // Check if user change brand to filter
             if (loopID == thisID) {
@@ -46,7 +66,11 @@ function filterBrandTop(brand, classNames) {
             }
             else {
                 classNames.style.border = "2px solid blue";
+                if (btmFilterStatus) {
+                    btmFilterBrand[btmFilterID].style.border = "2px solid blue";
+                }
             }
+            document.getElementById("carTable").innerHTML = originalTableContent;
             break;
 
         }
@@ -54,11 +78,13 @@ function filterBrandTop(brand, classNames) {
 
     // If unselect brand, reset table
     if (resetStatus) {
-        document.getElementById("carTable").innerHTML = originalTableContent;
         return;
     }
     else {
         classNames.style.border = "2px solid blue";
+        if (btmFilterStatus) {
+            btmFilterBrand[btmFilterID].style.border = "2px solid blue";
+        }
     }
     
     // First loop reset all display none, second loops filter
@@ -80,12 +106,12 @@ function filterBrandTop(brand, classNames) {
         }
     }
     document.getElementById("carTable").innerHTML = newTableContent;
-
+    filterBtmPreviousMark = btmFilterID;
 }
 
 
 // Filter brands (Bottom section)
-function filterBrand(brand, classNames) {
+function filterBrandBottom(brand, classNames) {
     var resetStatus = false;
     var relatedClass = classNames.className;
     var thisID = classNames.id;
