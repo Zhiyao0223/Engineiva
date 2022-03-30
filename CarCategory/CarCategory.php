@@ -19,53 +19,6 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <!-- Header  -->
-    <!-- <div class="header">
-        <div class="inner_header">
-            
-            <div class="navigation">
-                <a href ="home.php" class="logoStyle"><li>Engineiva</li></a>
-                <a href="home.php"><li>
-                    <button href="buy_car.php" class="dropdown_button" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()' id="buy_btn">Buy</button>
-                </li></a>  
-                <a href="home.php"><li>Sell</li></a>    
-                <a href="faq.php"><li>FAQ</li></a>
-                <a href="about_us.php"><li>About Engineiva</li></a>
-            </div>
-            <div class="signin_up">
-                <a href ="signin.php"><img src="user.png" alt="User" id="profile_style"><div id="signtext">Sign Up/Login</div></a> 
-            </div>
-        </div>
-        <div class="dropdown_content" id="buy_content" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()'>
-            <a href="buy_car.php"><h2>View All Cars ></h2></a>
-            <div class="column" id="car_column1">
-                <a href="buy_car.php">BMW</a>
-                <a href="buy_car.php">Honda</a>
-                <a href="buy_car.php">Isuzu</a>
-                <a href="buy_car.php">Mazda</a>
-                <a href="buy_car.php">Mini</a>
-                <a href="buy_car.php">Perodua</a>
-                <a href="buy_car.php">Proton</a>
-                <a href="buy_car.php">Suzuki</a>
-                <a href="buy_car.php">Toyota</a>
-                <a href="buy_car.php">Volkswagen</a>
-            </div>
-            <div class="column" id="car_column2">
-                <a href="buy_car.php">Ford</a>
-                <a href="buy_car.php">Hyundai</a>
-                <a href="buy_car.php">Kia</a>
-                <a href="buy_car.php">Mercedes</a>
-                <a href="buy_car.php">Nissan</a>
-                <a href="buy_car.php">Peugeot</a>
-                <a href="buy_car.php">Subaru</a>
-                <a href="buy_car.php">Tesla</a>
-                <a href="buy_car.php">Volve</a>
-            </div>
-        </div>
-    </div> -->
-
-
-
     <!-- Main Container  -->
     <div class="main-container"> 
          <!-- Brand Popup Box -->
@@ -77,37 +30,37 @@
                 </div>
                 <div class="brand-row">
                     <div class="brand-col1">
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol1' onclick="filterBrand('BMW', this)">
                             <img class='brand-img' src="img/bmw-logo.png">
                             <div class="brands">
                                 BMW
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol2' onclick="filterBrand('Mazda', this)">
                             <img class="brand-img" src="img/mazda.jpg">
                             <div class="brands">
                                 Mazda
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol3' onclick="filterBrand('Mini', this)">
                             <img class="brand-img" src="img/mini.jpg">
                             <div class="brands">
                                 Mini
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol4' onclick="filterBrand('Perodua', this)">
                             <img class="brand-img" src="img/perodua.jpg">
                             <div class="brands">
                                 Perodua
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol5' onclick="filterBrand('Subaru', this)">
                             <img class="brand-img" src="img/subaru.png">
                             <div class="brands">
                                 Subaru
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol6' onclick="filterBrand('Volkswagen', this)">
                             <img class="brand-img" src="img/volkswagen.jpg">
                             <div class="brands">
                                 Volkswagen
@@ -115,31 +68,31 @@
                         </div>
                     </div>
                     <div class="brand-col2">
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol7' onclick="filterBrand('Honda', this)">
                             <img class="brand-img" src="img/honda.jpg">
                             <div class="brands">
                                 Honda
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol8' onclick="filterBrand('Mercedes', this)">
                             <img class="brand-img" src="img/mercedes.jpg">
                             <div class="brands">
                                 Mercedes
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol9' onclick="filterBrand('Nissan', this)">
                             <img class="brand-img" src="img/nissan.png">
                             <div class="brands">
                                 Nissan
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol10' onclick="filterBrand('Proton', this)">
                             <img class="brand-img" src="img/proton.png">
                             <div class="brands">
                                 Proton
                             </div>
                         </div>
-                        <div class="brand-name">
+                        <div class="brand-name" id='brandCol11' onclick="filterBrand('Toyota', this)">
                             <img class="brand-img" src="img/toyota.png">
                             <div class="brands">
                                 Toyota
@@ -164,16 +117,16 @@
                     <div class="filter-title">
                         Brands
                     </div>
-                    <div class="filter-brand" onclick="filterBrand('BMW')">
+                    <div class="filter-brand" id='filterBrand1' onclick="filterBrand('BMW', this)">
                         BMW
                     </div>
-                    <div class="filter-brand" onclick="filterBrand('Honda')">
+                    <div class="filter-brand" id='filterBrand7' onclick="filterBrand('Honda', this)">
                         Honda
                     </div>
-                    <div class="filter-brand" onclick="filterBrand('Mazda')">
+                    <div class="filter-brand" id='filterBrand2' onclick="filterBrand('Mazda', this)">
                         Mazda
                     </div>
-                    <div class="filter-brand" onclick="filterBrand('Mercedes')">
+                    <div class="filter-brand" id='filterBrand8' onclick="filterBrand('Mercedes', this)">
                         Mercedes
                     </div>
                     <div class="filter-brand more-brand" onclick="verification('open')">
@@ -207,7 +160,7 @@
         </div>
 
         <div class="bottom-container">
-            <table class="car-table">
+            <table class="car-table" id='carTable'>
                 <tr>
                     <?php
                         $counter = 0;
@@ -262,9 +215,6 @@
                                         </div>
                                     </td>";
                             echo $data;
-                            // echo "<div class='trPlacement' id='tr$carID'></div>";
-                            
-                            $counter++;
                         }
                     ?>
                 </tr>
@@ -362,5 +312,5 @@
         </div>
     </footer>
     <!-- Add tr tag to table  -->
+    <script>defaultAddTr()</script>
 </body>
-<script>addTr()</script>;
