@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="ad-all-image.css">
 </head>
 <body>
+    <?php include "ad-session.php"?>
+
     <?php 
         include 'admin-header.php';
     ?>
@@ -21,7 +23,7 @@
     
     <?php
         // Connect engineiva database 
-        include 'db.php';
+        include 'conn.php';
         // Get carID from the URL
         $car_id = intval($_GET['carID']);
         // Create SQL code that display all car image 

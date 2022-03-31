@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="ad-edit-car-image.css">
 </head>
 <body>
+    <?php include "ad-session.php"?>    
+
     <?php 
         include 'admin-header.php';
     ?>
 
-    
     <div class="submenu">   
         <ul class="menu-content">
             <li><a href="ad-add-new-car.php"  class="active">Add New Car</a></li> 
@@ -24,7 +25,7 @@
         // If admin click the upload image button 
         if(isset($_POST['uploadImage'])){
             // Connect engineiva database 
-            include 'db.php';
+            include 'conn.php';
             // Retrieve carID and imageID from the from
             $carID = $_POST['carID'];
             $imageID = $_POST['imageID'];
@@ -89,7 +90,7 @@
                         echo '<script>window.location.href= "ad-view-image.php?carID='.$carID.'";</script>';
                     // Elseif page source from ad-all-image.php
                     } elseif ($path == 'add'){
-                        echo '<script>window.location.href= "ad-all-image.php?carID='.$carID.'";</script>'; 
+                        echo '<script>confirm("Press a button!");window.location.href= "ad-all-image.php?carID='.$carID.'";</script>'; 
                     }
                 }
             }   
@@ -98,7 +99,7 @@
 
     <?php 
         // Connect engineiva database 
-        include 'db.php';
+        include 'conn.php';
 
         // Retrieve carID and imageID from URL
         $carID=intval($_GET['carID']);

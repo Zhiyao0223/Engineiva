@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="ad-buy-record.css">
 </head>
 <body>
+    <?php include "ad-session.php"?>
+
     <?php 
         include 'admin-header.php';
     ?>
@@ -23,7 +25,7 @@
         // If admin click the upload button      
         if(isset($_POST["uploadBtn"])){ 
             // Connect engineiva database 
-            include 'db.php';
+            include 'conn.php';
             //  Get car id from the URL
             $car_id = intval($_GET['carID']);
 
@@ -110,7 +112,7 @@
                     // If admin click the check button    
                     if(isset($_POST["checkBtn"])){ 
                         // Connect engineiva database 
-                        include "db.php";
+                        include "conn.php";
                         // Create SQL code that display customer record where email is equal to admin input
                         $result = mysqli_query($con,"SELECT * FROM customer WHERE email = '$_POST[email]'");
                         // If customer record exists in database
