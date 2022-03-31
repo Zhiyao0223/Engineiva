@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content-container {
+    margin-left: 295px;
+    margin-top: 65px;
+    padding-top: 20px;
+    width: auto;
+    height: auto;
+
+}
+
+.content-container .top-title {
+    font-weight: 550;
+    font-size: 18px;
+}
+
+
+.content-container .select-box {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.content-container .select-box .selectBtn {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 1rem;
+    width: 200px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.content-container .select-box .selectBtn:hover {
+    box-shadow: 1px 1px lightgray;
+    color: blue;
+    border: 1px solid darkblue;
+    font-weight: 500;
+}
+
+.content-container .report-box {
+    width: 95%;
+    height: fit-content;
+    margin-top: 1rem;
+    /* border: 1px solid; */
+    padding: 10px 20px;
+    user-select: none;
+    text-justify: inter-word;
+    text-align: justify;
+}
+
+.content-container .report-box .report-title {
+    font-weight: 550;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.content-container .report-box .report-table {
+    border-collapse: collapse;
+    /* border: 1px solid; */
+    width: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content-container .report-box .report-table td {
+    width: auto;
+    border: 1px solid;
+    padding: 10px 0;
+}
+
+.content-container .report-box .report-table tr:first-child {
+    font-weight: 550;
+    background: skyblue;
+}
+
+
+.content-container .print-report {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content-container .print-report .print-button {
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    margin: 1rem;
+    width: fit-content;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid;
+    border-radius: 30px;
+    color: blue;
+    font-weight: 550;
+    background: none;
+}
+
+.content-container .print-report .print-button:hover {
+    text-shadow: 1px 1px lightgray;
+}
+
+/* .content-container .car {
+    display: none;
+} */
