@@ -23,37 +23,37 @@
                 </div>
                 <div class="brand-row">
                     <div class="brand-col1">
-                        <div class="brand-name" id='brandCol1' onclick="filterBrandTop('BMW', this)">
+                        <div class="brand-name" id='brandTopBMW' onclick="filter('BMW', this)">
                             <img class='brand-img' src="img/bmw-logo.png">
                             <div class="brands">
                                 BMW
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol2' onclick="filterBrandTop('Mazda', this)">
+                        <div class="brand-name" id='brandTopMazda' onclick="filter('Mazda')">
                             <img class="brand-img" src="img/mazda.jpg">
                             <div class="brands">
                                 Mazda
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol3' onclick="filterBrandTop('Mini', this)">
+                        <div class="brand-name" id='brandTopMini' onclick="filter('Mini', this)">
                             <img class="brand-img" src="img/mini.jpg">
                             <div class="brands">
                                 Mini
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol4' onclick="filterBrandTop('Perodua', this)">
+                        <div class="brand-name" id='brandTopPerodua' onclick="filter('Perodua')">
                             <img class="brand-img" src="img/perodua.jpg">
                             <div class="brands">
                                 Perodua
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol5' onclick="filterBrandTop('Subaru', this)">
+                        <div class="brand-name" id='brandTopSubaru' onclick="filter('Subaru')">
                             <img class="brand-img" src="img/subaru.png">
                             <div class="brands">
                                 Subaru
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol6' onclick="filterBrandTop('Volkswagen', this)">
+                        <div class="brand-name" id='brandTopVolkswagen' onclick="filter('Volkswagen')">
                             <img class="brand-img" src="img/volkswagen.jpg">
                             <div class="brands">
                                 Volkswagen
@@ -61,31 +61,31 @@
                         </div>
                     </div>
                     <div class="brand-col2">
-                        <div class="brand-name" id='brandCol7' onclick="filterBrandTop('Honda', this)">
+                        <div class="brand-name" id='brandTopHonda' onclick="filter('Honda')">
                             <img class="brand-img" src="img/honda.jpg">
                             <div class="brands">
                                 Honda
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol8' onclick="filterBrandTop('Mercedes', this)">
+                        <div class="brand-name" id='brandTopMercedes' onclick="filter('Mercedes')">
                             <img class="brand-img" src="img/mercedes.jpg">
                             <div class="brands">
                                 Mercedes
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol9' onclick="filterBrandTop('Nissan', this)">
+                        <div class="brand-name" id='brandTopNissan' onclick="filter('Nissan')">
                             <img class="brand-img" src="img/nissan.png">
                             <div class="brands">
                                 Nissan
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol10' onclick="filterBrandTop('Proton', this)">
+                        <div class="brand-name" id='brandTopProton' onclick="filter('Proton')">
                             <img class="brand-img" src="img/proton.png">
                             <div class="brands">
                                 Proton
                             </div>
                         </div>
-                        <div class="brand-name" id='brandCol11' onclick="filterBrandTop('Toyota', this)">
+                        <div class="brand-name" id='brandTopToyota' onclick="filterBrandTop('Toyota', this)">
                             <img class="brand-img" src="img/toyota.png">
                             <div class="brands">
                                 Toyota
@@ -110,16 +110,16 @@
                     <div class="filter-title">
                         Brands
                     </div>
-                    <div class="filter-brand" id='filterBrand1' onclick="filterBrandBottom('BMW', this)">
+                    <div class="filter-brand" id='filterBtmBMW' onclick="filter('BMW')">
                         BMW
                     </div>
-                    <div class="filter-brand" id='filterBrand7' onclick="filterBrandBottom('Honda', this)">
+                    <div class="filter-brand" id='filterBtmHonda' onclick="filter('Honda')">
                         Honda
                     </div>
-                    <div class="filter-brand" id='filterBrand2' onclick="filterBrandBottom('Mazda', this)">
+                    <div class="filter-brand" id='filterBtmMazda' onclick="filter('Mazda')">
                         Mazda
                     </div>
-                    <div class="filter-brand" id='filterBrand8' onclick="filterBrandBottom('Mercedes', this)">
+                    <div class="filter-brand" id='filterBtmMercedes' onclick="filter('Mercedes')">
                         Mercedes
                     </div>
                     <div class="filter-brand more-brand" onclick="verification('open')">
@@ -136,81 +136,79 @@
                         </div>
 
                         <!-- Range High Low -->
-                        <form method='post' action='#' name='sort'>
-                            <select class="sort-range" name="rangeSize" id="rangeSize" onchange='this.form.submit()'>
-                                <option value="default" selected="selected">No Filter<span><i class="fas fa-angle-down"></i></span></option>
-                                <option value="priceHigh">Price : High > Low</option>
-                                <option value="priceLow">Price : Low  > High</option>
-                                <option value="transmissionHigh">Transmission : Automatic</option>
-                                <option value="transmissionLow">Transmission : Manual</option>
-                                <option value="yearHigh">Year : High  > Low</option>
-                                <option value="yearLow">Year: Low > High</option>
-                            </select>
-                        </form>
+                        <select class="sort-range" name="rangeSize" id="rangeSize" onchange='sort(this.value)'>
+                            <option value="default" selected="selected">No Filter<span><i class="fas fa-angle-down"></i></span></option>
+                            <option value="priceHigh">Price : High > Low</option>
+                            <option value="priceLow">Price : Low  > High</option>
+                            <option value="auto">Transmission : Automatic</option>
+                            <option value="manual">Transmission : Manual</option>
+                            <option value="yearHigh">Year : High  > Low</option>
+                            <option value="yearLow">Year: Low > High</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="bottom-container">
-            <table class="car-table" id='carTable'>
-                <tr>
-                    <?php
-                        $counter = 0;
-                        $sqlCar = "SELECT * FROM car";
-                        $resultCar = mysqli_query($con, $sqlCar);
-                        
-                        while($arrayCar = mysqli_fetch_array($resultCar)) {
-                            $carID = $arrayCar['carID'];
-                            $brand = $arrayCar['brand'];
-                            $model = $arrayCar['model'];
-                            $variant = $arrayCar['variant'];
-                            $carName = $brand ." " .$model ." " .$variant;
+            <div class="car-table" id='carTable'>
+                <?php
+                    $counter = 0;
+                    $sqlCar = "SELECT * FROM car";
+                    $resultCar = mysqli_query($con, $sqlCar);
+                    
+                    while($arrayCar = mysqli_fetch_array($resultCar)) {
+                        $carID = $arrayCar['carID'];
+                        $brand = $arrayCar['brand'];
+                        $model = $arrayCar['model'];
+                        $variant = $arrayCar['variant'];
+                        $carName = $brand ." " .$model ." " .$variant;
 
-                            $engine = $arrayCar['engine'];
-                            $transmission = $arrayCar['transmission'];
-                            $year = $arrayCar['year'];
+                        $engine = $arrayCar['engine'];
+                        $transmission = $arrayCar['transmission'];
+                        $year = $arrayCar['year'];
 
-                            // Get Price and add currency format to it
-                            $price = $arrayCar['price'];
-                            $length = strlen($price);
+                        // Get Price and add currency format to it
+                        $price = $arrayCar['price'];
+                        $length = strlen($price);
 
-                            if ($length > 6) {
-                                $firstPart = substr($price, 0, -6);
-                                $secondPart = substr($price, -6);
-                        
-                                $newPrice = "RM" .$firstPart .", " .$secondPart;
-                                $firstPart = substr($price, 0, -3);
-                                $secondPart = substr($price, -3);
-                            }
-                            else if ($length > 3) {
-                                $firstPart = substr($price, 0, -3);
-                                $secondPart = substr($price, -3); 
-                            }
+                        if ($length > 6) {
+                            $firstPart = substr($price, 0, -6);
+                            $secondPart = substr($price, -6);
+                    
                             $newPrice = "RM" .$firstPart .", " .$secondPart;
+                            $firstPart = substr($price, 0, -3);
+                            $secondPart = substr($price, -3);
+                        }
+                        else if ($length > 3) {
+                            $firstPart = substr($price, 0, -3);
+                            $secondPart = substr($price, -3); 
+                        }
+                        $newPrice = "RM" .$firstPart .", " .$secondPart;
 
-                            $sqlImage = "SELECT * FROM car_image WHERE carID = '$carID' GROUP BY carID";
-                            $resultImage = mysqli_query($con, $sqlImage);
-                            $arrayImage = mysqli_fetch_assoc($resultImage);
-                            $image = $arrayImage['image'];
-                            
-                            $data = "<td class='$brand' id='$carID' onclick=\"window.location.href='../CarProduct/CarProduct.php?carID=$carID'\">
+                        $sqlImage = "SELECT * FROM car_image WHERE carID = '$carID' GROUP BY carID";
+                        $resultImage = mysqli_query($con, $sqlImage);
+                        $arrayImage = mysqli_fetch_assoc($resultImage);
+                        $image = $arrayImage['image'];
+                        
+                        $data = "<div class='carBox $brand'>
+                                    <div id='$carID' onclick=\"window.location.href='../CarProduct/CarProduct.php?carID=$carID'\">
                                         <img src=\"data:image/png;base64," .base64_encode($image) ."\" class='image'>
                                         <div class = 'image-description'>
                                             <span>$carName</span><br/>
                                             <div class='year'>Year: $year</div>
                                             <div class='engine'>Engine: $engine</div>
-                                            <div class='transmission'>Tranmission: $transmission</div>
+                                            <div class='$transmission'>Tranmission: $transmission</div>
                                         </div>
                                         <div class='price'>
                                             $newPrice
                                         </div>
-                                    </td>";
-                            echo $data;
-                        }
-                    ?>
-                </tr>
-            </table>
+                                    </div>
+                                </div>";
+                        echo $data;
+                    }
+                ?>
+            </div>
         </div>
     </div>
 
@@ -303,40 +301,5 @@
             </div>
         </div>
     </footer>
-    <!-- Add tr tag to table  -->
-    <script>defaultAddTr()</script>
-
-    <?php
-        // Detect sort
-        if (isset($_POST['rangeSize'])) {
-            $option = $_POST['rangeSize'];
-            // echo "<script>alert('$option')</script>";
-            
-            if ($option == "default") {
-                $script = "<script>resetTable()</script>";
-                echo $script;
-            }
-            else if ($option == "priceHigh") {
-
-            }
-            else if($option == "priceLow") {
-
-            }
-            else if ($option == "transmissionHigh") {
-
-            }
-            else if ($option == "transmissionLow") {
-
-            }
-            else if ($option == "yearHigh") {
-
-            }
-            else if ($option == "yearLow") {
-
-            }
-            else {
-                echo "<script>alert('Hah New bug congrat~')</script>";
-            }
-        }
-    ?>
+    <script>saveBodyContent()</script>
 </body>

@@ -50,10 +50,10 @@
                             <ul class="f_list">
                                 <li><a href="../AboutUs/aboutUs.php">About Us</a></li>
                                 <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="../SupportCust/SupportCust.html">Support Ticket</a></li>
+                                <li><a href="../SupportCust/SupportCust.php">Support Ticket</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="https://goo.gl/maps/EDoSVuic3zT8mrMj8" onclick="alert('Redirecting to Google Map...')" target="_blank">Locate Us</a></li>
-                                <li><a href="../FAQ/FAQ.html">FAQ</a></li>
+                                <li><a href="../FAQ/FAQ.php">FAQ</a></li>
                             </ul>
                         </div>
                     </div>

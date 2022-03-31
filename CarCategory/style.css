@@ -119,46 +119,47 @@
 }
 
 .main-container .bottom-container .car-table {
-    border-style: collapse;
-    border-spacing: 3rem;
+    /* border-style: collapse;
+    border-spacing: 3rem; */
     text-align: center;
     width: 100%;
     justify-content: space-evenly;
 }
 
-.main-container .bottom-container .car-table tr {
+/* .main-container .bottom-container .car-table tr {
     width: max-content;
-}
+} */
 
-.main-container .bottom-container .car-table td {
+.main-container .bottom-container .car-table  .carBox{
     border: 1px solid;
     cursor: pointer;
     border-radius: 20px;
+    display: inline-flex;
+    margin: 2rem;
+    margin-left: 0;
+    width: 30%;
+    height: fit-content;
 }
 
-.main-container .bottom-container .car-table td:hover {
+.main-container .bottom-container .car-table .carBox:hover {
     box-shadow: 2px 2px lightgray;
 }
 
-.main-container .bottom-container .car-table td img {
+.main-container .bottom-container .car-table .carBox img {
     width: 100%;
-    overflow: hidden;
-    height: 200px;
+    /* overflow: hidden; */
+    height: 310px;
     border-radius: 20px;
 }
 
 
 /* '>' apply for item inside container. 
     Reference: https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
-.main-container .bottom-container .car-table td:hover > .image-description span {
+.main-container .bottom-container .car-table .carBox:hover .image-description span {
     color: darkblue;
 }
 
-.main-container .bottom-container .car-table td .hidden-car-info {
-    display:none;
-}
-
-.main-container .bottom-container .car-table td .image-description {
+.main-container .bottom-container .car-table .carBox .image-description {
     font-size: 15px;
     text-align: left;
     margin: 1rem;
@@ -166,13 +167,13 @@
     line-height: 2.0;
 }
 
-.main-container .bottom-container .car-table td .image-description span {
+.main-container .bottom-container .car-table .carBox .image-description span {
     font-size: 20px;
     font-weight: 500;
     color: #1338BE;
 }
 
-.main-container .bottom-container .car-table td .price {
+.main-container .bottom-container .car-table .carBox .price {
     color: red;
     font-weight: 600;
     font-size: 18px;

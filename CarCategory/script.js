@@ -1,5 +1,4 @@
-var originalTableContent, filterTopPreviousMark, filterBtmPreviousMark;
-const currentFilter = [];
+var filterPreviousBrand, filterCurrentBrand = "", originalTableContent;
 
 // Header
 function mouseOverToggle() {
@@ -27,187 +26,266 @@ function verification(option) {
 } 
 
 
-// Filter brands (Top section)
-function filterBrandTop(brand, classNames) {
-    var resetStatus = false, btmFilterStatus = false;
-    var relatedClass = classNames.className;
-    var loopID, btmFilterID;
+// Filter
+function filter(brand) {
+    var carBox = document.getElementsByClassName("carBox");
+    var brandBox = document.getElementsByClassName(brand);
+    var filterTop = document.getElementsByClassName("brand-name");
+    var filterBtm = document.getElementsByClassName("filter-brand");
+    var topBrandClass, topBrandBox, btmBrandClass, btmBrandBox;
+    var resetStatus = false, checkStatus = false;
 
-    var thisID = classNames.id;
-    var newTopID = parseInt(thisID.slice(8));
-    // alert(newTopID);
-    var btmFilterBrand = document.getElementsByClassName("filter-brand");
-    for (let x = 0; x < btmFilterBrand.length; x++) {
-        btmFilterID = btmFilterBrand[x].id;
-        btmFilterID = btmFilterID.slice(11);
-        // alert(btmFilterID + " " + newTopID);
+    if (brand == filterPreviousBrand) {
+        resetStatus = true;
+    }
+    else if (brand == "BMW") {
+        topBrandClass = "brandTopBMW";
+        btmBrandClass = "filterBtmBMW";
+        checkStatus = true;
+    }
+    else if(brand == "Honda") {
+        topBrandClass = "brandTopHonda";
+        btmBrandClass = "filterBtmHonda";
+        checkStatus = true;
+    }
+    else if (brand == "Mazda") {
+        topBrandClass = "brandTopMazda";
+        btmBrandClass = "filterBtmMazda";
+        checkStatus = true;
+    }
+    else if (brand == "Mercedes") {
+        topBrandClass = "brandTopMercedes";
+        btmBrandClass = "filterBtmMercedes";
+        checkStatus = true;
+    }
 
-        if (btmFilterID == newTopID) {
-            btmFilterID = x;
-            btmFilterStatus = true;
-            // alert(btmFilterID);
-            break;
+    // Check if user want to unselect brand
+    if (resetStatus) {
+        filterCurrentBrand = "";
+        for (let z = 0; j < carBox.length; z++) {
+            carBox[z].style.display = "";
+        }
+        return;
+    }
+    else {
+        filterCurrentBrand = brand;
+    }
+    
+    // Reset border color
+    for (let x = 0; x < filterTop.length; x++) {
+        filterTop[x].style.border = "none";
+    }
+    for (let y = 0; y < filterBtm.length; y++) {
+        filterBtm[y].style.border = "none";
+    }
+
+    if (checkStatus) {
+        topBrandBox = document.getElementById(topBrandClass);
+        btmBrandBox = document.getElementById(btmBrandClass);
+        
+        topBrandBox.style.border = "2px solid blue";
+        btmBrandBox.style.border = "2px solid blue";
+
+
+    }
+    else {
+        topBrandClass = "brandTop" + brand;
+        document.getElementById(topBrandClass).border = "2px solid blue";
+    }
+
+    // First loop set all to none, second filter
+    for (let i = 0; i < carBox.length; i++) {
+        carBox[i].style.display = "none";
+    }
+
+    for (let j = 0; j < brandBox.length; j++) {
+        brandBox[j].style.display = "";
+    }
+    filterPreviousBrand = brand;
+}
+
+
+// Sort table 
+function sort(value) {
+    var carBox = document.getElementsByClassName("carBox");
+    // alert(filterCurrentBrand);
+    if (filterCurrentBrand != "") {
+        var brandBox = document.getElementsByClassName(filterCurrentBrand);
+        // Reset all and filter again by brand
+        for (let k = 0; k < carBox.length; k++) {
+            carBox[k].style.display = "none";
+        }
+        for (let p = 0; p < brandBox.length; p++) {
+            brandBox[p].style.display = "";
+        }
+    }
+    else {
+        for (let k = 0; k < carBox.length; k++) {
+            carBox[k].style.display = "";
         }
     }
 
-    var filterBrandArray = document.getElementsByClassName(relatedClass);
-    
-
-    for (let i = 0; i < filterBrandArray.length; i++) {
-        if (filterBrandArray[i].style.border == "2px solid blue") {
-            loopID = filterBrandArray[i].id;       
-            filterBrandArray[i].style.border = "";
-            btmFilterBrand[filterBtmPreviousMark].style.border = "";
-
-            // Check if user change brand to filter
-            if (loopID == thisID) {
-                resetStatus = true;
+    if (value == "default") {
+        document.getElementById("carTable").innerHTML = originalTableContent;
+        // alert(filterCurrentBrand);
+        if (filterCurrentBrand != "") {
+            var brandBox = document.getElementsByClassName(filterCurrentBrand);
+            // Reset all and filter again by brand
+            for (let k = 0; k < carBox.length; k++) {
+                carBox[k].style.display = "none";
             }
-            else {
-                classNames.style.border = "2px solid blue";
-                if (btmFilterStatus) {
-                    btmFilterBrand[btmFilterID].style.border = "2px solid blue";
+            for (let p = 0; p < brandBox.length; p++) {
+                brandBox[p].style.display = "";
+            }
+        }
+    }
+    else if(value == "priceHigh") {
+        var priceBox = document.getElementsByClassName("price");
+        swap = true;
+
+        while (swap) {
+            swap = false;
+            for (i = 0; i < (priceBox.length-1); i++) {
+                shouldSwap = false;
+
+                var price = priceBox[i].innerHTML.trim();
+                newPrice = price.replace(/,\s/g, "");
+                newPrice = parseInt(newPrice.slice(2));
+
+                var priceNext = priceBox[i+1].innerHTML.trim();
+                newPriceNext = priceNext.replace(/,\s/g, "");
+                newPriceNext = parseInt(newPriceNext.slice(2));
+
+                if (newPriceNext > newPrice) {
+                    // alert('swapp');
+                    shouldSwap = true;
+                    break;
                 }
             }
-            document.getElementById("carTable").innerHTML = originalTableContent;
-            break;
 
-        }
-    }
-
-    // If unselect brand, reset table
-    if (resetStatus) {
-        return;
-    }
-    else {
-        classNames.style.border = "2px solid blue";
-        if (btmFilterStatus) {
-            btmFilterBrand[btmFilterID].style.border = "2px solid blue";
-        }
-    }
-    
-    // First loop reset all display none, second loops filter
-    var carBox = document.getElementsByTagName("td");
-    var newTableContent = "";
-    var brand, carID;
-    var tdCounter = 0;
-
-    for (let i = 0; i < carBox.length; i++) {
-        if (carBox[i].className == brand) {
-            // carBox[i].style.display = "";
-            brand = carBox[i].className;
-            carID = i+1;
-            newTableContent = newTableContent + "<td class='" + brand + "' id='" + carID + "' onclick=\"window.location.href = '../CarProduct/CarProduct.php?carID=" + carID + "'\">" + carBox[i].innerHTML  + "</td>";
-            if ((tdCounter+1) % 3 == 0) {
-                newTableContent += "</tr><tr>";
+            if (shouldSwap == true) {
+                carBox[i].parentNode.insertBefore(carBox[i + 1], carBox[i]);
+                swap = true;
             }
-            tdCounter++;
         }
     }
-    document.getElementById("carTable").innerHTML = newTableContent;
-    filterBtmPreviousMark = btmFilterID;
-}
+    else if(value == "priceLow") {
+        var priceBox = document.getElementsByClassName("price");
+        swap = true;
 
+        while (swap) {
+            swap = false;
+            for (i = 0; i < (priceBox.length-1); i++) {
+                shouldSwap = false;
 
-// Filter brands (Bottom section)
-function filterBrandBottom(brand, classNames) {
-    var resetStatus = false;
-    var relatedClass = classNames.className;
-    var thisID = classNames.id;
-    
-    var loopBtmID, loopTopID;
-    var newBtmID = parseInt(thisID.slice(11)) - 1;
+                var price = priceBox[i].innerHTML.trim();
+                newPrice = price.replace(/,\s/g, "");
+                newPrice = parseInt(newPrice.slice(2));
 
-    // Get top section if has border
-    var filterTopSection = document.getElementsByClassName("brand-name");
-    for (let z = 0; z < filterTopSection.length; z++) {
-        if (filterTopSection[z].style.display == "2px solid blue") {
-            loopTopID = z+1;
-            alert(loopTopID);
-            break;
+                var priceNext = priceBox[i+1].innerHTML.trim();
+                newPriceNext = priceNext.replace(/,\s/g, "");
+                newPriceNext = parseInt(newPriceNext.slice(2));
+
+                if (newPriceNext < newPrice) {
+                    // alert('swapp');
+                    shouldSwap = true;
+                    break;
+                }
+            }
+
+            if (shouldSwap == true) {
+                carBox[i].parentNode.insertBefore(carBox[i + 1], carBox[i]);
+                swap = true;
+            }
         }
     }
+    else if(value == "auto") {
+        var transmission = document.getElementsByClassName("Automatic");
+        for (let i = 0; i < carBox.length; i++) {
+            if (carBox[i].style.display != "none") {
+                if (transmission[i].className == "Automatic") {
+                    carBox[i].style.display = "";
+                }
+                else {
+                    carBox[i].style.display = "none"
+                }
+            }
 
-    var filterBrandArray = document.getElementsByClassName(relatedClass);
-    var topFilterBrand = document.getElementsByClassName("brand-name");
-    for (let i = 0; i < filterBrandArray.length; i++) {
-        if (filterBrandArray[i].style.border == "2px solid blue") {
-            loopBtmID = filterBrandArray[i].id;       
-            filterBrandArray[i].style.border = "";
-            topFilterBrand[filterTopPreviousMark].style.border = "";
-
-
-            // Check if user change brand to filter
-            if (loopBtmID == thisID) {
-                resetStatus = true;
+        }
+    }
+    else if(value == "manual") {
+        var transmission = document.getElementsByClassName("transmission");
+        for (let i = 0; i < carBox.length; i++) {
+            if (transmission[i] == "Manual") {
+                carBox[i].style.display = "";
             }
             else {
-                classNames.style.border = "2px solid blue";
-                document.getElementsByClassName("brand-name")[newBtmID].style.border = "2px solid blue";
-                topClass = loopBtmID;
+                carBox[i].style.display = "none"
             }
-            document.getElementById("carTable").innerHTML = originalTableContent;
-            break;
-
         }
     }
+        // Sort from latest year to earliest
+    else if(value == "yearHigh") {
+        var yearBox = document.getElementsByClassName("year");
+        swap = true;
 
-    // If unselect brand, reset table
-    if (resetStatus) {
-        return;
+        while (swap) {
+            swap = false;
+            for (i = 0; i < (yearBox.length-1); i++) {
+                shouldSwap = false;
+
+                var year = yearBox[i].innerHTML.trim();
+                var yearNext = yearBox[i+1].innerHTML.trim();
+
+                if (year < yearNext) {
+                    // alert('swapp');
+                    shouldSwap = true;
+                    break;
+                }
+            }
+
+            if (shouldSwap == true) {
+                carBox[i].parentNode.insertBefore(carBox[i + 1], carBox[i]);
+                swap = true;
+            }
+        }
+    }
+    // Sort from earliest year to latest
+    else if (value == "yearLow") {
+        var yearBox = document.getElementsByClassName("year");
+        swap = true;
+
+        while (swap) {
+            swap = false;
+            for (i = 0; i < (yearBox.length-1); i++) {
+                shouldSwap = false;
+
+                var year = yearBox[i].innerHTML.trim();
+                var yearNext = yearBox[i+1].innerHTML.trim();
+
+                if (year > yearNext) {
+                    // alert('swapp');
+                    shouldSwap = true;
+                    break;
+                }
+            }
+
+            if (shouldSwap == true) {
+                carBox[i].parentNode.insertBefore(carBox[i + 1], carBox[i]);
+                swap = true;
+            }
+        }
     }
     else {
-        classNames.style.border = "2px solid blue";
-        document.getElementsByClassName("brand-name")[newBtmID].style.border = "2px solid blue";
+        alert("Error occur ~ RIP ~");
+        return;
     }
-    
-    // First loop reset all display none, second loops filter
-    var carBox = document.getElementsByTagName("td");
-    var newTableContent = "";
-    var brand, carID;
-    var tdCounter = 0;
+    previousSort = value;
 
-    for (let i = 0; i < carBox.length; i++) {
-        if (carBox[i].className == brand) {
-            // carBox[i].style.display = "";
-            brand = carBox[i].className;
-            carID = i+1;
-            newTableContent = newTableContent + "<td class='" + brand + "' id='" + carID + "' onclick=\"window.location.href = '../CarProduct/CarProduct.php?carID=" + carID + "'\">" + carBox[i].innerHTML  + "</td>";
-            if ((tdCounter+1) % 3 == 0) {
-                newTableContent += "</tr><tr>";
-            }
-            tdCounter++;
-        }
-    }
-    document.getElementById("carTable").innerHTML = newTableContent;
-
-    // Record previous filter top border box and use it for next filter
-    filterTopPreviousMark = newBtmID;
-}   
-
-
-// Add <tr> tag to table
-function defaultAddTr() {
-    var tdContent = document.getElementsByTagName("td");
-    var tableContent = "";
-    var brand, carID;
-    
-    // Loop until end of <td>
-    // Add <tr> tag upon third <td>
-    for (let i = 0; i < tdContent.length; i++) {
-        brand = tdContent[i].className;
-        carID = i+1;
-        tableContent = tableContent + "<td class='" + brand + "' id='" + carID + "' onclick=\"window.location.href = '../CarProduct/CarProduct.php?carID=" + carID + "'\">" + tdContent[i].innerHTML + "</td>";
-
-        if ((i+1) % 3 == 0) {
-            tableContent += "</tr><tr>";
-        }
-    }
-    // alert(tableContent);
-    document.getElementById("carTable").innerHTML = tableContent;
-    originalTableContent = tableContent;
 }
 
-function resetTable() {
-    document.getElementById("carTable").innerHTML = originalTableContent;
+
+// Backup original html content
+function saveBodyContent() {
+    originalTableContent = document.getElementById("carTable").innerHTML;
 }
