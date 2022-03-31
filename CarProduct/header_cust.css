@@ -11,6 +11,7 @@
 .fixed-header {
   width: 100%;
   top: 0;
+  position: fixed;
   background-color: lightblue;
   height: 50px;
   display: block;

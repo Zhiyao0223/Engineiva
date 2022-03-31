@@ -148,14 +148,14 @@
 
 <body>
 <?php 
-    include('conn.php');
+    include('../conn.php');
     session_start();
        
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $username = mysqli_real_escape_string($con, $_POST['username']);
             $password = mysqli_real_escape_string($con, $_POST['password']);
 
-            $sql = "SELECT adminID FROM admin WHERE admin_username = '$username' AND password ='$password'";
+            $sql = "SELECT adminID FROM admin WHERE username = '$username' AND password ='$password'";
 
             if($result = mysqli_query($con,$sql)){
                 // Return the number of rows in result set
@@ -165,9 +165,10 @@
 
                 if($rowcount==1){
                     // session_start();
-                    $_SESSION['mysession'] = $username;
+                    $_SESSION['mySession'] = $username;
                     $_SESSION['user_id'] = intval($row['adminID']);
-                    header('Location: home.php');
+                    // header('Location: home.php');
+                    echo "<script>window.location.href='../Homepage/homepage.php'</script>";
                 }
                 else{
                     $error = printf("Your Login Name or Password is invalid. Please re login<br><br>");

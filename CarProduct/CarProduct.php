@@ -1,5 +1,6 @@
 <?php
     include("../conn.php");
+    session_start();
 
     // Check for carID in URL
     if (isset($_GET['carID'])) {
@@ -72,8 +73,6 @@
     // Get remark and split it by ';'
     $remark = $arrayCar['remark'];
     $remarkArray = explode(";", $remark);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +85,15 @@
 </head>
 <body onload="getDeposit()">
     <!-- Header  -->
-    <div class="header">
+    <?php
+        if(isset($_SESSION['mysession'])) {
+            include("header_login.php");
+        } 
+        else {
+            include("header_cust.php");
+        }
+    ?>
+    <!-- <div class="header">
         <div class="inner_header">
             
             <div class="navigation">
@@ -128,7 +135,7 @@
                 <a href="buy_car.php">Volve</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Main Container  -->
     <div class="main-container">
@@ -370,6 +377,7 @@
                                 <div class="specification-content">
                                     <?php echo $year; ?>
                                 </div>
+
                             </div>
                         </div>
                         <div class="specification-box">

@@ -1,4 +1,5 @@
 var originalTableContent, filterTopPreviousMark, filterBtmPreviousMark;
+const currentFilter = [];
 
 // Header
 function mouseOverToggle() {
@@ -56,9 +57,7 @@ function filterBrandTop(brand, classNames) {
         if (filterBrandArray[i].style.border == "2px solid blue") {
             loopID = filterBrandArray[i].id;       
             filterBrandArray[i].style.border = "";
-            if (btmFilterStatus) {
-                btmFilterBrand[filterBtmPreviousMark].style.border = "";
-            }
+            btmFilterBrand[filterBtmPreviousMark].style.border = "";
 
             // Check if user change brand to filter
             if (loopID == thisID) {
@@ -207,4 +206,8 @@ function defaultAddTr() {
     // alert(tableContent);
     document.getElementById("carTable").innerHTML = tableContent;
     originalTableContent = tableContent;
+}
+
+function resetTable() {
+    document.getElementById("carTable").innerHTML = originalTableContent;
 }

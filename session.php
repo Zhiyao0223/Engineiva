@@ -2,9 +2,10 @@
 
 session_start();
 
-if(isset($_SESSION['mysession'])){
-    include ("fixedheaderfooter2.php");//change
-    }
-
-else include ("fixedheaderfooter.php");//change
+if(isset($_SESSION['mysession'])) {
+    include("header_login.php");
+} 
+else {
+    include("header_cust.php");
+}
 ?>

@@ -1,13 +1,6 @@
 <?php
     include("../conn.php");
-
-    session_start();
-    if(isset($_SESSION['mysession'])) {
-        include("header_login.php");
-    } 
-    else {
-        include("header_cust.php");
-    }
+    include("../session.php");
 ?>
 
 <!DOCTYPE html>
@@ -143,17 +136,17 @@
                         </div>
 
                         <!-- Range High Low -->
-                        <select class="sort-range" name="rangeSize" id="rangeSize">
-                            <option value="default" selected="selected">No Filter<span><i class="fas fa-angle-down"></i></span></option>
-                            <option value="priceHigh">Price : High > Low</option>
-                            <option value="priceLow">Price : Low  > High</option>
-                            <option value="transmissionHigh">Transmission : High  > Low</option>
-                            <option value="transmissionLow">Transmission : Low  > High</option>
-                            <option value="yearHigh">Year : High  > Low</option>
-                            <option value="yearLow">Year: Low > High</option>
-                            <option value="gearAuto">Gear: Automatic</option>
-                            <option value="gearManual">Gear: Manual</option>
-                        </select>
+                        <form method='post' action='#' name='sort'>
+                            <select class="sort-range" name="rangeSize" id="rangeSize" onchange='this.form.submit()'>
+                                <option value="default" selected="selected">No Filter<span><i class="fas fa-angle-down"></i></span></option>
+                                <option value="priceHigh">Price : High > Low</option>
+                                <option value="priceLow">Price : Low  > High</option>
+                                <option value="transmissionHigh">Transmission : Automatic</option>
+                                <option value="transmissionLow">Transmission : Manual</option>
+                                <option value="yearHigh">Year : High  > Low</option>
+                                <option value="yearLow">Year: Low > High</option>
+                            </select>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -205,10 +198,9 @@
                                         <img src=\"data:image/png;base64," .base64_encode($image) ."\" class='image'>
                                         <div class = 'image-description'>
                                             <span>$carName</span><br/>
-                                            Year: $year<br/>
-                                            Engine: $engine<br/>
-                                            Tranmission: $transmission<br/>
-    
+                                            <div class='year'>Year: $year</div>
+                                            <div class='engine'>Engine: $engine</div>
+                                            <div class='transmission'>Tranmission: $transmission</div>
                                         </div>
                                         <div class='price'>
                                             $newPrice
@@ -313,4 +305,38 @@
     </footer>
     <!-- Add tr tag to table  -->
     <script>defaultAddTr()</script>
+
+    <?php
+        // Detect sort
+        if (isset($_POST['rangeSize'])) {
+            $option = $_POST['rangeSize'];
+            // echo "<script>alert('$option')</script>";
+            
+            if ($option == "default") {
+                $script = "<script>resetTable()</script>";
+                echo $script;
+            }
+            else if ($option == "priceHigh") {
+
+            }
+            else if($option == "priceLow") {
+
+            }
+            else if ($option == "transmissionHigh") {
+
+            }
+            else if ($option == "transmissionLow") {
+
+            }
+            else if ($option == "yearHigh") {
+
+            }
+            else if ($option == "yearLow") {
+
+            }
+            else {
+                echo "<script>alert('Hah New bug congrat~')</script>";
+            }
+        }
+    ?>
 </body>

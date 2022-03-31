@@ -1,8 +1,8 @@
 <?php
     include("../conn.php");
-    session_start();
+    include("../session.php");
 
-    $userID = '1';
+    // $userID = '1';
     if (isset($_SESSION['mysession'])) {
         $userID = $_SESSION['id'];
 
@@ -34,49 +34,14 @@
 </head>
 <body>
     <!-- Header  -->
-    <div class="header">
-        <div class="inner_header">
-            
-            <div class="navigation">
-                <a href ="home.php" class="logoStyle"><li>Engineiva</li></a>
-                <a href="home.php"><li>
-                    <button href="buy_car.php" class="dropdown_button" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()' id="buy_btn">Buy</button>
-                </li></a>  
-                <a href="home.php"><li>Sell</li></a>    
-                <a href="faq.php"><li>FAQ</li></a>
-                <a href="about_us.php"><li>About Engineiva</li></a>
-            </div>
-            <div class="signin_up">
-                <a href ="signin.php"><img src="user.png" alt="User" id="profile_style"><div id="signtext">Sign Up/Login</div></a> 
-            </div>
-        </div>
-        <div class="dropdown_content" id="buy_content" onmouseover='mouseOverToggle()' onmouseout='mouseOutToggle()'>
-            <a href="buy_car.php"><h2>View All Cars ></h2></a>
-            <div class="column" id="car_column1">
-                <a href="buy_car.php">BMW</a>
-                <a href="buy_car.php">Honda</a>
-                <a href="buy_car.php">Isuzu</a>
-                <a href="buy_car.php">Mazda</a>
-                <a href="buy_car.php">Mini</a>
-                <a href="buy_car.php">Perodua</a>
-                <a href="buy_car.php">Proton</a>
-                <a href="buy_car.php">Suzuki</a>
-                <a href="buy_car.php">Toyota</a>
-                <a href="buy_car.php">Volkswagen</a>
-            </div>
-            <div class="column" id="car_column2">
-                <a href="buy_car.php">Ford</a>
-                <a href="buy_car.php">Hyundai</a>
-                <a href="buy_car.php">Kia</a>
-                <a href="buy_car.php">Mercedes</a>
-                <a href="buy_car.php">Nissan</a>
-                <a href="buy_car.php">Peugeot</a>
-                <a href="buy_car.php">Subaru</a>
-                <a href="buy_car.php">Tesla</a>
-                <a href="buy_car.php">Volve</a>
-            </div>
-        </div>
-    </div>
+    <?php
+        // if(isset($_SESSION['mysession'])) {
+        //     include("header_login.php");
+        // } 
+        // else {
+        //     include("header_cust.php");
+        // }
+    ?>
 
     <div class="main-container">
         <div class="top-container">
