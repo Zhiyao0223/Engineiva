@@ -1,54 +1,12 @@
 <?php
-///include("session.php")
-  include("../conn.php");
-?>
-<?php 
-  if (isset($_POST['carID'])) {
+include('conn.php');
+
     $carID = $_POST['carID'];
-    echo "<script>alert('$carID')</script>";
-  }
+    $car = "SELECT * FROM car WHERE carID='$carID'";
+    $record = mysqli_query($con,$car);
+    $row = mysqli_fetch_array($record);
 
-  // $car = "SELECT * FROM car where carID = $carID";
-// $record = mqli_query ...($conn. $SQL)
-// while fetch query
-// if isset() 
-// include conn
-
-// $SQL = "SELECT * FROM promotion"
-// $record = mqli_query ...($conn. $SQL)
-// while fetch query
-// if ($POST[promo] == $record['promocode']{​
-//   fetch
-  
-// $price = $car[price] - 2000;
 ?>
-  
-
-<?php
-//  if (isset($_POST['submitBtn'])) {
-// 	include("conn.php");
-
-// 	$sql="INSERT INTO cust_buy () 
-  
-//   VALUES ('$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]','$_POST[]'";
-
-//   $sql = "UPDATE FROM ??";
-    
-
-// 	if (!mysqli_query($con,$sql)){
-// 		die('Error: ' . mysqli_error($con));
-// 	}
-// 	else {
-// 		echo '<script>alert("Payment Successful!");
-//     window.location.href= "homepage.php";
-//     </script>';
-// 	}
-
-// 	mysqli_close($con);
-//  }
-?>
-
-
 
 
 <!DOCTYPE html>
@@ -56,9 +14,6 @@
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="checkout.css">
-<script src="checkout.js"></script>
-
-
 </head>
 <body>
 <!DOCTYPE html>
@@ -76,15 +31,17 @@
           <i class="fa fa-shopping-cart"></i>
         </span>
       </h1>
-      <p>Brand and Model <span class="price"></span></p>
-      <p>Price <span class="price">100,000</span></p>
-      <p>Secure 1% <span class="price">1,000</span></p>
-      <!-- form action="checkout.php" method="POST" -->
-      <p>Promo Code <span class="price"><input name="promo" style="width:70px"></span></p>
-      <!-- </form> -->
-      <p>Discount <span class="price">-200</span></p>
+      <p>Brand<span class="price"><?php echo $row['brand']?></span></p>
+      <p>Model<span class="price"><?php echo $row['model']?></span></p>
+      <p>Price<span class="price"><?php echo $row['price'] ?></span></p>
+      <p>Secure 1% <span class="price"><?php $secure = ($row['price']*0.01); echo $secure;?></span></p>
+      <form action="checkout.php" method="POST">
+      <p>Promo Code <span class="price"><input name="promocode" id='promoInput' style="width:70px">&nbsp<button type="submit" id='submitPromoCode' name="submitPromo">Submit</button></span></p>
+      </form>
+      &nbsp
+      <p>Discount <span class="price" id='discount'></span></p>
       <hr>
-      <p>Total <span class="price" style="color:black"><b><!-- echo $price --> $11111</b></span></p>
+      <p>Total <span class="price" id='total'></span></p>
     </div>
   </div>
 </div>
@@ -95,6 +52,7 @@
     <div class="container">
       <form action="/action_page.php">
       <h2>Please fill in below information.</h2>
+      <br>
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
@@ -154,4 +112,75 @@
     </form>
  
 </div>
+</body>
+<?php
+    if (isset($_POST['submitPromo'])){        //check whether promocode exists
+      $SQL = "SELECT * FROM promocode";
+      $record = mysqli_query($con,$SQL);
+      $promo = $_POST['promocode'];
+      while($rows = mysqli_fetch_array($record)){
+          if ($promo == $rows['promocode']){
+              $true = "<script>alert('Valid Promocode!!')</script>";
+              echo $true;
 
+              // Replace discount box with promocode discount
+              $offer = $rows['offer'];
+              $script = "<script>
+                            var discountBox = document.getElementById('discount').innerHTML;
+                            document.getElementById('discount').innerHTML = '$offer';
+                            document.getElementById('submitPromoCode').style.display = 'none';
+                            document.getElementById('promoInput').value = '$promo';
+
+                            // Change Attribute of input box
+                            document.getElementById('promoInput').readOnly = true;
+                            document.getElementById('promoInput').style.border = 'none';
+                            document.getElementById('promoInput').style.outline = 'none';
+                            document.getElementById('promoInput').style.textAlign = 'right';
+                            document.getElementById('promoInput').style.color = 'grey';
+                          </script>";
+              echo $script;
+              $total= $secure-$offer;
+              
+              $scripttotal="<script>
+                        document.getElementById('total').innerHTML = '$total';
+              </script>";
+              echo $scripttotal;
+          }
+          else {
+              $false = "<script>alert('Invalid Promocode!!')</script>";
+              echo $false;
+          }
+      }
+
+  }
+?>
+
+<?php
+  if (isset($_POST['submitBtn'])) {
+	include("conn.php");
+    
+  $custID;//session
+  $date = date('Y-m-d'); //set current date and time
+	$sql1="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
+        VALUES ('$carID','?session?','$date','$total','Credit Card')";
+    
+    $sql = "UPDATE car SET 
+    sellStatus = 'Sold' 
+    WHERE carID='$carID'";
+    
+
+
+	if (!mysqli_query($con,$sql)){
+		die('Error: ' . mysqli_error($con));
+	}
+	else {
+    mysqli_query($con,$sql1);
+		echo '<script>alert("Payment Successful!");
+    
+    </script>';
+	}
+
+	mysqli_close($con);
+ }
+?>
+</html>
