@@ -132,7 +132,7 @@
                                 </div>
                             </div>
                             <div class="answer">
-                                You could edit your profile details by clicking this <a href="../Profile/profile.php" style="font-weight: 400;">link</a>
+                                You could edit your profile details by clicking this <a href="profile.php" style="font-weight: 400;">link</a>
                             </div>
                         </div>
                     </div>
@@ -229,7 +229,7 @@
                 <div class="ticket-description">
                     Didn't found your answer? Message Us!
                 </div>
-                <div class="ticket-button" onclick="window.open('../SupportCust/SupportCust.html');">
+                <div class="ticket-button" onclick="window.open('SupportCust.php');">
                     Create Ticket
                 </div>
             </div>

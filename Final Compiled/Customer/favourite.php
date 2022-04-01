@@ -20,13 +20,22 @@
             <div class="no-fav-description">
                 Seem like you dont have favourtite yet
             </div>
-            <button class="no-fav-search" onclick="window.location.href = 'carCategory.html'">Search Now!</button>
+            <button class="no-fav-search" onclick="window.location.href = 'CarCategory.php'">Search Now!</button>
         </div>
 
         <!-- Have favourite -->
         <table class="favourite-table" id='favTable'>
             <?php
-                $userID = '2';
+                if (isset($_SESSION['mysession'])) {
+                    $userID = $_SESSION['id'];
+                }
+                else {
+                    echo    "<script>
+                                alert('Please login to proceed!');
+                                window.location.href='userlogin.php';
+                            </script>";
+                }
+                
 
                 // Get fav info
                 $sqlFav = "SELECT * FROM favourite WHERE custID = '$userID'";
