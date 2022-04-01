@@ -445,7 +445,34 @@
 
         // Check test drive form
         if(isset($_POST['testDriveSubmit'])) {
-            // echo "<script>alert('yeet')</script>";
+            // Get total num of row for updating
+            $sqlGetNumAppointment = "SELECT * FROM buy_appointment ORDER BY buyID DESC LIMIT 1";
+            $result_Num = mysqli_query($con, $sqlGetNumAppointment);
+            $array_Num = mysqli_fetch_array($result_Num);
+            $new_row = $array_Num['buyID'] + 1; 
+
+            $appointmentType = $_POST['appointmentType'];
+            $date = $_POST['date'];
+            $time = $_POST['time'];
+
+            $sql = "INSERT INTO buy_appointment(custID, carID, appointmentType, date, time) VALUES ('$id', '$carID', '$appointmentType', '$date', '$time')";
+            if (mysqli_query($con, $sql)) {
+                if ($appointmentType == "physical") {
+                    $location = $_POST['location'];
+                    $sqlUpdate = "UPDATE buy_appointment
+                            SET location = '$location'
+                            WHERE buyID = '$new_row'";
+                    mysqli_query($con, $sqlUpdate);
+                }
+            }
+            else {
+                echo "<script>alert('Error on updating. Please contact admin~')</script>";
+                // echo "<script>alert('Fail:" .$mysqli -> connect_error ."')</script>";
+                return;
+            }
+            echo "<script>alert('Appointment created successfully.')</script>";
+
+
         }
     ?>
 </body>
