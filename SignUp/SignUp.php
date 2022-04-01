@@ -178,7 +178,7 @@ opacity: 1;
 			Email Address
 		</div>
 		<div class="field">
-			<input id="partitioned" type="email" name="email">
+			<input id="partitioned" type="email" name="email"required>
 		</div>
 	</div>
     <div class="section">
@@ -186,7 +186,7 @@ opacity: 1;
 			Password
 		</div>
 		<div class="field">
-			<input id="partitioned" type="password" name="password">
+			<input id="partitioned" type="password" name="password" required>
 		</div>
 	</div>
 	<div class="section">
@@ -204,7 +204,7 @@ opacity: 1;
 			Date of Birth
 		</div>
 		<div class="field">
-			<input id="partitioned" type="date" name="DOB">
+			<input id="partitioned" type="date" name="DOB"required>
 		</div>
 	</div>
 	<div class="section">
@@ -212,7 +212,7 @@ opacity: 1;
 			Phone Number
 		</div>
 		<div class="field">
-			<input id="partitioned" type="number" name="phoneNum">
+			<input id="partitioned" type="number" name="phoneNum" required>
 		</div>
 	</div>
 	<div class="section">
@@ -220,7 +220,7 @@ opacity: 1;
 			Identity Card Number
 		</div>
 		<div class="field">
-			<input id="partitioned" type="text" name="identityCard">
+			<input id="partitioned" type="text" name="identityCard" required>
 		</div>
 	</div>
 	<div class="section">
@@ -228,7 +228,7 @@ opacity: 1;
 			Image
 		</div>
 		<div class="field">
-			<input id="partitioned" type="file" name="img" value=""/>
+			<input id="partitioned" type="file" name="img" value="" required/>
 		</div>
 	</div>
 	<div class="section">
