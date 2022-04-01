@@ -1,0 +1,89 @@
+.itemName {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0 10px 20px;
+}
+
+.button {
+  float: left;
+  padding: 5px 7px;
+  cursor: pointer;
+  background-color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  color: black;
+  border: 2px solid black;
+  transition-duration: 0.4s;
+  border-radius: 7px;
+}
+
+.add-image {
+  font-size: 18px;
+  width: 150px;
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+.ad-submenu {
+  height: max-content;
+  width: 250px;
+  padding-top: 85px;
+  overflow-x: hidden;
+  float: left;
+  min-height: 100%;
+  position: fixed;
+  background-color: #b0e2ff;
+  top: 0;
+}
+
+.menu-content {
+  padding-left: 0rem;
+}
+
+.images-container {
+  width: 100%;
+  height: auto;
+  margin: 35px 0;
+  float: left;
+}
+.images-card {
+  height: auto;
+  width: 350px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f7f7f7;
+  display: inline-block;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 35px;
+  padding-bottom: 55px;
+}
+.images-size {
+  width: 300px;
+  height: auto;
+  margin: 25px 25px auto 25px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.image-edit,
+.image-delete {
+  background: none;
+  border: none;
+  margin-left: 92px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.image-buttons {
+  margin-top: 65px;
+}
+
+.images-size-preview {
+  width: 250px;
+  height: auto;
+  margin: 25px 25px 25px 25px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.no-image {
+  margin-left: 25px;
+  font-weight: 600;
+}
