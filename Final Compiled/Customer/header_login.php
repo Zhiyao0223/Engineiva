@@ -12,27 +12,20 @@
         <a href="home.php"><button class="dropbtn">Buy</button></a>
         <div class="dropdown-content">
           <div class="column" id="car_column1">
-            <a href="buy_car.php">BMW</a>
-            <a href="buy_car.php">Honda</a>
-            <a href="buy_car.php">Isuzu</a>
-            <a href="buy_car.php">Mazda</a>
-            <a href="buy_car.php">Mini</a>
-            <a href="buy_car.php">Perodua</a>
-            <a href="buy_car.php">Proton</a>
-            <a href="buy_car.php">Suzuki</a>
-            <a href="buy_car.php">Toyota</a>
-            <a href="buy_car.php">Volkswagen</a>
+            <a href="CarCategory.php?brand=BMW">BMW</a>
+            <a href="CarCategory.php?brand=Mazda">Mazda</a>
+            <a href="CarCategory.php?brand=Mini">Mini</a>
+            <a href="CarCategory.php?brand=Perodua">Perodua</a>
+            <a href="CarCategory.php?brand=Subaru">Subaru</a>
+            <a href="CarCategory.php?brand=Volkswagen">Volkswagen</a>
+
           </div>
           <div class="column" id="car_column2">
-            <a href="buy_car.php">Ford</a>
-            <a href="buy_car.php">Hyundai</a>
-            <a href="buy_car.php">Kia</a>
-            <a href="buy_car.php">Mercedes</a>
-            <a href="buy_car.php">Nissan</a>
-            <a href="buy_car.php">Peugeot</a>
-            <a href="buy_car.php">Subaru</a>
-            <a href="buy_car.php">Tesla</a>
-            <a href="buy_car.php">Volve</a>
+          <a href="CarCategory.php?brand=Honda">Honda</a>
+            <a href="CarCategory.php?brand=Mercedes">Merdeces</a>
+            <a href="CarCategory.php?brand=Nissan">Nissan</a>
+            <a href="CarCategory.php?brand=Proton">Proton</a>
+            <a href="CarCategory.php?brand=Toyota">Toyota</a>
           </div>
         </div>
       </div>

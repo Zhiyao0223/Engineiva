@@ -48,12 +48,12 @@
                         <div class="f_widget about-widget" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
                             <h3 class="f-title">Quick Links</h3>
                             <ul class="f_list">
-                                <li><a href="../AboutUs/aboutUs.php">About Us</a></li>
+                                <li><a href="aboutUs.php">About Us</a></li>
                                 <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="../SupportCust/SupportCust.php">Support Ticket</a></li>
+                                <li><a href="SupportCust.php">Support Ticket</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="https://goo.gl/maps/EDoSVuic3zT8mrMj8" onclick="alert('Redirecting to Google Map...')" target="_blank">Locate Us</a></li>
-                                <li><a href="../FAQ/FAQ.php">FAQ</a></li>
+                                <li><a href="FAQ.php">FAQ</a></li>
                             </ul>
                         </div>
                     </div>

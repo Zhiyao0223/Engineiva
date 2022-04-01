@@ -1,12 +1,6 @@
 <?php
     include("conn.php");
     include("session.php");
-
-    if (isset($_GET['carID'])) {
-        $carBrand = $_GET['carID'];
-        echo "<script>alert('$carBrand')</script>";
-        // echo "<script>filter('$carBrand')</script>";
-    }
 ?>
 
 <!DOCTYPE html>
@@ -221,6 +215,12 @@
     <!-- Footer  -->
     <?php
         include("footer.php");
+
+        if (isset($_GET['brand'])) {
+            $carBrand = $_GET['brand'];
+            // echo "<script>alert('$carBrand')</script>";
+            echo "<script>filter('$carBrand')</script>";
+        }
     ?>
     <script>saveBodyContent()</script>
 </body>
