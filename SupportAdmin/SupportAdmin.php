@@ -1,6 +1,5 @@
 <?php
-    include("../conn.php");
-    // echo "<script>alert('$num_row')</script>";
+    include("conn.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +10,7 @@
     <link rel="stylesheet" href="styleAdmin.css">
     <link rel="stylesheet" href="../AddCar/admin-header.css">
 
-    <script src="scriptAdmin.js"></script>
+    <script src="scriptSupportAdmin.js"></script>
 </head>
 <body>
     <!-- Header  -->

@@ -28,9 +28,9 @@
 <head>
     <title>Support Ticket</title>
 
-    <link rel="stylesheet" href="styleSupportCust.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="scriptSupportCust.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Header  -->

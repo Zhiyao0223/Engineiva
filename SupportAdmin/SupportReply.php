@@ -1,5 +1,5 @@
 <?php
-    include("../conn.php");
+    include("conn.php");
     // $adminID = $_SESSION['user_id'];
     $adminID = '1';
 
@@ -36,10 +36,10 @@
 <head>
     <title>Admin Support Ticket Page</title>
 
-    <link rel="stylesheet" href="styleReply.css">
-    <link rel="stylesheet" href="../AddCar/admin-header.css">
+    <link rel="stylesheet" href="styleSupportReply.css">
+    <link rel="stylesheet" href="admin-header.css">
 
-    <script src="scriptReply.js"></script>
+    <script src="scriptSupportReply.js"></script>
     <script>
         var status = <?php 
                     echo $status;
