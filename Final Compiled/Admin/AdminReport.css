@@ -108,6 +108,24 @@
     text-shadow: 1px 1px lightgray;
 }
 
-/* .content-container .car {
-    display: none;
-} */
+.profit-box {
+    width: 100%;
+    font-weight: 550;
+    display: flex;
+    margin-top: 1rem;
+    text-shadow: 1px 1px lightgray;
+    justify-content: flex-end;
+}
+
+.profit-box h2 {
+    font-size: 20px;
+}
+
+.profit-box .profit {
+    text-align: right;
+}
+
+.profit-box .priceTotal {
+    padding-left: 1rem;
+    color: green;
+}
