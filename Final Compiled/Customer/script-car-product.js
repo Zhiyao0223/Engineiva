@@ -2,6 +2,7 @@
 var oriPrice = 0;
 var oriDeposit = 0;
 var currentImgPosition = 0;
+var loginStatus = false;
 
 // Auto put deposit amount
 function getDeposit() {
@@ -287,6 +288,25 @@ function checkDate() {
         return;
     }
 }
+
+
+// Disable test drive form button
+function disableBtn(id) {
+    if (id == undefined) { 
+        document.getElementById("feeHalf").disabled = true;
+        document.getElementById('feeHalf').style.cursor = 'not-allowed';
+        document.getElementById('feeHalf').innerHTML = "Please login"
+    
+        document.getElementById("feeFull").disabled = true;
+        document.getElementById('feeFull').style.cursor = 'not-allowed';
+        document.getElementById('feeFull').innerHTML = "Please login";
+    }
+    else {
+        loginStatus = true;
+    }
+}
+
+
 
 
 // Header

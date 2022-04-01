@@ -15,6 +15,13 @@
                 </script>";
     }
 
+    if(isset($_SESSION['mysession'])) {
+        $id = $_SESSION['id'];
+    }
+    else {
+        $id = "";
+    }
+
     // Retrieve car info from db
     $sqlCar = "SELECT * FROM car WHERE carID = '$carID'";
     $resultCar= mysqli_query($con, $sqlCar);
@@ -170,10 +177,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <button class='modalSubmit' value="half" onclick="verification('open', 'testDrive')">Select</button>
+                            <button class='modalSubmit' id='feeHalf' onclick="verification('open', 'testDrive')">Select</button>
                         </td>
                         <td>
-                            <button class='modalSubmit' value="full" onclick="alert('Redirecting to Payment Page...');
+                            <button class='modalSubmit' id='feeFull' onclick="alert('Redirecting to Payment Page...');
                                                                                 document.getElementById('carIDSubmit').submit();">Select</button>
                         </td>
                     </tr>    
@@ -193,7 +200,7 @@
                 <div class="modalDescription">Please fill in your information</div>
                 
                 <form action="#" class='test-drive-form' method="post">
-                    <input type="text" id="custID" hidden>
+                    <input type="text" id="custID" name='custID' value='<?php echo $id ?>' hidden>
 
                     <table class="form-table">
                         <!-- Appointment Type  -->
@@ -393,7 +400,7 @@
                     </div>                
                     <div class="form-title">
                             Deposit Amount (RM)<br/>
-                            <input type="number" class="form-text" id="deposit" onblur="validateDeposit()">
+                            <input type="number" class="form-text" id="deposit" onchange="validateDeposit()">
                     </div>
                     <div class="form-title">
                         Bank Rates (%)<br/>
@@ -433,6 +440,12 @@
 
     <!-- Footer  -->
     <?php
-        include("footer.php");
+        include("footer.php");     
+        echo "<script>disableBtn($id)</script>";
+
+        // Check test drive form
+        if(isset($_POST['testDriveSubmit'])) {
+            // echo "<script>alert('yeet')</script>";
+        }
     ?>
 </body>
