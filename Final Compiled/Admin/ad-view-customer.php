@@ -51,7 +51,7 @@
         <!-- Start of search form -->
         <div class="seach-contain">
             Customer(s) found: <?php echo $row_count;?>
-            <form action="ad-cust-record.php" method="POST">
+            <form action="ad-view-customer.php" method="POST">
                 <input type="text" placeholder="Search..." name="search_key" id="search-field" >
                 <div class="searchbtn">
                     <button type="submit" name="searchBtn" value="filter" class="searchbtn">
