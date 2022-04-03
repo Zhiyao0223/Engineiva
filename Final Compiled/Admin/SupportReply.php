@@ -9,7 +9,7 @@
     else {
         echo "<script>
                 alert('Error: No ticket to reply.');
-                window.location.href= 'SupportAdmin.php';
+                window.location.href= 'support-ticket.php';
             </script>";
     }
 
@@ -62,7 +62,7 @@
     <!-- Container Box Here  -->
     <div class="main-container">
         <div class="button-row">
-            <div class="back-btn" onclick="window.location.href='SupportAdmin.php'">
+            <div class="back-btn" onclick="window.location.href='support-ticket.php'">
                 < Back
             </div>
             <div class="statusBtn">

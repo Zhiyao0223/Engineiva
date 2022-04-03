@@ -1,10 +1,17 @@
 <?php
-include('conn.php');
+  include('conn.php');
+  include("session.php");
 
-    $carID = $_POST['carID'];
-    $car = "SELECT * FROM car WHERE carID='$carID'";
-    $record = mysqli_query($con,$car);
-    $row = mysqli_fetch_array($record);
+  if (!(isset($_SESSION['mysession']))) {
+    echo "<script>alert('Please login to proceed')
+                window.location.href='userlogin.php';
+        </script>";
+  }
+
+  $carID = $_POST['carID'];
+  $car = "SELECT * FROM car WHERE carID='$carID'";
+  $record = mysqli_query($con,$car);
+  $row = mysqli_fetch_array($record);
 
 ?>
 
@@ -19,9 +26,7 @@ include('conn.php');
 <!DOCTYPE html>
 <head>
     <title>Secure your car now.</title>
-
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="col-25">
@@ -35,7 +40,7 @@ include('conn.php');
       <p>Model<span class="price"><?php echo $row['model']?></span></p>
       <p>Price<span class="price">RM<?php echo $row['price'] ?></span></p>
       <p>Secure 1% <span class="price">RM<?php $secure = ($row['price']*0.01); echo $secure;?></span></p>
-      <form action="checkout.php" method="POST">
+      <form action="checkout.php" method="post" action='#'>
       <p>Promo Code <span class="price"><input name="promocode" id='promoInput' style="width:70px">&nbsp<button type="submit" id='submitPromoCode' name="submitPromo">Submit</button></span></p>
       </form>
       <p>Discount <span class="price" id='discount'></span></p>
@@ -45,14 +50,13 @@ include('conn.php');
   </div>
 </div>
 
+<form action="#" method='post'>
+  <div class="row">
+    <div class="col-75">
+      <div class="container2">
 
-<div class="row">
-  <div class="col-75">
-    <div class="container">
-      <form action="/action_page.php">
-      <h2>Please fill in below information.</h2>
-      <br>
-        <div class="row">
+          <h2>Please fill in below information.</h2><br>
+          <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="fname">Full Name</label>
@@ -82,7 +86,7 @@ include('conn.php');
             <input type="text" id="partitioned" name="cardname" required>
             <label for="ccnum">Card number</label>
             <input type="text" id="partitioned" name="cardnumber" required>
-            
+            <input type='text' name='carID' value='<?php echo $carID; ?>' hidden>
 
             <div class="row">
               <div class="col-50">
@@ -99,17 +103,18 @@ include('conn.php');
                 <input type="text" id="partitioned" name="cvv" required>
             </div>
           </div>
-      </form>
-    </div>
+          <div class='submit-section'>
+            <input type="submit" class="btn submitBtn" name="submitBtn" value="Checkout"/></center>
+        </div>
+      </div>
   </div>
 
-    <form method="post">
-        <center><input type="submit" class="btn" name="submitBtn" value="Checkout"/></center>
-    </form>
+</form>
  
 </div>
 </body>
 <?php
+    include("conn.php");
     if (isset($_POST['submitPromo'])){        //check whether promocode exists
       $SQL = "SELECT * FROM promocode";
       $record = mysqli_query($con,$SQL);
@@ -149,34 +154,36 @@ include('conn.php');
       }
 
   }
-?>
 
-<?php
   if (isset($_POST['submitBtn'])) {
-	include("conn.php");
+    //session
+    $custID = $_SESSION['custID'];
+    //set current date and time
+    $date = date('Y-m-d'); 
+    $carID = $_POST['carID'];
+
+    $sql="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
+        VALUES ('$carID','$custID','$date','$total','Credit Card')";
     
-  $custID;//session
-  $date = date('Y-m-d'); //set current date and time
-	$sql1="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
-        VALUES ('$carID','?session?','$date','$total','Credit Card')";
-    
-    $sql = "UPDATE car SET 
-    sellStatus = 'Sold' 
-    WHERE carID='$carID'";
-    
+    $sql1 = "UPDATE car SET 
+            sellStatus = 'Sold' 
+            WHERE carID='$carID'";
+        
 
 
-	if (!mysqli_query($con,$sql)){
-		die('Error: ' . mysqli_error($con));
-	}
-	else {
-    mysqli_query($con,$sql1);
-		echo '<script>alert("Payment Successful!");
-    
-    </script>';
-	}
+    if (!mysqli_query($con,$sql)){
+    die('Error: ' . mysqli_error($con));
+    }
+    else {
+      mysqli_query($con,$sql1);
+      echo "<script>alert('Payment Successful!');
+              window.location.href='homepage.php';
+              </script>";
+    }
+}
 
-	mysqli_close($con);
- }
+
+
+  mysqli_close($con);
 ?>
 </html>

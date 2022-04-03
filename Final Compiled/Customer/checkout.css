@@ -6,15 +6,17 @@ body {
 }
 
 body {
-font-family: 'Open Sans', sans-serif;
-padding-top: 62px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 62px;
+  background-image: url("checkoutBckground.jpg");
+  background-size: cover;
 }
 
 
 .row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
+  -ms-flex-wrap: wrap; /*IE10*/
   flex-wrap: wrap;
   margin: 0 16px;
 }
@@ -42,12 +44,24 @@ padding-top: 62px;
 
 
 .container {
-padding: 16px;
-background-color: white;
-width:800px;
-margin:0 auto;
-overflow:auto;
+  padding: 16px;
+  background-color: white;
+  width:800px;
+  margin:0 auto;
+  overflow:auto;
+  margin-top: 5rem;
+  border-radius: 15px;
 }
+
+.container2 {
+    padding: 16px;
+    background-color: white;
+    width:800px;
+    margin:0 auto;
+    overflow:auto;
+    margin-top: 1rem;
+    border-radius: 15px;
+  }
 
 #partitioned {
   width: 100%;
@@ -89,6 +103,20 @@ label {
 
 .btn:hover {
   background-color: #45a049;
+  box-shadow: 1px 1px lightgray;
+}
+
+.submit-section {
+  width: 100%;
+  display: block;
+  height: fit-content;
+  text-align: center;
+}
+
+.submitBtn {
+  display: inline-block;
+  margin: 0 auto;
+ 
 }
 
 span.price {
