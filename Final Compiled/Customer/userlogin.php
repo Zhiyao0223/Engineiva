@@ -11,7 +11,8 @@
                 text-align: center;
                 margin-top: 75px;
            }
-            #registration{
+
+           #registration{
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -31,6 +32,7 @@
 
             .box{
                 gap: 8px;
+                background-color: white;
             }
 
             .form-element{
@@ -40,8 +42,8 @@
             }
 
             .input-box input{
-                outline: none;
-                border: 1px solid #F2F2F2;
+                outline: black;
+                border: 4px solid black;
                 border-radius: 8px;
                 padding: 10px;
                 width: 100%;
@@ -79,7 +81,7 @@
             }
 
             .button button{
-                width: 500px;
+                width: 450px;
                 text-align: center;
                 background-color: green;
                 color: #FFF;
@@ -113,17 +115,6 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            * {box-sizing: border-box;}
-
-        body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container{
-                width: 80%;
-                margin: 0 auto;
-            }
 
             .back{
                 background-color: #1a252f;
@@ -142,19 +133,21 @@
                 position: absolute;
                 left: 80px;
             }
-    </style>
+        </style>
 </head>
-
 <body>
-<?php 
-    include('conn.php');
+    
+    <?php 
+    
+        include('conn.php');
 
-       
+        session_start();
+
         if($_SERVER['REQUEST_METHOD']=="POST"){
-            $username = mysqli_real_escape_string($con, $_POST['username']);
+            $email = mysqli_real_escape_string($con, $_POST['email']);
             $password = mysqli_real_escape_string($con, $_POST['password']);
 
-            $sql = "SELECT adminID FROM admin WHERE username = '$username' AND password ='$password'";
+            $sql = "SELECT id FROM customer WHERE cust_email = '$email' AND cust_password ='$password'";
 
             if($result = mysqli_query($con,$sql)){
                 // Return the number of rows in result set
@@ -163,27 +156,25 @@
                 $row = mysqli_fetch_array($result);
 
                 if($rowcount==1){
-                    session_start();
-                    $_SESSION['mysession'] = $username;
-                    $_SESSION['user_id'] = intval($row['adminID']);
-                    header('Location: ad-modify-remove.php');
+                    // session1_start();
+                    $_SESSION['mysession'] = $email;
+                    $_SESSION['id'] = intval($row['id']);
+                    header('Location: SignUp.php');
                 }
                 else{
-                    $error = printf("Your Login Name or Password is invalid. Please re login<br><br>");
+                    echo '<script>alert("Your Email Address or Password is invalid. Please re login!!");
+		            window.location.href= "SignUp.php";
+		            </script>';
                 }
             mysqli_close($con);
         }
-?>
-
-   <?php 
-        include 'admin-header.php';
     ?>
-
 
 <div class="button1">
     <button type="submit" class="back"><b>Back</b></button>
 </div>
-<h1>Admin Login</h1>
+
+    <h1>User Login</h1>
     <form action="" method="POST">
         <div class="form-element">
             <div class="header-title">
@@ -191,10 +182,10 @@
             </div>
             <div class="box">
                 <div class="label">
-                    Username <span class="remark">*</span>
+                    Email Address <span class="remark">*</span>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    <input type="text" name="email" class="form-control" placeholder="Email Address" required>
                 </div>
             </div>
             <div class="box">
@@ -210,6 +201,12 @@
             <div class="bottom-button">
                 <div class="button">
                     <button type="submit" class="btn">Log In</button>
+                </div>
+                <div class="text">
+                    Have not registered? Please register<a href="SignUp.php"> here</a>
+                </div>
+                <div class="text">
+                    <a href="Homepage.php">Back to Main Page</a>
                 </div>
             </div>
         </div>
