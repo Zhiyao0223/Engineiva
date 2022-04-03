@@ -9,10 +9,10 @@
 <?php
 session_start();
 if(isset($_SESSION['mysession'])) {
-  $id = $_SESSION['id'];
+  $id = $_SESSION['custID'];
   include("header_login.php");
   } else {
-  $id = "";
+  $id = "1";
   include("header_cust.php");
   }
 ?>
@@ -127,7 +127,7 @@ if(isset($_SESSION['mysession'])) {
 
 <?php
  if (isset($_POST['submitBtn'])) {
-  if (isset($_SESSION['mysession'])){
+   if (isset($_SESSION['mysession'])){
   
 	include("conn.php");
 
@@ -152,7 +152,7 @@ if(isset($_SESSION['mysession'])) {
     echo '<script>alert("Please Log In to Continue");
     </script>';
   }
- }
+  }
 ?>
 
 
@@ -200,19 +200,20 @@ if(isset($_SESSION['mysession'])) {
             <h3> Engine: <?php echo $row['engine'];?> </h3>
             <h3> Transmission: <?php echo $row['transmission'];?> </h3>
           <div class = box_inside_button>
-            <button class = "box_inside_button1"> See more details </button>
+            <button class = "box_inside_button1"><a href="CarProduct.php?carID=<?php echo $row['carID'] ?>"> See more details </a></button>
           </div>
       </div>
     </div>  
   </div>
-
-
-<?php
+  <?php
 }
+?>
+</div>
+
+
+<?php 
 include("footer.php");
 ?>
-
-
 
 </body>
 </html>

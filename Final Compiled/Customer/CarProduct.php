@@ -16,7 +16,7 @@
     }
 
     if(isset($_SESSION['mysession'])) {
-        $id = $_SESSION['id'];
+        $id = $_SESSION['custID'];
     }
     else {
         $id = "";
