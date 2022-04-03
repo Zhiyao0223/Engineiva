@@ -40,6 +40,26 @@ function myFunction() {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="col-25">
+    <div class="container">
+      <h1>Checkout
+        <span class="price" style="color:black">
+          <i class="fa fa-shopping-cart"></i>
+        </span>
+      </h1>
+      <p>Brand<span class="price"><?php echo $row['brand']?></span></p>
+      <p>Model<span class="price"><?php echo $row['model']?></span></p>
+      <p>Price<span class="price">RM<?php echo $row['price'] ?></span></p>
+      <p>Secure 1% <span class="price">RM<?php $secure = ($row['price']*0.01); echo $secure;?></span></p>
+      <form action="checkout.php" method="POST">
+      <p>Promo Code <span class="price"><input name="promocode" id='promoInput' style="width:70px">&nbsp<button type="submit" id='submitPromoCode' name="submitPromo">Submit</button></span></p>
+      </form>
+      <p>Discount <span class="price" id='discount'></span></p>
+      <hr>
+      <p>Total <span class="price" id='total'>RM<?php echo $secure;?></span></p>
+    </div>
+  </div>
+</div>
 
 
 
