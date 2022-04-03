@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
+
 }
 
 
@@ -126,6 +127,10 @@
 
 .main-container .bottom-container .description-box .description .additional-feature ul {
     margin-left: 1rem;
+}
+
+.main-container .bottom-container .description-box .description .additional-feature ul li {
+    list-style: disc;
 }
 
 .main-container .bottom-container .description-box .description .specification-box .specification-content {
@@ -442,7 +447,7 @@
     margin: 2rem 0;
     font-size: 20px;
     padding: 10px;
-    width: 30%;
+    width: 40%;
     text-align: center;
     border: none;
     cursor: pointer;

@@ -1,12 +1,6 @@
 <?php
     include("conn.php");
     include("session.php");
-
-    if (isset($_GET['carID'])) {
-        $carBrand = $_GET['carID'];
-        echo "<script>alert('$carBrand')</script>";
-        // echo "<script>filter('$carBrand')</script>";
-    }
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +85,7 @@
                                 Proton
                             </div>
                         </div>
-                        <div class="brand-name" id='brandTopToyota' onclick="filterBrandTop('Toyota', this)">
+                        <div class="brand-name" id='brandTopToyota' onclick="filter('Toyota')">
                             <img class="brand-img" src="imgCarCategory/toyota.png">
                             <div class="brands">
                                 Toyota
@@ -108,7 +102,7 @@
                         name="search-name" 
                         class="fas fa-search input-name" id="search-name" 
                         placeholder="&#xf002; Search Your Car Here.." 
-                        maxlength="50">
+                        maxlength="50" onkeyup='searchName(this.value)'>
         
             <div class="row">
                 <!-- Filter bar -->
@@ -201,7 +195,7 @@
                                     <div id='$carID' onclick=\"window.location.href='CarProduct.php?carID=$carID'\">
                                         <img src=\"data:image/png;base64," .base64_encode($image) ."\" class='image'>
                                         <div class = 'image-description'>
-                                            <span>$carName</span><br/>
+                                            <span class='carName'>$carName</span><br/>
                                             <div class='year'>Year: $year</div>
                                             <div class='engine'>Engine: $engine</div>
                                             <div class='$transmission'>Tranmission: $transmission</div>
@@ -221,6 +215,12 @@
     <!-- Footer  -->
     <?php
         include("footer.php");
+
+        if (isset($_GET['brand'])) {
+            $carBrand = $_GET['brand'];
+            // echo "<script>alert('$carBrand')</script>";
+            echo "<script>filter('$carBrand')</script>";
+        }
     ?>
     <script>saveBodyContent()</script>
 </body>

@@ -34,6 +34,11 @@ function filter(brand) {
     var filterBtm = document.getElementsByClassName("filter-brand");
     var topBrandClass, topBrandBox, btmBrandClass, btmBrandBox;
     var resetStatus = false, checkStatus = false;
+    
+    var searchBox = document.getElementsByClassName("input-name")[0];
+    if (searchBox.value != "") {
+        searchBox.value = "";
+    }
 
     if (brand == filterPreviousBrand) {
         resetStatus = true;
@@ -58,12 +63,21 @@ function filter(brand) {
         btmBrandClass = "filterBtmMercedes";
         checkStatus = true;
     }
+    // else {
+    //     return;
+    // }
 
     // Check if user want to unselect brand
     if (resetStatus) {
-        filterCurrentBrand = "";
-        for (let z = 0; j < carBox.length; z++) {
+        filterPreviousBrand = "";
+        for (let z = 0; z < carBox.length; z++) {
             carBox[z].style.display = "";
+        }
+        for (let x = 0; x < filterTop.length; x++) {
+            filterTop[x].style.border = "";
+        }
+        for (let y = 0; y < filterBtm.length; y++) {
+            filterBtm[y].style.border = "";
         }
         return;
     }
@@ -90,7 +104,7 @@ function filter(brand) {
     }
     else {
         topBrandClass = "brandTop" + brand;
-        document.getElementById(topBrandClass).border = "2px solid blue";
+        document.getElementById(topBrandClass).style.border = "2px solid blue";
     }
 
     // First loop set all to none, second filter
@@ -108,6 +122,8 @@ function filter(brand) {
 // Sort table 
 function sort(value) {
     var carBox = document.getElementsByClassName("carBox");
+    var searchBox = document.getElementsByClassName("input-name")[0];
+    searchBox.value = "";
     // alert(filterCurrentBrand);
     if (filterCurrentBrand != "") {
         var brandBox = document.getElementsByClassName(filterCurrentBrand);
@@ -288,4 +304,37 @@ function sort(value) {
 // Backup original html content
 function saveBodyContent() {
     originalTableContent = document.getElementById("carTable").innerHTML;
+}
+
+
+// Search name
+function searchName(input) {
+    var carBox = document.getElementsByClassName("carBox");
+    var nameBox = document.getElementsByClassName("carName");
+    var temp;
+    input.toLowerCase();
+
+    // Reset all filter
+    for (let j = 0; j <carBox.length; j++) {
+        carBox[j].style.display = "";
+    }
+
+
+    // Filter
+    for (let i = 0; i < carBox.length; i++) {
+        temp = nameBox[i].innerHTML.toLowerCase();
+        if (temp.includes(input)) {
+            if (carBox[i].style.display != "none") {
+                carBox[i].style.display = "";
+            }
+        }
+        else {
+            carBox[i].style.display = "none";
+        }
+    }
+
+    // Call Filter Brand
+    if (filterPreviousBrand != "") {
+        filter(filterPreviousBrand);
+    }
 }
