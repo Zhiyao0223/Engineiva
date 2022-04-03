@@ -382,8 +382,8 @@ input[type=text]:focus {
     display: flex;
 }
 
-.history_box_display1 h2{
-    font-size: xx-large;
+.test{
+    font-size: large;
     color: white;
     margin-left: 25px;
     margin-top: 20px;
