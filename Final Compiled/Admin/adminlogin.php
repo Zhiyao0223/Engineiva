@@ -6,150 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <style>
-           h1{
-                text-align: center;
-                margin-top: 75px;
-           }
-            #registration{
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .registration,
-            .form-element,
-            .box,
-            .bottom-button{
-                display: flex;
-                flex-direction: column;
-            }
-
-            .registration,
-            .form-element{
-                gap: 15px;
-            }
-
-            .box{
-                gap: 8px;
-            }
-
-            .form-element{
-                width: 50%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .input-box input{
-                outline: none;
-                border: 1px solid #F2F2F2;
-                border-radius: 8px;
-                padding: 10px;
-                width: 100%;
-            }
-
-            .radio-btn{
-                display: flex;
-                gap: 20px;
-                align-items: center;
-            }
-
-            .radio-btn label{
-                display: flex;
-                gap: 8px;
-                align-items: center;
-                padding-top: 10px;
-            }
-
-            .radio-btn input{
-                width: 15px;
-                height: 15px;
-            }
-
-            .radio-btn input[type="checkbox"]{
-                padding: 15px;
-            }
-
-            .header-title{
-                text-align: center;
-            }
-
-            .bottom-button{
-                margin-top: 25px;
-                align-items: center;
-            }
-
-            .button button{
-                width: 500px;
-                text-align: center;
-                background-color: green;
-                color: #FFF;
-            }
-
-            .remark{
-                color: rgb(220, 53, 69);
-            }
-
-            .error{
-                border-color: #dc3545 !important;
-                padding-right: calc(1.5em + .75rem) !important;
-                background-image: url('exclamation-octagon.svg');
-                background-repeat: no-repeat;
-                background-position: right calc(.375em + .1875rem) center;
-                background-size: calc(.75em + .375rem) calc(.75em + .375rem);
-            }
-
-            .error:focus{
-                box-shadow: 0px 0px 8px 0px #dc3545;
-            }
-
-            .warning-password{
-                font-size: 0.875rem;
-                color: rgb(220, 53, 69);
-                display: none;
-            }
-
-            .password-field{
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            * {box-sizing: border-box;}
-
-        body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container{
-                width: 80%;
-                margin: 0 auto;
-            }
-
-            .back{
-                background-color: #1a252f;
-                border-radius: 10px;
-                border: none;
-                color: white;
-                padding: 12px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 16px;
-                cursor: pointer;
-                width: 10%;
-                margin-bottom: 50px;
-                top: 50px;
-                position: absolute;
-                left: 80px;
-            }
-    </style>
+    <style rel='stylesheet' href='adminLogin.css'></style>
 </head>
 
 <body>
 <?php 
-    include('conn.php');
-
-       
+    include('conn.php');   
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $username = mysqli_real_escape_string($con, $_POST['username']);
             $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -175,9 +37,9 @@
         }
 ?>
 
-   <?php 
-        include 'admin-header.php';
-    ?>
+<?php 
+    include 'admin-header.php';
+?>
 
 
 <div class="button1">
