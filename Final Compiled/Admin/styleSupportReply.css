@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container {
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+    margin-top: 60px;
+    padding-top: 20px;
+}
+
+.main-container .button-row {
+    width: 100%;
+}
+
+.main-container .button-row .back-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.main-container .button-row .back-btn:hover {
+    color: blue;
+    text-shadow: 1px 1px lightgray;
+}
+
+.main-container .button-row .statusBtn {
+    float: right;
+    display: flex;
+}
+
+/* .main-container .button-row .statusBtn .status {
+    background-color: none;
+    padding: 10px 30px;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    box-shadow: 1px 1px lightgray;
+    border-radius: 30px;
+    margin-left: 1rem;
+} */
+
+.main-container .button-row .statusBtn #pending {
+    background-color: none;
+    padding: 10px 30px;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    box-shadow: 1px 1px lightgray;
+    border-radius: 30px;
+    margin-left: 1rem;
+}
+
+.main-container .button-row .statusBtn .status {
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    box-shadow: 1px 1px lightgray;
+    border-radius: 30px;
+    margin-left: 1rem;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 15px;
+}
+
+.main-container .button-row .statusBtn #done:hover {
+    color:red;
+    font-weight: 500;
+    box-shadow: 2px 1px lightcoral;
+}
+
+.main-container .top-container {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid;
+    margin-bottom: 2rem;
+}
+
+.main-container .top-container .text-box {
+    margin-bottom: 1rem;
+}
+
+.main-container .top-container .text-box .title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.main-container .top-container .text-box .description {
+    font-weight: 300;
+    text-align: justify;
+    text-justify: inter-word;
+    height: fit-content;
+}
+
+.main-container .top-container .text-box .image-box img{
+    width: auto;
+    height: 100px;
+}
+
+.main-container .bottom-container {
+    width: 10%;
+    margin: 0 auto;
+}
+
+.main-container .bottom-container .mail {
+    font-size: 18px;
+    border: 1px solid;
+    padding: 10px 30px;
+    border-radius: 30px;
+    box-shadow: 1px 1px lightgray;
+    color: white;
+    background-color: #263b5e;
+}
+
+.main-container .bottom-container .mail:hover {
+    background-color: #FEC34D;
+    box-shadow: 2px 1px lightgray;
+}
