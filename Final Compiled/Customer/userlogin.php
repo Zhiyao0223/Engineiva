@@ -126,7 +126,6 @@
     
         include('conn.php');
 
-        // session_start();
 
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $email = mysqli_real_escape_string($con, $_POST['email']);

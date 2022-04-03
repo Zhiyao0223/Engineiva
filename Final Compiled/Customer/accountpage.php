@@ -134,7 +134,8 @@ body {
 <?php 
 include('conn.php');
 include('session.php');
-    $id = $_SESSION['custID'];
+if (isset($_SESSION['mysession'])){$id = $_SESSION['custID'];}
+    else {echo '<script>alert("abc")</script>';}
 
     $result=mysqli_query($con,"SELECT * FROM customer WHERE custID = '$id'");
    
