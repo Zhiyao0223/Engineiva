@@ -148,7 +148,7 @@
 
 <body>
 <?php 
-    include('../conn.php');
+    include('conn.php');
     session_start();
        
         if($_SERVER['REQUEST_METHOD']=="POST"){

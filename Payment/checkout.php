@@ -1,5 +1,6 @@
 <?php
 include('conn.php');
+include('session.php');
 
     $carID = $_POST['carID'];
     $car = "SELECT * FROM car WHERE carID='$carID'";
