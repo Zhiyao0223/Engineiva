@@ -36,7 +36,7 @@
         <div class="dropdown">
           <button class="dropbtn"><a href="#">Log In</a></button>
           <div class="dropdown-content">
-            <a href="adminlogin.php">Log In as Admin</a>
+            <a href="../admin/adminlogin.php">Log In as Admin</a>
             <a href="userlogin.php">Log In as User</a>
           </div>
         </div> 
