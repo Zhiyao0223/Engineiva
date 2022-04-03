@@ -11,8 +11,7 @@
                 text-align: center;
                 margin-top: 75px;
            }
-
-           #registration{
+            #registration{
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -211,9 +210,6 @@
             <div class="bottom-button">
                 <div class="button">
                     <button type="submit" class="btn">Log In</button>
-                </div>
-                <div class="text">
-                    Not an admin? Back to home page. Click<a href="home.php"> here</a>
                 </div>
             </div>
         </div>
