@@ -163,7 +163,7 @@
                 }
                 else{
                     echo '<script>alert("Your Email Address or Password is invalid. Please re login!!");
-		            window.location.href= "SignUp.php";
+		            window.location.href= "userlogin.php";
 		            </script>';
                 }
             mysqli_close($con);
