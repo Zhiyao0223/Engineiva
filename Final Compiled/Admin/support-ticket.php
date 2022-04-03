@@ -1,5 +1,11 @@
 <?php
     include("conn.php");
+
+    if (isset($_SESSION['user_id'])) {
+        echo "<script>alert('Please login to proceed)')
+                    window.location.href='adminlogin.php';
+            </script>";
+    }
 ?>
 
 <!DOCTYPE html>
