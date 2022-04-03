@@ -147,7 +147,7 @@
             $email = mysqli_real_escape_string($con, $_POST['email']);
             $password = mysqli_real_escape_string($con, $_POST['password']);
 
-            $sql = "SELECT id FROM customer WHERE cust_email = '$email' AND cust_password ='$password'";
+            $sql = "SELECT custID FROM customer WHERE email = '$email' AND password ='$password'";
 
             if($result = mysqli_query($con,$sql)){
                 // Return the number of rows in result set
@@ -158,8 +158,8 @@
                 if($rowcount==1){
                     // session1_start();
                     $_SESSION['mysession'] = $email;
-                    $_SESSION['id'] = intval($row['id']);
-                    header('Location: SignUp.php');
+                    $_SESSION['custID'] = intval($row['custID']);
+                    header('Location: accountpage.php');
                 }
                 else{
                     echo '<script>alert("Your Email Address or Password is invalid. Please re login!!");

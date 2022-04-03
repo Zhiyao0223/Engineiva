@@ -134,9 +134,9 @@ body {
 <?php 
 include('conn.php');
 include('session.php');
-    $id = $_SESSION['id'];
+    $id = $_SESSION['custID'];
 
-    $result=mysqli_query($con,"SELECT * FROM customer WHERE id = '$id'");
+    $result=mysqli_query($con,"SELECT * FROM customer WHERE custID = '$id'");
    
 while($row=mysqli_fetch_array($result)){
   ?>
@@ -148,7 +148,7 @@ while($row=mysqli_fetch_array($result)){
       <button>
         <div class="signtext">
           <?php echo "<a href=\"edituser.php?id=";
-          echo $row['id'];
+          echo $row['custID'];
           echo "\">Edit</a>";?></a>
         </div>
       </button>
@@ -161,8 +161,8 @@ while($row=mysqli_fetch_array($result)){
     </div>
 
 <div class="center">
-<input type="hidden" name="id" value=<?php echo $row['id']?>>
-<?php echo '<img style="width=10px" src="data:image/jpeg;base64,'.base64_encode( $row['cust_image'] ).'"class="image">'?>
+<input type="hidden" name="id" value=<?php echo $row['custID']?>>
+<?php echo '<img style="width=10px" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"class="image">'?>
 </div>
 
 <div class="container1">
@@ -171,43 +171,43 @@ while($row=mysqli_fetch_array($result)){
       <div class="inputs">
         <label>&#128073; First Name </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_firstName']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['firstName']; ?>"readonly/>
       </div>
       &nbsp
       <div class="inputs">
         <label>&#128073; Last Name </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_lastName']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['lastName']; ?>"readonly/>
       </div>
       &nbsp
       <div class="inputs">
         <label>&#128231; Email Address </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_email']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['email']; ?>"readonly/>
       </div>
       &nbsp
       <div class="inputs">
         <label>&#127886; Gender </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_gender']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['gender']; ?>"readonly/>
       </div>
       &nbsp
       <div class="inputs">
         <label>&#128197; Date of Birth </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_DOB']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['DOB']; ?>"readonly/>
       </div>
       &nbsp
       <div class="inputs">
         <label>&#128222; Phone Number </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_phoneNum']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['phoneNum']; ?>"readonly/>
       </div>
       &nbsp
       <div class="inputs">
         <label>📇 IC Number </label>
         <span>:</span>
-        <input type="text" value="<?php echo $row['cust_identityCard']; ?>"readonly/>
+        <input type="text" value="<?php echo $row['identityCard']; ?>"readonly/>
       </div>
   </div>
 </div>
