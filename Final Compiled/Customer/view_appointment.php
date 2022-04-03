@@ -8,9 +8,8 @@
 
 <?php
 session_start();
-include("footer.php");
 if(isset($_SESSION['mysession'])) {
-  $id = $_SESSION['id'];
+  $id = $_SESSION['custID'];
   include("header_login.php");
   } else {
     echo '<script>alert("Please Log In to Continue");
@@ -71,7 +70,7 @@ $result = mysqli_query($con, "SELECT* FROM buy_appointment INNER JOIN car WHERE 
     $result1 = mysqli_query($con, "SELECT* FROM sell_appointment WHERE sell_appointment.custID = $id ORDER BY sellID")
     ?>
     <h3 style = "margin-bottom: 3px;"> Sell Appointment </h3>
-    <table id = "table">
+    <table id = "table" style = "margin-bottom: 200px">
         <tr>
             <th> Brand </th>
             <th> Model </th>
@@ -109,7 +108,9 @@ $result = mysqli_query($con, "SELECT* FROM buy_appointment INNER JOIN car WHERE 
     </table>
 </div>
 
-
+<?php
+include("footer.php");
+?>
 
 </body>
 </html>

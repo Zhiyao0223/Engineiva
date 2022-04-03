@@ -41,7 +41,7 @@
             <a href="logout.php">Log Out</a>
           </div>
         </div> 
-        <a href="SignUp.php">Sign Up</a>
+        
       </div>
     </div>
   </div>

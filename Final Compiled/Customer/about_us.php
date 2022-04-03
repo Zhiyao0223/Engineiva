@@ -8,7 +8,6 @@
 
 <?php
 session_start();
-include("footer.php");
 if(isset($_SESSION['mysession'])) {
   include("header_login.php");
   } else {
@@ -30,7 +29,9 @@ if(isset($_SESSION['mysession'])) {
 
 
 
-
+<?php
+include("footer.php");
+?>
 
 
 </body>

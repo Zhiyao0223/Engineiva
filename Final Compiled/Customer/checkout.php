@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
   include('conn.php');
   include("session.php");
+=======
+include('session.php');
+include('conn.php');
+>>>>>>> 5ff836a56fab619c7db0b95367276fcb77c5722b
 
   if (!(isset($_SESSION['mysession']))) {
     echo "<script>alert('Please login to proceed')

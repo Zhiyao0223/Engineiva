@@ -9,7 +9,7 @@
 <?php
 session_start();
 if(isset($_SESSION['mysession'])) {
-  $id = $_SESSION['id'];
+  $id = $_SESSION['custID'];
   include("header_login.php");
   } else {
   $id = "";
@@ -38,7 +38,7 @@ if(isset($_SESSION['mysession'])) {
           <h4> Brand </h4>
       </div>
 
-          <select class="sell" name = "brand" required = "required">Select Car brand</option>
+          <select class="sell" style = "width:68.5%" name = "brand" required = "required">Select Car brand</option>
               <option value="BMW">BMW</option>
               <option value="Honda">Honda</option>
               <option value="Mazda">Mazda</option>
@@ -85,7 +85,7 @@ if(isset($_SESSION['mysession'])) {
           <h4> Transmission </h4>
       </div>
 
-        <select class="sell" name="transmission" required="required">
+        <select class="sell" style = "width: 68.5%;" name="transmission" required="required">
             <option value="Auto">Auto</option>
             <option value="Manual">Manual</option>
           </select>
@@ -152,7 +152,7 @@ if(isset($_SESSION['mysession'])) {
     echo '<script>alert("Please Log In to Continue");
     </script>';
   }
- }
+}
 ?>
 
 
@@ -200,19 +200,20 @@ if(isset($_SESSION['mysession'])) {
             <h3> Engine: <?php echo $row['engine'];?> </h3>
             <h3> Transmission: <?php echo $row['transmission'];?> </h3>
           <div class = box_inside_button>
-            <button class = "box_inside_button1"> See more details </button>
+            <button class = "box_inside_button1"><a href="CarProduct.php?carID=<?php echo $row['carID'] ?>"> See more details </a></button>
           </div>
       </div>
     </div>  
   </div>
-
-
-<?php
+  <?php
 }
+?>
+</div>
+
+
+<?php 
 include("footer.php");
 ?>
-
-
 
 </body>
 </html>

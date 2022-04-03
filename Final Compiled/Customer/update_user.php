@@ -7,15 +7,15 @@
     $file = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
 
     $sql = "UPDATE customer SET
-    cust_firstName = '$_POST[FirstName]',
-    cust_lastName = '$_POST[LastName]',
-    cust_email = '$_POST[email]',
-    cust_password = '$_POST[password]',
-    cust_gender = '$_POST[gender]',
-    cust_DOB = '$_POST[DOB]',
-    cust_phoneNum = '$_POST[phoneNum]',
-    cust_identityCard = '$_POST[identityCard]',
-    cust_image = '$file'
+    firstName = '$_POST[FirstName]',
+    lastName = '$_POST[LastName]',
+    email = '$_POST[email]',
+    password = '$_POST[password]',
+    gender = '$_POST[gender]',
+    DOB = '$_POST[DOB]',
+    phoneNum = '$_POST[phoneNum]',
+    identityCard = '$_POST[identityCard]',
+    image = '$file'
 
     WHERE id = $_POST[id];";
 

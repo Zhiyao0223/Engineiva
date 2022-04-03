@@ -102,41 +102,41 @@
     <?php 
     include('conn.php');
     $id = intval($_GET['id']);
-    $result = mysqli_query($con, "SELECT * FROM customer WHERE id = $id");
+    $result = mysqli_query($con, "SELECT * FROM customer WHERE custID = $id");
     while ($row = mysqli_fetch_array($result))
     {
     ?>
 
     <form action="update_user.php" method="POST" ENCTYPE="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+    <input type="hidden" name="id" value="<?php echo $row['custID']; ?>">
     <h2>Customer Profile</h2>
     <h3>Edit Profile</h3>
       <p>* required fields</p>
       <div class="inputs">
         <label for="First Name">First Name <span class="required">*</span></label>
         <span>:</span>
-        <input type="text" name="FirstName" placeholder="Enter Your First Name" required autocomplete="on" value="<?php echo $row['cust_firstName']; ?>"/>
+        <input type="text" name="FirstName" placeholder="Enter Your First Name" required autocomplete="on" value="<?php echo $row['firstName']; ?>"/>
       </div>
       <div class="inputs">
         <label for="Last Name">Last Name <span class="required">*</span></label>
         <span>:</span>
-        <input type="text" name="LastName" placeholder="Enter Your Last Name" required autocomplete="on" value="<?php echo $row['cust_lastName']; ?>"/>
+        <input type="text" name="LastName" placeholder="Enter Your Last Name" required autocomplete="on" value="<?php echo $row['lastName']; ?>"/>
       </div>
       <div class="inputs">
         <label for="Email Address">Email Address <span class="required">*</span></label>
         <span>:</span>
-        <input type="email" name="email" placeholder="Enter Your Email Address" required autocomplete="on" value="<?php echo $row['cust_email']; ?>"/>
+        <input type="email" name="email" placeholder="Enter Your Email Address" required autocomplete="on" value="<?php echo $row['email']; ?>"/>
       </div>
       <div class="inputs">
         <label for="Password">Password <span class="required">*</span></label>
         <span>:</span>
-        <input type="password" name="password" placeholder="Enter Your New Password" required autocomplete="on" value="<?php echo $row['cust_password']; ?>"/>
+        <input type="password" name="password" placeholder="Enter Your New Password" required autocomplete="on" value="<?php echo $row['password']; ?>"/>
       </div>
       </div>
         <div class="field" style="padding-top:10px;">
             <input type="radio" name="gender" 
 
-            <?php if($row['cust_gender']=="Male"){
+            <?php if($row['gender']=="Male"){
                 echo 'checked="checked"';
             }?>
 
@@ -145,7 +145,7 @@
 
             <input type="radio" name="gender" 
 
-            <?php if($row['cust_gender']=="Female"){
+            <?php if($row['gender']=="Female"){
                 echo 'checked="checked"';
             }?>
 
@@ -155,17 +155,17 @@
       <div class="inputs">
         <label for="DOB">Date of Birth <span class="required">*</span></label>
         <span>:</span>
-        <input type="text" name="DOB" placeholder="Enter Your Date of Birth" required autocomplete="on" value="<?php echo $row['cust_DOB']; ?>"/>
+        <input type="text" name="DOB" placeholder="Enter Your Date of Birth" required autocomplete="on" value="<?php echo $row['DOB']; ?>"/>
       </div>
       <div class="inputs">
         <label for="phone_num">Phone Number <span class="required">*</span></label>
         <span>:</span>
-        <input type="tel" name="phoneNum"  placeholder="Enter Your Phone Number" required/ value="<?php echo $row['cust_phoneNum']; ?>">
+        <input type="tel" name="phoneNum"  placeholder="Enter Your Phone Number" required/ value="<?php echo $row['phoneNum']; ?>">
       </div>
       <div class="inputs">
         <label for="Identification Card">Identification Card Number <span class="required">*</span></label>
         <span>:</span>
-        <input type="text" name="identityCard" value="<?php echo $row['cust_identityCard']; ?>" placeholder="Enter Your Identification Card Number" required/>
+        <input type="text" name="identityCard" value="<?php echo $row['identityCard']; ?>" placeholder="Enter Your Identification Card Number" required/>
       </div>
       <div class="inputs">
         <label for="Profile Image">Profile Image <span class="required">*</span></label>
