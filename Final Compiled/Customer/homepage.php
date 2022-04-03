@@ -8,7 +8,6 @@
 
 <?php
 session_start();
-include("footer.php");
 if(isset($_SESSION['mysession'])) {
   $id = $_SESSION['id'];
   include("header_login.php");
@@ -210,6 +209,7 @@ if(isset($_SESSION['mysession'])) {
 
 <?php
 }
+include("footer.php");
 ?>
 
 
