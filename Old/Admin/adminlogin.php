@@ -118,6 +118,7 @@
 
         body {
         margin: 0;
+        margin-top:10%;
         font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -139,7 +140,7 @@
                 cursor: pointer;
                 width: 10%;
                 margin-bottom: 50px;
-                top: 50px;
+                top: -5%;
                 position: absolute;
                 left: 80px;
             }
@@ -182,7 +183,7 @@
 
 
 <div class="button1">
-    <button type="submit" class="back"><b>Back</b></button>
+    <button type="submit" class="back" href="homepage.php"><b>Back</b></button>
 </div>
 <h1>Admin Login</h1>
     <form action="" method="POST">
@@ -211,9 +212,6 @@
             <div class="bottom-button">
                 <div class="button">
                     <button type="submit" class="btn">Log In</button>
-                </div>
-                <div class="text">
-                    Not an admin? Back to home page. Click<a href="home.php"> here</a>
                 </div>
             </div>
         </div>
