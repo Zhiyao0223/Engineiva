@@ -127,7 +127,7 @@ if(isset($_SESSION['mysession'])) {
 
 <?php
  if (isset($_POST['submitBtn'])) {
-  // if (isset($_SESSION['mysession'])){
+   if (isset($_SESSION['mysession'])){
   
 	include("conn.php");
 
@@ -152,7 +152,7 @@ if(isset($_SESSION['mysession'])) {
     echo '<script>alert("Please Log In to Continue");
     </script>';
   }
-//  }
+  }
 ?>
 
 
