@@ -7,9 +7,9 @@
 <body>
   <div class="fixed-header">
     <div class="topnav">
-      <a href ="home.php" class="logoStyle">Engineiva</a>
+      <a href ="homepage.php" class="logoStyle">Engineiva</a>
       <div class="dropdown">
-        <a href="home.php"><button class="dropbtn">Buy</button></a>
+        <a href="CarCategory.php"><button class="dropbtn">Buy</button></a>
         <div class="dropdown-content">
           <div class="column" id="car_column1">
             <a href="CarCategory.php?brand=BMW">BMW</a>
@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <a href="home.php">Sell</a>    
+      <a href="homepage.php">Sell</a>    
       <a href="FAQ.php">FAQ</a>
       <a href="about_us.php">About Engineiva</a> 
 
