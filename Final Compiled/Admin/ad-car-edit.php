@@ -19,6 +19,7 @@
             <li><a href="ad_view_appointment.php">View Appointment</a></li>
             <li><a href="ad-promotion-detail.php">Promotion Detail </a></li>
             <li><a href="support-ticket.php">Support Ticket</a></li>
+            <li><a href='AdminReport.php'>Report Generation</a></li>
         </ul>
     </div>
 

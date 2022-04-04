@@ -163,6 +163,11 @@
                         $model = $arrayCar['model'];
                         $variant = $arrayCar['variant'];
                         $carName = $brand ." " .$model ." " .$variant;
+                        
+                        $availableStatus = $arrayCar['sellStatus'];
+                        if ($availableStatus != "Available") {
+                            continue;
+                        }
 
                         $engine = $arrayCar['engine'];
                         $transmission = $arrayCar['transmission'];

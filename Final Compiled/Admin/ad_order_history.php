@@ -10,11 +10,14 @@
 
     <div class="submenu">
         <ul class="menu-content">
-            <li><a href="ad-add-new-car.php">Add New Car</a></li> 
-            <li><a href="modify-remove.php">Modify and Remove</a></li>
+        <li><a href="ad-add-new-car.php">Add New Car</a></li> 
+            <li><a href="ad-modify-remove.php">Modify and Remove</a></li>
+            <li><a href="ad-view-customer.php">View Customer Record </a></li>
             <li><a href="ad_view_appointment.php">View Appointment</a></li>
+            <li><a href="ad-promotion-detail.php">Promotion Detail </a></li>
             <li><a href="support-ticket.php">Support Ticket</a></li>
             <li><a href="ad_order_history.php" class="active">Order History</a></li>
+            <li><a href='AdminReport.php'>Report Generation</a></li>
         </ul>
     </div>
 

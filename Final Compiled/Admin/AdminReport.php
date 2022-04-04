@@ -28,7 +28,8 @@
             <li><a href="ad_view_appointment.php">View Appointment</a></li>
             <li><a href="ad-promotion-detail.php">Promotion Detail </a></li>
             <li><a href="support-ticket.php">Support Ticket</a></li>
-            <li><a href='#'>Report Generation</a></li>
+            <li><a href="ad_order_history.php">Order History</a></li>
+            <li><a href='AdminReport.php'>Report Generation</a></li>
         </ul>
     </div>
 
@@ -50,6 +51,8 @@
                 <table class='report-table ' id='reportTable'>
                     <?php
                         $total = 0;
+                        $firstPart = "";
+                        $secondPart = "";
                         $firstData =    "<tr>
                                             <td>Car Name</td>
                                             <td>Date</td>

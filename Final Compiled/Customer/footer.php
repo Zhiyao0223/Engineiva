@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Footer</title>
-
     <link rel="stylesheet", href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -87,7 +85,7 @@
         </div>
         <div class="footer_bottom">
             <div class="footer-bottom-container">
-                <div class="row align-items-center">
+                <div class="align-items-center">
                     <div class="footer-bottom-column">
                         <p class="copyright">&#169; Engineiva Sdn Bhd 2022 All rights reserved.</p>
                     </div>

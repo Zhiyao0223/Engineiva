@@ -59,7 +59,9 @@
                                 </div>
                             </div>
                             <div class="answer">
-                                Later copy about us.......
+                            Engineiva is a Online Platform that allows the selling or purchasing of cars all over Malaysia with just a click of a button. We aim to digitalize Malaysia's second-hand car industry by improving the experience of selling and purchasing of cars.
+                            Our vision? Is to drive Malaysia's automotive industry forward regarding the second-hand car ecosystem.
+                            Engineiva will only ensure that the only best price will be provided for our customers and the transaction will be completely secure and confidential.
                             </div>
                         </div>
                         <div class="question-box">

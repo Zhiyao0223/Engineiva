@@ -40,24 +40,69 @@
     <link rel="stylesheet" href="admin-header.css">
 
     <script src="scriptSupportReply.js"></script>
-    <script>
-        var status = <?php 
-                    echo $status;
-                    ?>;
-    </script>
 </head>
 <body>
-    <!-- Header  -->
-    <div class="header">
-        <div class="inner_header">
-            <div class="logo">
-                <a href ="admin.php" class="logoStyle"><li>Engineiva (Admin)</li></a> 
-            </div>
-            <div class="logout">
-                <a href ="logout.php"><img src="logout.png" alt="Logout" id="logout_style"></a> 
+    <?php
+        include "ad-session.php";
+        include 'admin-header.php';
+    ?>
+
+    <!-- Modal Box Refund  -->
+    <div id='refundModal' class='modal'>
+            <div class='modalContent'>
+                <a id='close' name='checkout' onclick="toggleRefund('close')">&times</a>
+                <div class='modalHeader'>Add Refund Record </div>
+                <div class="modalDescription">Please fill in refund information</div>
+                
+                <form action="#" class='refund-form' method="post">
+                    <input type="text" id="custID" name='custID' value='<?php echo $userID ?>' hidden>
+                    <table class="form-table">
+                        <!-- Cust ID  -->
+                        <tr>
+                            <td>
+                                <div class="title">
+                                    CustID
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-input" id='custDisable'>
+                                <input type="text" id="userID" disabled value='<?php echo $userID ?>' style='cursor: not-allowed;'>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Car ID -->
+                        <tr>
+                            <td>
+                                <div class="title">
+                                    Car ID
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-input">
+                                    <input type="number" min='1' max='1000' id="carID" name='carID' required>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Fee  -->
+                        <tr>
+                            <td>
+                                <div class="title">
+                                    Secure Fee (RM)
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-input">
+                                    <input type="number" min='1' id="fee" name="fee" required>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="submit-box">
+                        <input type="submit" class="submit-btn" value="Submit" name="refundSubmit">
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
 
     <!-- Container Box Here  -->
     <div class="main-container">
@@ -144,6 +189,10 @@
 
     <?php
         if (isset($_POST['submitStatus'])) {
+            if ($category == "refund") {
+                echo "<script>toggleRefund('open')</script>";
+                return;
+            }
             $sql = "UPDATE support_ticket
                     SET ticketStatus = 'F'
                     WHERE ticketID = '$ticketID'";
@@ -152,9 +201,35 @@
                 echo "<script>('Error in updating status!')</script>";
             }
             else {
-                echo "<script>alert('Update status success!')</script>";
+                echo    "<script>
+                            alert('Update status success!');
+                            window.location.href='support-ticket.php';
+                        </script>";
             }
-            // echo "<script>alert('yeet')</script>";
+
+        }
+
+        if (isset($_POST['refundSubmit'])) {
+            $secureFee = $_POST['fee'];
+            $carID = $_POST['carID'];
+            $date = date("Y/m/d");
+            $sqlRefund = "INSERT INTO refund (carID, custID, date, secureFee, paymentMethod) VALUES
+                            ('$carID', '$userID', '$date', '$secureFee', 'Credit Card')";
+
+            $sqlTicket = "UPDATE support_ticket
+                            SET ticketStatus = 'F'
+                            WHERE ticketID = '$ticketID'";
+
+            if(mysqli_query($con, $sqlRefund)) {
+                mysqli_query($con, $sqlTicket);
+                echo    "<script>
+                            alert('Update success!');
+                            window.location.href='support-ticket.php';
+                        </script>";
+            }
+            else {
+                echo "<script>('Error in updating status!')</script>";
+            }
         }
     ?>
 </body>

@@ -155,7 +155,7 @@ while($row=mysqli_fetch_array($result)){
       </button>
       <button>
         <div class="signtext">
-        <a href="">Purchase History</a>
+        <a href="purchase_history.php">Purchase History</a>
         </div>
       </button>
       </center>

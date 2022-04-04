@@ -19,7 +19,6 @@
 
 .main-container .table-container {
     border-collapse: collapse;
-    margin: 2rem;
     width: 90%;
     text-align: center;
     font-weight: 350;
@@ -33,27 +32,25 @@
 
 .main-container .table-container tr {
     height: 50px;
+    border-bottom: 1.5px solid;
 }
 
 .main-container .table-container tr:first-child {
-    border: 2px solid;
+    border: 1.5px solid;
+    border-left: none;
     font-weight: 500;
 }
 
-.main-container .table-container tr:last-child {
-    border-bottom: 2px solid;
-}
 
-.main-container .table-container tr:first-child .filter-row {
+/* .main-container .filter-row {
     text-align: left;
     border-left: 2px solid;
     padding-left: 2rem;
     position: relative;
     width: 20%;
-}
+} */
 
 .main-container .table-container td {
-    border: 1px solid;
     border-right: 2px solid;
 }
 
@@ -61,27 +58,37 @@
     font-weight: normal;
 }
 
-.main-container .table-container .filter-box {
-    vertical-align: top;
-    display: table-cell;
-
+.main-container .table-roww {
+    display: flex;
+    width: 95%;
+    margin: 2rem 0;
+    padding-bottom: 3rem;
 }
 
-.main-container .table-container .filter-row .filter-title {
+.main-container .filter-box {
+    border: 2px solid;
+    width: 20%;
+    display: inline-block;
+    padding: 10px;
+    padding-right: 0;
+    /* border-right: 2px solid; */
+}
+
+.main-container .filter-box .filter-title {
     font-size: 20px;
     font-weight: 500;
 }
 
-.main-container .table-container .filter-row .filter-option {
+.main-container  .filter-box .filter-option {
     margin: 1rem;
 }
 
-.main-container .table-container .filter-option .options {
+.main-container .filter-option .options {
     font-size: 15px;
     margin: 1rem 0;
 }
 
-.main-container .table-container .filter-option .options:hover {
+.main-container .filter-option .options:hover {
     color: blue;
     font-weight: 500;
     text-shadow: 1px 1px lightgray;

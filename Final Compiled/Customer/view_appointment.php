@@ -21,13 +21,12 @@ if(isset($_SESSION['mysession'])) {
 
 <?php
 include("conn.php");
-include("header.php");
 $result = mysqli_query($con, "SELECT* FROM buy_appointment INNER JOIN car WHERE buy_appointment.carID = car.carID AND buy_appointment.custID = $id ORDER BY buyID ")
 ?>
 
 
 <div class = "section">
-    <button class = "back"> Back </button>
+    <button class = "back"><a href="accountpage.php"> Back </a></button>
     <h1 style = "margin-bottom: 50px;"> Appointment List </h1>
     <h3 style = "margin-bottom: 3px;"> Buy Appointment </h3>
     <table id = "table">
