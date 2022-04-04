@@ -157,15 +157,21 @@
             echo"<script>alert('Error: ".mysqli_error($con) ."')</script>";
         }
         else {
-            echo"<script>alert('Ticket Successfully Created !')</script>";
+            if ($pictureStatus == 0) {
+                $new_ticket = $array_support[0] + 1;
+                // echo "<script>alert('$new_ticket')</script>";
+                $sql_update_image = "UPDATE support_ticket SET picture = '$file_name' WHERE ticketID = '$new_ticket'";
+                mysqli_query($con, $sql_update_image);
+                
+            }
+            echo    "<script>
+                        alert('Ticket Successfully Created!');
+                        alert('You will be contacted through emails within 3 working days');
+                        window.location.href='FAQ.php';
+                    </script>";
         };
 
-        if ($pictureStatus == 0) {
-            $new_ticket = $array_support[0] + 1;
-            // echo "<script>alert('$new_ticket')</script>";
-            $sql_update_image = "UPDATE support_ticket SET picture = '$file_name' WHERE ticketID = '$new_ticket'";
-            mysqli_query($con, $sql_update_image);
-            
-        }
+
+        echo"<script></script>";
     }
 ?>

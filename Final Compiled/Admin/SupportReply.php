@@ -40,25 +40,23 @@
     <link rel="stylesheet" href="admin-header.css">
 
     <script src="scriptSupportReply.js"></script>
-    <script>
-        var status = <?php 
-                    echo $status;
-                    ?>;
-    </script>
 </head>
 <body>
     <!-- Header  -->
-    <div class="header">
+    <!-- <div class="header">
         <div class="inner_header">
             <div class="logo">
                 <a href ="admin.php" class="logoStyle"><li>Engineiva (Admin)</li></a> 
             </div>
             <div class="logout">
-                <a href ="logout.php"><img src="logout.png" alt="Logout" id="logout_style"></a> 
+                <a href ="logout.php"><img src="imgAdmin/logout.png" alt="Logout" id="logout_style"></a> 
             </div>
         </div>
-    </div>
-
+    </div> -->
+    <?php
+        include "ad-session.php";
+        include 'admin-header.php';
+    ?>
     <!-- Container Box Here  -->
     <div class="main-container">
         <div class="button-row">
@@ -144,6 +142,9 @@
 
     <?php
         if (isset($_POST['submitStatus'])) {
+            if ($category == "refund") {
+                return;
+            }
             $sql = "UPDATE support_ticket
                     SET ticketStatus = 'F'
                     WHERE ticketID = '$ticketID'";
@@ -152,9 +153,12 @@
                 echo "<script>('Error in updating status!')</script>";
             }
             else {
-                echo "<script>alert('Update status success!')</script>";
+                echo    "<script>
+                            alert('Update status success!');
+                            window.location.href='support-ticket.php';
+                        </script>";
             }
-            // echo "<script>alert('yeet')</script>";
+
         }
     ?>
 </body>
