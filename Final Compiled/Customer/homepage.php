@@ -12,7 +12,7 @@ if(isset($_SESSION['mysession'])) {
   $id = $_SESSION['custID'];
   include("header_login.php");
   } else {
-  $id = "1";
+  $id = "";
   include("header_cust.php");
   }
 ?>
@@ -38,7 +38,7 @@ if(isset($_SESSION['mysession'])) {
           <h4> Brand </h4>
       </div>
 
-          <select class="sell" name = "brand" required = "required">Select Car brand</option>
+          <select class="sell" style = "width:68.5%" name = "brand" required = "required">Select Car brand</option>
               <option value="BMW">BMW</option>
               <option value="Honda">Honda</option>
               <option value="Mazda">Mazda</option>
@@ -85,7 +85,7 @@ if(isset($_SESSION['mysession'])) {
           <h4> Transmission </h4>
       </div>
 
-        <select class="sell" name="transmission" required="required">
+        <select class="sell" style = "width: 68.5%;" name="transmission" required="required">
             <option value="Auto">Auto</option>
             <option value="Manual">Manual</option>
           </select>
@@ -127,7 +127,7 @@ if(isset($_SESSION['mysession'])) {
 
 <?php
  if (isset($_POST['submitBtn'])) {
-   if (isset($_SESSION['mysession'])){
+  if (isset($_SESSION['mysession'])){
   
 	include("conn.php");
 
@@ -152,7 +152,7 @@ if(isset($_SESSION['mysession'])) {
     echo '<script>alert("Please Log In to Continue");
     </script>';
   }
-  }
+}
 ?>
 
 

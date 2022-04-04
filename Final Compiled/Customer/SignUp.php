@@ -1,5 +1,5 @@
 <?php
-// include("session.php");
+include("session.php");
 ?>
 
 <?php
@@ -7,8 +7,8 @@
 	include("conn.php");
 	$file = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
 
-	$insert="INSERT INTO customer (cust_firstName, cust_lastName, cust_email, cust_password, 
-	cust_gender, cust_DOB, cust_phoneNum,cust_identityCard,cust_image)
+	$insert="INSERT INTO customer (firstName, lastName, email, password, 
+	gender, DOB, phoneNum, identityCard, image)
 	VALUES ('$_POST[FirstName]','$_POST[LastName]','$_POST[email]','$_POST[password]', '$_POST[gender]',
 	'$_POST[DOB]','$_POST[phoneNum]','$_POST[identityCard]','$file')";
 
@@ -17,7 +17,7 @@
 	}
 	else {
 		echo '<script>alert("Successfully signed up!!");
-		window.location.href= "SignUp.php";
+		window.location.href= "accountpage.php";
 		</script>';
 	}
 
@@ -156,6 +156,7 @@ opacity: 1;
   
 <div class="container">
 <h1>Sign Up</h1>
+<br>
 		<div id="left">
 			<div class="label">
 				First Name
@@ -228,7 +229,7 @@ opacity: 1;
 			Image
 		</div>
 		<div class="field">
-			<input id="partitioned" type="file" name="img" value="" required/>
+			<input id="partitioned" type="file" name="img" value="" />
 		</div>
 	</div>
 	<div class="section">
@@ -242,3 +243,6 @@ opacity: 1;
 	</div>
 </div>
 </div>
+<?php
+include("footer.php");
+?>

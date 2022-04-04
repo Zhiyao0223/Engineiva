@@ -96,7 +96,7 @@ button {
   margin-left:45%;
   width:55%;
   top:10%;
-  overflow:auto;
+  overflow-y:clip;
 }
 
 label{

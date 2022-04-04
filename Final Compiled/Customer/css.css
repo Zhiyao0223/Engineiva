@@ -13,7 +13,7 @@ body{
 
 .title{
     background-color: #1abc9c;
-    height: 260px;
+    height: 720px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -243,10 +243,18 @@ input[type=text]:focus {
 }
 
 /* about_us */
+.container{
+    display: block;
+    height: fit-content;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 150px;
+}
 
 .about_us{
     margin: auto;
     margin-top: 30px;
+    padding-top: 30px;
     margin-bottom: 30px;
     text-align: center;
     color: white;
@@ -258,10 +266,12 @@ input[type=text]:focus {
     border-radius: 15px;
     height: 440px;
     width: 60%;
-    position: fixed;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    /* position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
 .about_us_box_2{
