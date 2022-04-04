@@ -50,6 +50,8 @@
                 <table class='report-table ' id='reportTable'>
                     <?php
                         $total = 0;
+                        $firstPart = "";
+                        $secondPart = "";
                         $firstData =    "<tr>
                                             <td>Car Name</td>
                                             <td>Date</td>
