@@ -116,7 +116,22 @@
                 gap: 10px;
             }
 
-        
+            .back{
+                background-color: #1a252f;
+                border-radius: 10px;
+                border: none;
+                color: white;
+                padding: 12px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                width: 10%;
+                margin-bottom: 50px;
+                top: 50px;
+                position: absolute;
+                left: 80px;
             }
         </style>
 </head>
@@ -147,12 +162,16 @@
                 }
                 else{
                     echo '<script>alert("Your Email Address or Password is invalid. Please re login!!");
-		            window.location.href= "userlogin.php";
+		            window.location.href= "SignUp.php";
 		            </script>';
                 }
             mysqli_close($con);
         }
     ?>
+
+<div class="button1">
+    <button type="submit" class="back"><b>Back</b></button>
+</div>
 
     <h1>User Login</h1>
     <form action="" method="POST">
@@ -185,11 +204,11 @@
                 <div class="text">
                     Have not registered? Please register<a href="SignUp.php"> here</a>
                 </div>
+                <div class="text">
+                    <a href="Homepage.php">Back to Main Page</a>
+                </div>
             </div>
         </div>
     </form>
 </body>
 </html>
-<?php
-include("footer.php");
-?>

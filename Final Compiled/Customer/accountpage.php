@@ -3,7 +3,7 @@
 <style>
 body {
 font-family: 'Open Sans', sans-serif;
-padding-top: 100px; /*50px for the height of the navbar + 37px for the offset*/
+padding-top: 50px; /*50px for the height of the navbar + 37px for the offset*/
 padding-bottom: 50px; /*50px for the height of the bottom navbar*/
 }
 .section {
@@ -134,8 +134,7 @@ body {
 <?php 
 include('conn.php');
 include('session.php');
-if (isset($_SESSION['mysession'])){$id = $_SESSION['custID'];}
-    else {echo '<script>alert("abc")</script>';}
+    $id = $_SESSION['custID'];
 
     $result=mysqli_query($con,"SELECT * FROM customer WHERE custID = '$id'");
    
@@ -144,7 +143,6 @@ while($row=mysqli_fetch_array($result)){
 
 
   <h1><center>My Profile</center></h1>
-  <br>
     <div class="field">
       <center>
       <button>
@@ -161,6 +159,7 @@ while($row=mysqli_fetch_array($result)){
       </button>
       </center>
     </div>
+
 <div class="center">
 <input type="hidden" name="id" value=<?php echo $row['custID']?>>
 <?php echo '<img style="width=10px" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"class="image">'?>
@@ -168,7 +167,6 @@ while($row=mysqli_fetch_array($result)){
 
 <div class="container1">
 <div id="center">
-  <br>
   <h3>Basic Data</h3>
       <div class="inputs">
         <label>&#128073; First Name </label>
