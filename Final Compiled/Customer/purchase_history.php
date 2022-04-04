@@ -20,14 +20,13 @@ if(isset($_SESSION['mysession'])) {
 
 
 <?php
-include ("header.php");
 include ("conn.php");
 $result = mysqli_query($con, "SELECT * FROM cust_buy INNER JOIN car ON cust_buy.carID = car.carID INNER JOIN car_image ON cust_buy.carID = car_image.carID WHERE cust_buy.custID = $id GROUP BY cust_buy.carID");
 ?>
 
 
 <div class = "section">
-    <button class = "back"> Back </button>
+    <button class = "back"><a href="accountpage.php"> Back </a></button>
     <h1 style = "margin-bottom: 50px;"> Purchase History </h1>
 
 
