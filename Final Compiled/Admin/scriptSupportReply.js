@@ -39,3 +39,18 @@ function doneHover(mouseStatus, ticketStatus) {
         alert("OMG new bugs? Contact IT admin please");
     }
 }
+
+function toggleRefund(option) {
+    if (option == "open") {
+        document.getElementById('refundModal').style.visibility = "visible";
+        document.getElementById('refundModal').style.opacity = "1";
+    }
+    else if (option == "close") {
+        document.getElementById('refundModal').style.visibility = "hidden";
+        document.getElementById('refundModal').style.opacity = "0";
+    }
+    else {
+        alert("New bug bois");
+    }
+
+}

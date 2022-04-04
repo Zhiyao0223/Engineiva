@@ -10,10 +10,10 @@ function filter(category) {
 
     for (let j = 1; j < table.length; j++) {
         className = table[j].className;
-        alert(className + "," + category);
+        // alert(className + "," + category);
 
         if (className == category) {
-            alert('yeet');
+            // alert('yeet');
             foundStatus = true;
             table[j].style.display = "table-row";
         }
