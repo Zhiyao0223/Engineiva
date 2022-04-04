@@ -126,3 +126,116 @@
     background-color: #FEC34D;
     box-shadow: 2px 1px lightgray;
 }
+
+
+/* Refund Popup  */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 3px 3px lightgray;
+}
+
+.modal .modalContent {
+    display: flexbox;
+    width: 50%;
+    height: max-content;
+    margin: 10% auto;
+    padding: 0;
+    border: 1px solid #888;
+    background-color: white;
+    text-align: center;
+}
+
+.modal .modalContent #close {
+    width: 5%;
+    float:right;
+    color: black;
+    font-size: 25px;
+}
+
+.modal .modalContent #close:hover, 
+.modal .modalContent #close:focus {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal .modalContent .modalHeader {
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 1rem;
+    margin: 0 auto;
+    padding-left: 3rem;
+}
+
+.modal .modalContent .modalDescription {
+    font-size: 15px;
+    font-style: italic;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#refundModal {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+#refundModal .refund-form {
+    text-align: left;
+    margin: 3rem auto;
+}
+
+#refundModal .refund-form .form-table {
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+#refundModal .refund-form .form-table td {
+    padding: 10px;
+}
+
+#refundModal .refund-form .form-table td:nth-child(1) {
+    width: 80%;
+}
+
+#refundModal .refund-form .form-table .title {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#refundModal .refund-form .form-table .form-input select,
+#refundModal .refund-form .form-table .form-input input {
+    padding: 5px;
+    width: 100%;
+    cursor: text;
+    user-select: none;
+}
+
+#refundModal .submit-box {
+    width: 15%;
+    margin: 0 auto;
+}
+
+#refundModal .submit-box .submit-btn {
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    background-color: #263b5e;
+    color: white;
+}
+
+#refundModal .submit-box .submit-btn:hover {
+    background-color: #FEC34D;
+    box-shadow: 2px 2px 1px 1px lightgray;
+}
