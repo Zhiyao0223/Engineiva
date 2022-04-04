@@ -15,6 +15,12 @@
         include('conn.php');
         include('header_cust.php');
         
+        if (isset($_SESSION['custID'])) {
+            echo   "<script>
+                        alert('You have already logged in!');
+                        window.location.href='homepage.php';
+                    </script>";
+        }
 
         if($_SERVER['REQUEST_METHOD']=="POST"){
             $email = mysqli_real_escape_string($con, $_POST['email']);
