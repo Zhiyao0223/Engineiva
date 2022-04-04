@@ -12,6 +12,7 @@ include('conn.php');
   $car = "SELECT * FROM car WHERE carID='$carID'";
   $record = mysqli_query($con,$car);
   $row = mysqli_fetch_array($record);
+  $total = 0;
 
 ?>
 
@@ -41,7 +42,8 @@ include('conn.php');
       <p>Price<span class="price">RM<?php echo $row['price'] ?></span></p>
       <p>Secure 1% <span class="price">RM<?php $secure = ($row['price']*0.01); echo $secure;?></span></p>
       <form action="checkout.php" method="post" action='#'>
-      <p>Promo Code <span class="price"><input name="promocode" id='promoInput' style="width:70px">&nbsp<button type="submit" id='submitPromoCode' name="submitPromo">Submit</button></span></p>
+        <p>Promo Code <span class="price"><input name="promocode" id='promoInput' style="width:70px">&nbsp<button type="submit" id='submitPromoCode' name="submitPromo">Submit</button></span></p>
+        <input type='text' name='carID' value='<?php echo $carID; ?>' hidden>
       </form>
       <p>Discount <span class="price" id='discount'></span></p>
       <hr>
@@ -171,14 +173,14 @@ include('conn.php');
         
 
 
-    if (!mysqli_query($con,$sql)){
-    die('Error: ' . mysqli_error($con));
-    }
-    else {
+    if ($mysql = mysqli_query($con,$sql)){
       mysqli_query($con,$sql1);
       echo "<script>alert('Payment Successful!');
               window.location.href='homepage.php';
               </script>";
+    }
+    else {
+      die('Error: ' . mysqli_error($con));
     }
 }
 

@@ -30,219 +30,102 @@ include("session.php");
 <html>
 <head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-* {box-sizing: border-box;}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-.container p{
-        line-height: 200px; /* Create scrollbar to test positioning */
-    }
-
-body {
-font-family: 'Open Sans', sans-serif;
-padding-top: 50px; /*50px for the height of the navbar + 37px for the offset*/
-padding-bottom: 50px; /*50px for the height of the bottom navbar*/
-}
-
-.section {
-margin-bottom: 15px;
-width:100%;
-float:left;
-}
-#left{
-    float:left;
-    width: 50%;
-	padding-right:10px;
-    }
-#right{
-    float:left;
-    width: 50%;
-	padding-left:10px;
-}
-
-.label {
-float: left;
-margin-right: 10px;
-}
-
-.field {
-float: left;
-width:100%;
-}
-
-* {
-box-sizing: border-box;
-}
-
-.container {
-padding: 16px;
-background-color: white;
-width:800px;
-margin:0 auto;
-overflow:auto;
-}
-
-
-#partitioned, input[type=password], input[type=email], input[type=tel], textarea, select {
-width: 100%;
-padding: 14px;
-margin: 5px 0 22px 0;
-display: inline-block;
-font-size:15pt;
-}
-
-input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus{
-background-color: #ddd;
-outline: none;
-}
-
-input[type='radio'] { 
-transform: scale(2); 
-}
-
-/* Overwrite default styles of hr */
-hr {
-border: 1px solid #f1f1f1;
-margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.btn {
-background-color: #555555;
-color: white;
-padding: 16px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 49%;
-opacity: 0.9;
-display: inline;
-}
-
-.btn:hover {
-opacity: 1;
-}
-
-.button {
-    background-color: #e7e7e7;
-    color: black;
-    border: 2px solid #e7e7e7;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius:7px;
-}
-
-.button:hover {
-    background-color: white;
-}
-
-
-</style>
+<link rel='stylesheet' href='signUp.css'>
 </head>
 <body>
 
 <form action="SignUp.php" method="post" ENCTYPE="multipart/form-data">
   
-<div class="container">
-<h1>Sign Up</h1>
-<br>
+<div class='background-container'>
+	<div class="container">
+		<h1>Sign Up</h1><br>
 		<div id="left">
 			<div class="label">
 				First Name
 			</div>
 			<div class="field">
-				<input id="partitioned" type="text" name="FirstName" required>
+				<input id="partitioned" type="text" name="FirstName" placeholder='Muhammad' required>
 			</div>
 		</div>
-		
+			
 		<div id="right">
 			<div class="label">
 				Last Name
 			</div>
 			<div class="field">
-				<input id="partitioned" type="text" name="LastName" required>
+				<input id="partitioned" type="text" name="LastName" placeholder='Ali' required>
 			</div>
 		</div>
-	<div class="section">
-		<div class="label">
-			Email Address
+		<div class="section">
+			<div class="label">
+				Email Address
+			</div>
+			<div class="field">
+				<input id="partitioned" type="email" name="email" placeholder='sample@gmail.com' required>
+			</div>
 		</div>
-		<div class="field">
-			<input id="partitioned" type="email" name="email" required>
+		<div class="section">
+			<div class="label">
+				Password
+			</div>
+			<div class="field">
+				<input id="partitioned" type="password" name="password" required>
+			</div>
 		</div>
-	</div>
-    <div class="section">
-		<div class="label">
-			Password
+		<div class="section">
+			<div class="label">
+				Gender
+			</div>
+			<div class="field" style="padding-top:10px;">
+				<input type="radio" name="gender" value="Male" required="required"> &nbsp;&nbsp;Male &nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="gender" value="Female" required="required"> &nbsp;&nbsp;Female 
+			</div>
 		</div>
-		<div class="field">
-			<input id="partitioned" type="password" name="password" required>
+		&nbsp;
+		<div class="section">
+			<div class="label">
+				Date of Birth
+			</div>
+			<div class="field">
+				<input id="partitioned" type="date" name="DOB" required>
+			</div>
 		</div>
-	</div>
-	<div class="section">
-		<div class="label">
-			Gender
+		<div class="section">
+			<div class="label">
+				Phone Number
+			</div>
+			<div class="field">
+				<input id="partitioned" type="text" name="phoneNum" pattern="[0-9]{5}" maxlength='5' required>
+			</div>
 		</div>
-		<div class="field" style="padding-top:10px;">
-			<input type="radio" name="gender" value="Male" required="required"> &nbsp;&nbsp;Male &nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="radio" name="gender" value="Female" required="required"> &nbsp;&nbsp;Female 
+		<div class="section">
+			<div class="label">
+				Identity Card Number
+			</div>
+			<div class="field">
+				<input id="partitioned" type="text" name="identityCard" pattern="[0-9]{12}" maxlength='12' required>
+			</div>
 		</div>
-	</div>
-	&nbsp;
-	<div class="section">
-		<div class="label">
-			Date of Birth
+		<div class="section">
+			<div class="label">
+				Image
+			</div>
+			<div class="field">
+				<input id="partitioned" type="file" name="img" value="" />
+			</div>
 		</div>
-		<div class="field">
-			<input id="partitioned" type="date" name="DOB" required>
-		</div>
-	</div>
-	<div class="section">
-		<div class="label">
-			Phone Number
-		</div>
-		<div class="field">
-			<input id="partitioned" type="number" name="phoneNum" required>
-		</div>
-	</div>
-	<div class="section">
-		<div class="label">
-			Identity Card Number
-		</div>
-		<div class="field">
-			<input id="partitioned" type="text" name="identityCard" required>
-		</div>
-	</div>
-	<div class="section">
-		<div class="label">
-			Image
-		</div>
-		<div class="field">
-			<input id="partitioned" type="file" name="img" value="" />
-		</div>
-	</div>
-	<div class="section">
-		<div class="label">
-			&nbsp;
-		</div>
-		<div class="field">
-			<button type= "submit" class="btn" name="submitBtn">Submit</button>
-			<button type= "reset" class="btn">Reset</button>
+		<div class="section">
+			<div class="label">
+				&nbsp;
+			</div>
+			<div class="field">
+				<button type= "submit" class="btn" name="submitBtn">Submit</button>
+				<button type= "reset" class="btn">Reset</button>
+			</div>
 		</div>
 	</div>
 </div>
-</div>
+</body>
 <?php
 include("footer.php");
 ?>

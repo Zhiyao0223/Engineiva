@@ -9,7 +9,7 @@
     <div class="topnav">
       <a href ="homepage.php" class="logoStyle">Engineiva</a>
       <div class="dropdown">
-        <a href="CarCategory.php"><button class="dropbtn">Buy</button></a>
+        <a href="CarCategory.php" style='cursor:pointer;'><button class="dropbtn">Buy</button></a>
         <div class="dropdown-content">
           <div class="column" id="car_column1">
             <a href="CarCategory.php?brand=BMW">BMW</a>

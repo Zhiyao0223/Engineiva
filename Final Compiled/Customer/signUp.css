@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.background-container {
+    margin-top: 3rem;
+    width: 100%;
+    background-image: url("signUpBackground.jpg");
+    background-size:cover;
+    height: 100%;
+    background-repeat: no-repeat;
+    padding: 3rem;
+}
+
+.container {
+    padding: 2rem;
+    width: 60%;
+    margin: 2rem auto;
+    background-color: white;
+    width:800px;
+    margin:0 auto;
+    overflow:auto;
+    box-shadow: 1px 1px 1px 1px lightgray;
+}
+.container p{
+}
+
+.section {
+margin-bottom: 15px;
+width:100%;
+float:left;
+}
+#left{
+    float:left;
+    width: 50%;
+    padding-right:10px;
+    }
+#right{
+    float:left;
+    width: 50%;
+    padding-left:10px;
+}
+
+.label {
+float: left;
+margin-right: 10px;
+}
+
+.field {
+float: left;
+width:100%;
+}
+
+* {
+box-sizing: border-box;
+}
+
+
+#partitioned, input[type=password], input[type=email], input[type=tel], textarea, select {
+width: 100%;
+padding: 14px;
+margin: 5px 0 22px 0;
+display: inline-block;
+font-size:15pt;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=tel]:focus, textarea:focus{
+background-color: #ddd;
+outline: none;
+}
+
+input[type='radio'] { 
+transform: scale(2); 
+}
+
+/* Overwrite default styles of hr */
+hr {
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.btn {
+background-color: #555555;
+color: white;
+padding: 16px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 49%;
+opacity: 0.9;
+display: inline;
+}
+
+.btn:hover {
+opacity: 1;
+}
+
+.button {
+    background-color: #e7e7e7;
+    color: black;
+    border: 2px solid #e7e7e7;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius:7px;
+}
+
+.button:hover {
+    background-color: white;
+}
