@@ -67,8 +67,14 @@ td {
 
 .editbtn {
   margin-top: 2.5px;
+  height: fit-content;
+  width: auto;
 }
 
 .view-images {
   text-decoration: underline;
+}
+
+.deletebtn {
+  cursor: pointer;
 }

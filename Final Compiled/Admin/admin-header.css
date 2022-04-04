@@ -36,6 +36,7 @@ a {
   color: black;
   font-size: 20px;
   font-family: "Chivo", sans-serif;
+  text-decoration: none;
 }
 
 .logout {

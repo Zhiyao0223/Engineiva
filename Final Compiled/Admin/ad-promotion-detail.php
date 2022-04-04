@@ -4,9 +4,11 @@
     <link rel="stylesheet" href="ad-modify-remove.css">
 </head>
 <body>
-    <?php include "ad-session.php"?>
     <?php 
+        include "ad-session.php";
         include 'admin-header.php';
+        $promo = "";
+        $offer = "";
     ?>
 
     <div class="submenu">
@@ -19,13 +21,6 @@
             <li><a href="support-ticket.php">Support Ticket</a></li>
         </ul>
     </div>
-<?php
-include('conn.php');
-$promocode = mysqli_query($con,"SELECT * FROM promocode");
-
-
-?>
-?>
         <!-- Start of main content -->
     <div class="content-container">
         <h2>Promotion Details</h2>
@@ -39,16 +34,26 @@ $promocode = mysqli_query($con,"SELECT * FROM promocode");
             </tr>
             
             <?php 
+                include('conn.php');
+                $resultPromo = mysqli_query($con,"SELECT * FROM promocode");
                 // Fetch promotion detail and echo one by one
-                while($row = mysqli_fetch_array($promocode)){
-                    echo "<tr>";
-                    echo "<td>".$row['promo']."</td>";
-                    echo "<td>".$row['offer']."</td>";
-                    echo '<td>
-                        <button class="editbtn"><a href="ad-promo-edit.php?promocode='.$row['promo'].'"><img src="imgAdmin/edit.png"></a></button>
-                        <button class="deletebtn" name="delete-img" onclick="deletePromo('.$row['promo'].')"><img src="imgAdmin/bin.png"></a></button>
-                        </td>';
-                    echo "</tr>";
+                while($row = mysqli_fetch_array($resultPromo)){
+ 
+                    $data =  "<tr>
+                                <td>" .$row['promocode'] ."</td>
+                                <td>" .$row['offer'] ."</td>
+                                 <td>
+                                    <button class='editbtn'>
+                                        <a href='ad-promo-edit.php?promocode=" .$row['promocode']."'>
+                                            <img src='imgAdmin/edit.png'>
+                                        </a>
+                                    </button>
+                                    <button class='deletebtn' name='delete-img' onclick=\"deletePromo('" .$row['promocode'] ."')\">
+                                        <img src='imgAdmin/bin.png'>
+                                    </button>
+                                </td>;
+                            </tr>";
+                    echo $data;
                 }
             ?>
         </table>

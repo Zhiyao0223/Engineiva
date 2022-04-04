@@ -101,21 +101,29 @@
   
     <?php 
     include('conn.php');
-    $id = intval($_GET['promocode']);
-    $result = mysqli_query($con, "SELECT * FROM promocode WHERE promo = $id");
-    while ($row = mysqli_fetch_array($result))
-    {
-    ?>
+    if (isset($_GET['promocode'])) {
+      $id = $_GET['promocode'];
+    }
+    else {
+      echo  "<script>
+                alert('Error on retrieving promocode.')
+                window.location.href='ad-promotion-detail.php';
+            </script>";
+    }
+    
+    $result = mysqli_query($con, "SELECT * FROM promocode WHERE promocode = '$id'");
+    $row = mysqli_fetch_array($result);
+  ?>
 
     <form action="update_user.php" method="POST" ENCTYPE="multipart/form-data">
-    <input type="hidden" name="id" value="<?php echo $row['promo']; ?>">
+    <input type="hidden" name="id" value="<?php echo $row['promocode']; ?>">
     <h2>Customer Profile</h2>
     <h3>Edit Profile</h3>
       <p>* required fields</p>
       <div class="inputs">
         <label for="Promocode">Promocode <span class="required">*</span></label>
         <span>:</span>
-        <input type="text" name="promo" placeholder="Enter Promocode" required autocomplete="on" value="<?php echo $row['promo']; ?>"/>
+        <input type="text" name="promo" placeholder="Enter Promocode" required autocomplete="on" value="<?php echo $row['promocode']; ?>"/>
       </div>
       <div class="inputs">
         <label for="Offer">Offer <span class="required">*</span></label>
@@ -133,7 +141,6 @@
 
 
     <?php
-    }
     mysqli_close($con);
     ?>
   </body>
