@@ -115,6 +115,7 @@
     margin-top: 1rem;
     text-shadow: 1px 1px lightgray;
     justify-content: flex-end;
+    padding-right: 1%;
 }
 
 .profit-box h2 {

@@ -87,7 +87,7 @@
         </div>
         <div class="footer_bottom">
             <div class="footer-bottom-container">
-                <div class="row align-items-center">
+                <div class="align-items-center">
                     <div class="footer-bottom-column">
                         <p class="copyright">&#169; Engineiva Sdn Bhd 2022 All rights reserved.</p>
                     </div>
