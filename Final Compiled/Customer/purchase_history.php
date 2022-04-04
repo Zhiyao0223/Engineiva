@@ -26,7 +26,7 @@ $result = mysqli_query($con, "SELECT * FROM cust_buy INNER JOIN car ON cust_buy.
 
 
 <div class = "section">
-    <button class = "back"> Back </button>
+    <button class = "back"><a href="accountpage.php"> Back </a></button>
     <h1 style = "margin-bottom: 50px;"> Purchase History </h1>
 
 
