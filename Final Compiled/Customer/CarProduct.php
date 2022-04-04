@@ -1,7 +1,7 @@
 <?php
     include("conn.php");
     session_start();
-
+;
     // Check for carID in URL
     if (isset($_GET['carID'])) {
         $carID = $_GET['carID'];

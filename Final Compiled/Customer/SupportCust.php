@@ -4,7 +4,7 @@
 
     // $userID = '1';
     if (isset($_SESSION['mysession'])) {
-        $userID = $_SESSION['id'];
+        $userID = $_SESSION['custID'];
 
         // Autofill email
         $sql_email = "SELECT email FROM customer WHERE custID = '$userID'";
@@ -28,9 +28,9 @@
 <head>
     <title>Support Ticket</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleSupportCust.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="script.js"></script>
+    <script src="scriptSupportCust.js"></script>
 </head>
 <body>
     <!-- Header  -->
@@ -110,6 +110,9 @@
         $title = $_POST['title'];
         $description = $_POST['description'];
 
+        // Get today date
+        $today = date("Y/m/d");
+
         // Detect if uploading files
         $is_uploading = $_FILES["image"]["error"];
         if ($is_uploading == 0) {
@@ -145,9 +148,9 @@
             $pictureStatus = -1;
         }
 
-        $sql_insert = "INSERT INTO support_ticket (custID, ticketStatus, category, title, explaination) 
+        $sql_insert = "INSERT INTO support_ticket (custID, ticketStatus, date, category, title, explaination) 
                         VALUES(
-                        '$userID', 'T', '$category', '$title' , '$description')";
+                        '$userID', 'T', '$today', '$category', '$title' , '$description')";
         
 
         if(!mysqli_query($con, $sql_insert)) {
