@@ -20,7 +20,6 @@ if(isset($_SESSION['mysession'])) {
 
 
 <?php
-include ("header.php");
 include ("conn.php");
 $result = mysqli_query($con, "SELECT * FROM cust_buy INNER JOIN car ON cust_buy.carID = car.carID INNER JOIN car_image ON cust_buy.carID = car_image.carID WHERE cust_buy.custID = $id GROUP BY cust_buy.carID");
 ?>
