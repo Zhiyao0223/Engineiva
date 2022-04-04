@@ -141,9 +141,10 @@ include('session.php');
 while($row=mysqli_fetch_array($result)){
   ?>
 
-
+<br>
   <h1><center>My Profile</center></h1>
     <div class="field">
+      <br>
       <center>
       <button>
         <div class="signtext">
@@ -159,7 +160,7 @@ while($row=mysqli_fetch_array($result)){
       </button>
       </center>
     </div>
-
+<br>
 <div class="center">
 <input type="hidden" name="id" value=<?php echo $row['custID']?>>
 <?php echo '<img style="width=10px" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"class="image">'?>
@@ -167,6 +168,7 @@ while($row=mysqli_fetch_array($result)){
 
 <div class="container1">
 <div id="center">
+  <br>
   <h3>Basic Data</h3>
       <div class="inputs">
         <label>&#128073; First Name </label>
