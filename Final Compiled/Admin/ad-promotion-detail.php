@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="ad-modify-remove.css">
 </head>
+
 <body>
     <?php 
         include "ad-session.php";
@@ -24,9 +25,10 @@
         <!-- Start of main content -->
     <div class="content-container">
         <h2>Promotion Details</h2>
-        
+
         <!-- Start of car table -->
         <table class="car-table">
+            
             <tr class="table-title">
                 <th>Promocode</th>
                 <th>Offer</th>
@@ -38,7 +40,7 @@
                 $resultPromo = mysqli_query($con,"SELECT * FROM promocode");
                 // Fetch promotion detail and echo one by one
                 while($row = mysqli_fetch_array($resultPromo)){
- 
+
                     $data =  "<tr>
                                 <td>" .$row['promocode'] ."</td>
                                 <td>" .$row['offer'] ."</td>

@@ -3,103 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add New Profile</title>
-    
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-      * {
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Montserrat", sans-serif;
-      }
-      
-      h2,
-      h3 {
-        padding-left: 15px;
-      }
-
-      .inputs {
-        display: flex;
-        align-items: center;
-        margin: 15px;
-      }
-
-      .inputs label {
-        width: 130px;
-        padding-right: 20px;
-        overflow-wrap: break-word;
-        font-size: 1rem;
-      }
-      
-      .required{
-        color: red;
-      }
-
-      span {
-        padding-right: 10px;
-      }
-
-      p{
-        font-size: 0.75rem;
-        color: red;
-        padding-left: 15px;
-      }
-
-      input[type="text"],
-      input[type="tel"],
-      input[type="email"],
-      input[type="date"],
-      textarea,
-      select {
-        width: 250px;
-        font-family: "Montserrat", sans-serif;
-        border-radius: 5px;
-        border: 0.005px solid #000;
-        font-size: 15px;
-        outline: none;
-      }
-
-      input[type="text"],
-      input[type="tel"],
-      input[type="email"],
-      input[type="date"],
-      select {
-        height: 1.5rem;
-      }
-
-      input[type="text"]:focus:valid,
-      input[type="tel"]:focus:valid,
-      input[type="email"]:focus:valid,
-      textarea:focus:valid {
-        background-color: #ccffcc;
-        border: 1px solid #009900;
-      }
-
-      input[type="text"]:focus:invalid,
-      input[type="tel"]:focus:invalid,
-      input[type="email"]:focus:invalid,
-      textarea:focus:invalid {
-        background-color: #ffcccc;
-        border: 1px solid #ff3333;
-      }
-
-      .finale {
-        display: grid;
-        grid-template-columns: 130px 15px 200px;
-        column-gap: 5px;
-      }
-
-      .button {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 5px;
-      }
-    </style>
+    <title>Edit Promocode</title>
+    <link rel="stylesheet" href="ad-add-new-car.css">
+    <link rel="stylesheet" href="ad-car-edit.css">
   </head>
   <body>
   
-    <?php 
+ 
+<?php include "ad-session.php"?>
+    
+    <?php   
+        include 'admin-header.php';
+    ?>
+<?php
     include('conn.php');
     if (isset($_GET['promocode'])) {
       $id = $_GET['promocode'];
@@ -114,32 +30,47 @@
     $result = mysqli_query($con, "SELECT * FROM promocode WHERE promocode = '$id'");
     $row = mysqli_fetch_array($result);
   ?>
+<div class="submenu">   
+        <ul class="menu-content">
+            <li><a href="ad-add-new-car.php">Add New Car</a></li> 
+            <li><a href="ad-modify-remove.php"">Modify and Remove</a></li>
+            <li><a href="ad-view-customer.php">View Customer Record </a></li>
+            <li><a href="ad_view_appointment.php">View Appointment</a></li>
+            <li><a href="ad-promotion-detail.php" class="active">Promotion Detail </a></li>
+            <li><a href="support-ticket.php">Support Ticket</a></li>
+            <li><a href="ad_order_history.php">Order History</a></li>
+            <li><a href='AdminReport.php'>Report Generation</a></li>
+        </ul>
+    </div>
 
-    <form action="update_user.php" method="POST" ENCTYPE="multipart/form-data">
+    <div class="content-container">
+      <h2>Promocode Detail</h2>
+      <div class="edit-car-form">
+      <div class="form-header">
+        EDIT PROMOTION DETAILS
+      </div>
+    <div class="form-content">
+    <form action="ad-promo-update.php" method="POST">
     <input type="hidden" name="id" value="<?php echo $row['promocode']; ?>">
-    <h2>Customer Profile</h2>
-    <h3>Edit Profile</h3>
-      <p>* required fields</p>
-      <div class="inputs">
-        <label for="Promocode">Promocode <span class="required">*</span></label>
-        <span>:</span>
-        <input type="text" name="promo" placeholder="Enter Promocode" required autocomplete="on" value="<?php echo $row['promocode']; ?>"/>
+    
+    <div class="attribute">
+      <div class="field">
+        Promocode: <input type="text" name="promo" placeholder="Enter Promocode" required autocomplete="on" value="<?php echo $row['promocode']; ?>"/>
       </div>
-      <div class="inputs">
-        <label for="Offer">Offer <span class="required">*</span></label>
-        <span>:</span>
-        <input type="text" name="value" placeholder="Enter Offer Value" required autocomplete="on" value="<?php echo $row['offer']; ?>"/>
+    </div>
+    <div class="attribute">
+      <div class="field">
+        Offer: <input type="text" name="value" placeholder="Enter Offer Value" required autocomplete="on" value="<?php echo $row['offer']; ?>"/>
       </div>
-      
-      <div class="finale">
-        <div class="button">
-          <input type="submit" value="Update" />
-          <input type="reset" value="Reset" />
-        </div>
-      </div>
+    </div>
+    <div class="twobutton ">
+      <input type="submit" class="abutton submit" name="updateBtn" value="Update"> 
+      <input class="abutton cancel" type="button" value="Cancel" onclick="history.back()">
+    </div>
     </form>
-
-
+  </div>
+  </div>
+  </div>
     <?php
     mysqli_close($con);
     ?>
