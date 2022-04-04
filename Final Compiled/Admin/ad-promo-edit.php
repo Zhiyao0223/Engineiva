@@ -106,7 +106,7 @@
     }
     else {
       echo  "<script>
-                alert('Error on retrieving promocode.')
+                alert('Error on retrieving promocode.');
                 window.location.href='ad-promotion-detail.php';
             </script>";
     }
