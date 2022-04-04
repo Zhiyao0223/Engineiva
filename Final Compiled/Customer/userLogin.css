@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.container {
+    width: 70%;
+    margin: 5rem auto;
+    padding: 1rem;
+    border: 1px solid;
+    box-shadow: 2px 2px 1px 1px lightgray;
+    border-radius: 30px;
+    background: white;
+}
+
+h1{
+     text-align: center;
+     text-shadow: 1px 1px lightgray;
+}
+
+#registration{
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .registration,
+ .form-element,
+ .box,
+ .bottom-button{
+     display: flex;
+     flex-direction: column;
+ }
+
+ .registration,
+ .form-element{
+     gap: 15px;
+ }
+
+ .box{
+     gap: 8px;
+     background-color: white;
+ }
+
+ .form-element{
+     width: 50%;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .input-box input{
+     outline: black;
+     border: 4px solid black;
+     border-radius: 8px;
+     padding: 10px;
+     width: 100%;
+ }
+
+ .radio-btn{
+     display: flex;
+     gap: 20px;
+     align-items: center;
+ }
+
+ .radio-btn label{
+     display: flex;
+     gap: 8px;
+     align-items: center;
+     padding-top: 10px;
+ }
+
+ .radio-btn input{
+     width: 15px;
+     height: 15px;
+ }
+
+ .radio-btn input[type="checkbox"]{
+     padding: 15px;
+ }
+
+ .header-title{
+     text-align: center;
+ }
+
+ .bottom-button{
+     margin-top: 25px;
+     align-items: center;
+ }
+
+ .button button{
+     width: 450px;
+     text-align: center;
+     background-color: green;
+     color: #FFF;
+ }
+
+ .remark{
+     color: rgb(220, 53, 69);
+ }
+
+ .error{
+     border-color: #dc3545 !important;
+     padding-right: calc(1.5em + .75rem) !important;
+     background-image: url('exclamation-octagon.svg');
+     background-repeat: no-repeat;
+     background-position: right calc(.375em + .1875rem) center;
+     background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+ }
+
+ .error:focus{
+     box-shadow: 0px 0px 8px 0px #dc3545;
+ }
+
+ .warning-password{
+     font-size: 0.875rem;
+     color: rgb(220, 53, 69);
+     display: none;
+ }
+
+ .password-field{
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ }
+
+ /* .back{
+     background-color: #1a252f;
+     border-radius: 10px;
+     border: none;
+     color: white;
+     padding: 12px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     cursor: pointer;
+     width: 10%;
+     margin-bottom: 50px;
+     top: 50px;
+     position: absolute;
+     left: 80px;
+ } */
