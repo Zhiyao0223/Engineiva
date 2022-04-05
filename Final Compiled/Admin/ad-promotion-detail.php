@@ -64,7 +64,7 @@
     <!-- End of main content -->
     <script> 
         function deletePromo(promo){
-            if (confirm("Are you sure want to permenently delete the promotion?\n *All other record that consist this carID will be deleted")){
+            if (confirm("Are you sure want to permenently delete the promotion?\n *All other record that consist this promocode will be deleted")){
                 window.location.href="promo-remove.php?promocode="+promocode;
             }
         }

@@ -6,7 +6,7 @@
             include("conn.php");
             
             //how to get promocode id
-            $promo = $_GET['id'];
+            $promo = $_GET['promocode'];
 
             // Create SQL code that update the car record
             $sql = "UPDATE promocode SET 

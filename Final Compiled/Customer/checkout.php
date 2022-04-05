@@ -168,7 +168,7 @@ include('conn.php');
   if (isset($_POST['submitBtn'])) {
     //session
     $custID = $_SESSION['custID'];
-    //set current date and time
+    //set current date
     $date = date('Y-m-d'); 
     $carID = $_POST['carID'];
 

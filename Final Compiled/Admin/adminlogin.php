@@ -34,7 +34,7 @@
                             Username<span class="remark">*</span>
                         </div>
                         <div class="input-box">
-                            <input type="text" name="username" class="form-control" placeholder="Email Address" required>
+                            <input type="text" name="username" class="form-control" placeholder="username" required>
                         </div>
                     </div>
                     <div class="box">
