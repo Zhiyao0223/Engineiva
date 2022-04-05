@@ -6,14 +6,14 @@
             include("conn.php");
             
             //how to get promocode id
-            $promo = $_GET['promocode'];
+            $id = intval($_GET['id']);
 
             // Create SQL code that update the car record
             $sql = "UPDATE promocode SET 
-            promocode ='$_POST[promo]', 
-            offer ='$_POST[value]'
+            promocode ='$_POST[promocode]', 
+            offer ='$_POST[offer]'
 
-            WHERE promocode=$promo;";
+            WHERE id=$_POST[id];";
 
             // If the SQL code failed to execute     
             if (!mysqli_query($con,$sql)) {

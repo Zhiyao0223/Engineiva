@@ -17,8 +17,8 @@
     ?>
 <?php
     include('conn.php');
-    if (isset($_GET['promocode'])) {
-      $id = $_GET['promocode'];
+    if (isset($_GET['id'])) {
+      $id = $_GET['id'];
     }
     else {
       echo  "<script>
@@ -27,8 +27,9 @@
             </script>";
     }
     
-    $result = mysqli_query($con, "SELECT * FROM promocode WHERE promocode = '$id'");
-    $row = mysqli_fetch_array($result);
+    $result = mysqli_query($con, "SELECT * FROM promocode WHERE id = '$id'");
+    while ($row = mysqli_fetch_array($result))
+    {
   ?>
 <div class="submenu">   
         <ul class="menu-content">
@@ -51,16 +52,16 @@
       </div>
     <div class="form-content">
     <form action="ad-promo-update.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $row['promocode']; ?>">
+    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
     
     <div class="attribute">
       <div class="field">
-        Promocode: <input type="text" name="promo" placeholder="Enter Promocode" required autocomplete="on" value="<?php echo $row['promocode']; ?>"/>
+        Promocode: <input type="text" name="promocode" placeholder="Enter Promocode" required autocomplete="on" value="<?php echo $row['promocode']; ?>"/>
       </div>
     </div>
     <div class="attribute">
       <div class="field">
-        Offer: <input type="text" name="value" placeholder="Enter Offer Value" required autocomplete="on" value="<?php echo $row['offer']; ?>"/>
+        Offer: <input type="text" name="offer" placeholder="Enter Offer Value" required autocomplete="on" value="<?php echo $row['offer']; ?>"/>
       </div>
     </div>
     <div class="twobutton ">
@@ -72,6 +73,7 @@
   </div>
   </div>
     <?php
+    }
     mysqli_close($con);
     ?>
   </body>

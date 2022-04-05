@@ -22,14 +22,15 @@
             <li><a href="support-ticket.php">Support Ticket</a></li>
         </ul>
     </div>
-        <!-- Start of main content -->
+
     <div class="content-container">
         <h2>Promotion Details</h2>
 
-        <!-- Start of car table -->
+
         <table class="car-table">
             
             <tr class="table-title">
+                <th>ID</th>
                 <th>Promocode</th>
                 <th>Offer</th>
                 <th></th>
@@ -42,15 +43,16 @@
                 while($row = mysqli_fetch_array($resultPromo)){
 
                     $data =  "<tr>
+                                <td>" .$row['id'] ."</td>
                                 <td>" .$row['promocode'] ."</td>
                                 <td>" .$row['offer'] ."</td>
                                  <td>
                                     <button class='editbtn'>
-                                        <a href='ad-promo-edit.php?promocode=" .$row['promocode']."'>
+                                        <a href='ad-promo-edit.php?id=" .$row['id']."'>
                                             <img src='imgAdmin/edit.png'>
                                         </a>
                                     </button>
-                                    <button class='deletebtn' name='delete-img' onclick=\"deletePromo('" .$row['promocode'] ."')\">
+                                    <button class='deletebtn' name='delete-img' onclick=\"deletePromo('" .$row['id'] ."')\">
                                         <img src='imgAdmin/bin.png'>
                                     </button>
                                 </td>;
