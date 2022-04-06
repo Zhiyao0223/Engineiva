@@ -171,8 +171,6 @@ include('conn.php');
     //set current date
     $date = date('Y-m-d'); 
     $carID = $_POST['carID'];
-    $total = floatval($total);
-    echo $total;
     $sql="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
         VALUES ('$carID','$custID','$date','$total','Credit Card')";
     

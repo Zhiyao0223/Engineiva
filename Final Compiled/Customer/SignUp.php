@@ -69,7 +69,7 @@ include("session.php");
 				Password
 			</div>
 			<div class="field">
-				<input id="partitioned" type="password" name="password" required>
+				<input id="partitioned" type="password" name="password" placeholder='*******' required>
 			</div>
 		</div>
 		<div class="section">
@@ -95,7 +95,7 @@ include("session.php");
 				Phone Number
 			</div>
 			<div class="field">
-				<input id="partitioned" type="text" name="phoneNum" pattern="[0-9]{5}" maxlength='5' required>
+				<input id="partitioned" type="text" name="phoneNum" maxlength='11' placeholder='01X-XXXXXXX' required>
 			</div>
 		</div>
 		<div class="section">
@@ -103,7 +103,7 @@ include("session.php");
 				Identity Card Number
 			</div>
 			<div class="field">
-				<input id="partitioned" type="text" name="identityCard" pattern="[0-9]{12}" maxlength='12' required>
+				<input id="partitioned" type="text" name="identityCard" pattern="[0-9]{12}" maxlength='12' placeholder='XXXXXXXXXXXX'required>
 			</div>
 		</div>
 		<div class="section">
@@ -111,7 +111,7 @@ include("session.php");
 				Image
 			</div>
 			<div class="field">
-				<input id="partitioned" type="file" name="img" value="" />
+				<input id="partitioned" type="file" name="img" value="" / required>
 			</div>
 		</div>
 		<div class="section">

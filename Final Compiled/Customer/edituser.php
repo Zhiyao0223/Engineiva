@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add New Profile</title>
+    <title>Edit Profile</title>
     
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
@@ -132,7 +132,7 @@
     include('session.php');
     $id = intval($_GET['id']);
     $result = mysqli_query($con, "SELECT * FROM customer WHERE custID = $id");
-    while ($row = mysqli_fetch_array($result))
+    while ($row = mysqli_fetch_assoc($result))
     {
     ?>
 
@@ -205,7 +205,7 @@
       <div class="inputs">
         <label for="Profile Image">Profile Image <span class="required">*</span></label>
         <span>:</span>
-        <input type="file" name="img" value=""/ >
+        <input type="file" name="img" value="" >
       </div>
       <div class="finale">
         
