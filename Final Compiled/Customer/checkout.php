@@ -1,7 +1,6 @@
 <?php
 include('session.php');
 include('conn.php');
-
   if (!(isset($_SESSION['mysession']))) {
     echo "<script>alert('Please login to proceed')
                 window.location.href='userlogin.php';
@@ -19,8 +18,6 @@ include('conn.php');
   $car = "SELECT * FROM car WHERE carID='$carID'";
   $record = mysqli_query($con,$car);
   $row = mysqli_fetch_array($record);
-  $total = 0;
-
 ?>
 
 
@@ -49,7 +46,7 @@ include('conn.php');
           <p>Model<span class="price"><?php echo $row['model']?></span></p>
           <p>Price<span class="price">RM<?php echo $row['price'] ?></span></p>
           <p>Secure 1% <span class="price">RM<?php $secure = ($row['price']*0.01); echo $secure;?></span></p>
-          <form action="checkout.php" method="post" action='#'>
+          <form method="post">
             <p>Promo Code <span class="price"><input name="promocode" id='promoInput' style="width:70px">&nbsp<button type="submit" id='submitPromoCode' name="submitPromo">Submit</button></span></p>
             <input type='text' name='carID' value='<?php echo $carID; ?>' hidden>
           </form>
@@ -60,7 +57,7 @@ include('conn.php');
       </div>
     </div>
 
-    <form action="#" method='post'>
+    <form method='post'>
       <div class="row">
         <div class="col-75">
           <div class="container2">
@@ -102,6 +99,7 @@ include('conn.php');
                   <div class="col-50">
                     <label for="expmonth">Exp Month</label>
                     <input type="text" id="partitioned" name="expmonth" required>
+                    <input type='text' id='hiddenTotal' name='totalPrice' value='' hidden>
                   </div>
                   <div class="col-50">
                     <label for="expyear">Exp Year</label>
@@ -124,15 +122,13 @@ include('conn.php');
 </body>
 <?php
     include("conn.php");
+    $total = 0.00;
     if (isset($_POST['submitPromo'])){        //check whether promocode exists
       $SQL = "SELECT * FROM promocode";
       $record = mysqli_query($con,$SQL);
       $promo = $_POST['promocode'];
       while($rows = mysqli_fetch_array($record)){
           if ($promo == $rows['promocode']){
-              $true = "<script>alert('Valid Promocode!!')</script>";
-              echo $true;
-
               // Replace discount box with promocode discount
               $offer = $rows['offer'];
               $script = "<script>
@@ -152,10 +148,14 @@ include('conn.php');
               $total= $secure-$offer;
               
               $scripttotal="<script>
-                        document.getElementById('total').innerHTML = '$total';
+                        document.getElementById('total').innerHTML = 'RM' + '$total';
+                        document.getElementById('hiddenTotal').value = '$total';
               </script>";
               echo $scripttotal;
-              
+
+              $true = "<script>alert('Valid Promocode!!')</script>";
+              echo $true;
+              break;
           }
           else {
               $false = "<script>alert('Invalid Promocode!!')</script>";
@@ -164,6 +164,8 @@ include('conn.php');
       }
 
   }
+  if(isset($_POST['totalPrice'])) {
+  }
 
   if (isset($_POST['submitBtn'])) {
     //session
@@ -171,9 +173,11 @@ include('conn.php');
     //set current date
     $date = date('Y-m-d'); 
     $carID = $_POST['carID'];
-
+    // $total = $total;
+    $total = $_POST['totalPrice'];
+    // echo "<script>alert('$total')</script>";
     $sql="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
-        VALUES ('$carID','$custID','$date','$secure','Credit Card')";
+        VALUES ('$carID','$custID','$date','$total','Credit Card')";
     
     $sql1 = "UPDATE car SET 
             sellStatus = 'Sold' 
