@@ -278,6 +278,9 @@
         <!-- Content -->
         <div class="title-container">
             <?php echo $carName; ?>
+            <div class="fav-button " onclick="window.location.href='addFav.php?carID=<?php echo $carID ?>'">	
+                <i class="fas fa-heart"></i>
+            </div>
         </div>
         <div class="picture-container">
             <table class="picture-table">
@@ -433,6 +436,7 @@
 
                 <div class="button-section">
                     <button class="checkout-button" onclick="verification('open', 'checkout')">Get Started !</button>
+                   
                 </div>
             </div>
         </div>

@@ -23,6 +23,17 @@
     margin-bottom: 1rem;
 }
 
+.main-container .title-container .fav-button {
+    float: right;
+    cursor: pointer;
+    padding-right: 1rem;
+}
+
+.main-container .title-container .fav-button:hover {
+    color: red;
+
+}
+
 /* Car table  */
 .main-container .picture-container .picture-table {
     border-collapse: collapse;
@@ -231,6 +242,7 @@
     border-radius: 30px;
     width: 100%;
     font-size: 20px;
+    margin-top: 1rem;
 }
 
 .main-container .bottom-container .checkout-box .checkout-button:hover {
