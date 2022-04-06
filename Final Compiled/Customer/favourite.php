@@ -9,6 +9,18 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="script-favourite.js"></script>
+<?php
+    $scriptDelete = "<script>
+    function deleteFunction(string, id){
+        var msg = 'Delete ' + string + ' from favourite?'; 
+        if (confirm(msg)) {
+            var newUrl = 'delete-fav.php?carID=' + id;
+            window.location.href= newUrl;
+        }
+    }</script>";
+    
+    echo $scriptDelete;
+?>
 </head>
 <body>
     <!-- Main Container  -->
@@ -27,7 +39,7 @@
         <table class="favourite-table" id='favTable'>
             <?php
                 if (isset($_SESSION['mysession'])) {
-                    $userID = $_SESSION['id'];
+                    $userID = $_SESSION['custID'];
                 }
                 else {
                     echo    "<script>
@@ -72,13 +84,14 @@
                         $image = $arrayImage['image'];
                         $urlAddress = "CarProduct.php?carID=$carID";
 
-                        $favRow = "<tr onclick=\"window.open('$urlAddress')\">
-                                        <td>
+
+                        $favRow = "<tr >
+                                        <td onclick=\"window.open('$urlAddress');\">
                                             <img src=\"data:image/png;base64,".base64_encode($image) ."\" height='200px' width='300px'>
                                         </td>
                                         <td>
                                             <div class='table-row'>
-                                                <div class='col1'>
+                                                <div class='col1' onclick=\"window.open('$urlAddress');\">
                                                     <div class='car-name'>
                                                         $carName
                                                     </div>
@@ -86,8 +99,8 @@
                                                             $carDescription
                                                     </div>
                                                 </div>
-                                                <div class='col2'>
-                                                    <div class='delete-btn'>
+                                                <div class='col2' onclick=\"deleteFunction('$carName', '$carID')\">
+                                                    <div class='delete-btn' id='test'>
                                                         <i class='fas fa-trash-alt'></i>
                                                     </div>
                                                 </div>
@@ -108,11 +121,10 @@
                 }
             ?>
         </table>
-        
     </div>
-
+    <script>
+    </script>
     <!-- Footer -->
     <?php
         include("footer.php");
     ?>
-</body>
