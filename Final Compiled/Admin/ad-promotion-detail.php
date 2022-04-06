@@ -3,10 +3,26 @@
 <head>
     <link rel="stylesheet" href="ad-modify-remove.css">
 </head>
+<style>
+button {
+  background-color: #83d5de;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
 <script> 
         function deletePromo(id){
             if (confirm("Are you sure want to permenently delete the promocode")){
-                window.location.href="ad-modify-remove.php?id="+id;
+                window.location.href="promo-remove.php?id="+id;
             }
         }
 </script> 
@@ -18,7 +34,7 @@
         $offer = "";
     ?>
 
-    <div class="submenu">
+<div class="submenu">   
         <ul class="menu-content">
             <li><a href="ad-add-new-car.php">Add New Car</a></li> 
             <li><a href="ad-modify-remove.php">Modify and Remove</a></li>
@@ -33,6 +49,7 @@
 
     <div class="content-container">
         <h2>Promotion Details</h2>
+        <button><a href="ad-add-promo">Add New Promotion</a></button>
         <table class="car-table">
             
             <tr class="table-title">
