@@ -20,13 +20,13 @@
             <li><a href="ad_view_appointment.php">View Appointment</a></li>
             <li><a href="ad-promotion-detail.php" class="active">Promotion Detail </a></li>
             <li><a href="support-ticket.php">Support Ticket</a></li>
+            <li><a href="ad_order_history.php">Order History</a></li>
+            <li><a href='AdminReport.php'>Report Generation</a></li>
         </ul>
     </div>
 
     <div class="content-container">
         <h2>Promotion Details</h2>
-
-
         <table class="car-table">
             
             <tr class="table-title">
@@ -52,7 +52,8 @@
                                             <img src='imgAdmin/edit.png'>
                                         </a>
                                     </button>
-                                    <button class='deletebtn' name='delete-img' onclick=\"deletePromo('" .$row['id'] ."')\">
+                                    <button class='editbtn'>
+                                        <a href='promo-remove.php?id=" .$row['id']."'>
                                         <img src='imgAdmin/bin.png'>
                                     </button>
                                 </td>;
@@ -64,13 +65,6 @@
          <!-- End of car table -->
     </div>
     <!-- End of main content -->
-    <script> 
-        function deletePromo(promo){
-            if (confirm("Are you sure want to permenently delete the promotion?\n *All other record that consist this promocode will be deleted")){
-                window.location.href="promo-remove.php?promocode="+promocode;
-            }
-        }
-    </script> 
     
 </body>
 </html>
