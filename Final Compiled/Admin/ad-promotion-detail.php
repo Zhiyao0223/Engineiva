@@ -34,7 +34,7 @@ button {
         $offer = "";
     ?>
 
-    <div class="submenu">
+<div class="submenu">   
         <ul class="menu-content">
             <li><a href="ad-add-new-car.php">Add New Car</a></li> 
             <li><a href="ad-modify-remove.php">Modify and Remove</a></li>

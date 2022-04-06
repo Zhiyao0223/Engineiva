@@ -16,12 +16,10 @@ include("session.php");
 	if (!mysqli_query($con,$insert)){
 		die('Error: ' . mysqli_error($con));
 	}
-	else {                    
-		$_SESSION['mysession'] = $email;
-		$_SESSION['custID'] = intval($row['custID']);
-		echo "<script>alert('Successfully signed up!!');
-		window.location.href= 'accountpage.php';
-		</script>";
+	else {
+		echo '<script>alert("Successfully signed up!!");
+		window.location.href= "userlogin.php";
+		</script>';
 	}
 
 	mysqli_close($con);
