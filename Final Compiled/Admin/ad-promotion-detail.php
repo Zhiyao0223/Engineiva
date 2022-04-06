@@ -22,7 +22,7 @@ button {
 <script> 
         function deletePromo(id){
             if (confirm("Are you sure want to permenently delete the promocode")){
-                window.location.href="ad-modify-remove.php?id="+id;
+                window.location.href="promo-remove.php?id="+id;
             }
         }
 </script> 
