@@ -17,7 +17,7 @@ include("session.php");
 	}
 	else {
 		echo '<script>alert("Successfully signed up!!");
-		window.location.href= "accountpage.php";
+		window.location.href= "userlogin.php";
 		</script>';
 	}
 

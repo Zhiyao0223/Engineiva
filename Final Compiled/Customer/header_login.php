@@ -37,7 +37,11 @@
         <div class="dropdown">
           <button class="dropbtn"><a href="#">My Account</a></button>
           <div class="dropdown-content">
-            <a href="accountpage.php">My Account</a>
+            <a href="accountpage.php">View profile</a>
+            <a href="edituser.php?id=<?php echo $_SESSION['custID']?>">Edit profile</a>
+            <a href="favourite.php">Favourite Car</a>
+            <a href="view_appointment.php">View appointment</a>
+            <a href="purchase_history.php">Purchase History</a>
             <a href="logout.php">Log Out</a>
           </div>
         </div> 

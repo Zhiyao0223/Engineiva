@@ -27,7 +27,7 @@
         <table class="favourite-table" id='favTable'>
             <?php
                 if (isset($_SESSION['mysession'])) {
-                    $userID = $_SESSION['id'];
+                    $userID = $_SESSION['custID'];
                 }
                 else {
                     echo    "<script>
