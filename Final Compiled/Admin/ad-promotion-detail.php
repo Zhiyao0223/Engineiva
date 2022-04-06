@@ -3,6 +3,22 @@
 <head>
     <link rel="stylesheet" href="ad-modify-remove.css">
 </head>
+<style>
+button {
+  background-color: #83d5de;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
 <script> 
         function deletePromo(id){
             if (confirm("Are you sure want to permenently delete the promocode")){
@@ -33,6 +49,7 @@
 
     <div class="content-container">
         <h2>Promotion Details</h2>
+        <button><a href="ad-add-promo">Add New Promotion</a></button>
         <table class="car-table">
             
             <tr class="table-title">
