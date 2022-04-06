@@ -170,7 +170,7 @@
                                     </div>";
                          }
                          else {
-                             echo "<img src='../SupportCust/img/$image'>";
+                             echo "<img src='../Customer/imgSupportCust/$image'>";
                          }
                     ?>
                 </div>

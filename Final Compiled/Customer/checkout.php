@@ -164,9 +164,7 @@ include('conn.php');
       }
 
   }
-  if(isset($_POST['totalPrice'])) {
-  }
-
+  
   if (isset($_POST['submitBtn'])) {
     //session
     $custID = $_SESSION['custID'];

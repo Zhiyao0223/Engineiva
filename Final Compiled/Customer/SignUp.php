@@ -3,8 +3,9 @@ include("session.php");
 ?>
 
 <?php
- if (isset($_POST['submitBtn'])) {
 	include("conn.php");
+ if (isset($_POST['submitBtn'])) {
+
 	$file = addslashes(file_get_contents($_FILES["img"]["tmp_name"]));
 
 	$insert="INSERT INTO customer (firstName, lastName, email, password, 
@@ -15,10 +16,12 @@ include("session.php");
 	if (!mysqli_query($con,$insert)){
 		die('Error: ' . mysqli_error($con));
 	}
-	else {
-		echo '<script>alert("Successfully signed up!!");
-		window.location.href= "accountpage.php";
-		</script>';
+	else {                    
+		$_SESSION['mysession'] = $email;
+		$_SESSION['custID'] = intval($row['custID']);
+		echo "<script>alert('Successfully signed up!!');
+		window.location.href= 'accountpage.php';
+		</script>";
 	}
 
 	mysqli_close($con);
