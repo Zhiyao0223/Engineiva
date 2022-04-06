@@ -155,7 +155,7 @@ include('conn.php');
                         document.getElementById('total').innerHTML = '$total';
               </script>";
               echo $scripttotal;
-              $javatotal='<script>document.getElementById("total").innerHTML="<?php $total ?> echo $javatotal;"</script>';//
+              
           }
           else {
               $false = "<script>alert('Invalid Promocode!!')</script>";
@@ -173,7 +173,7 @@ include('conn.php');
     $carID = $_POST['carID'];
 
     $sql="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
-        VALUES ('$carID','$custID','$date','$javatotal','Credit Card')";
+        VALUES ('$carID','$custID','$date','$secure','Credit Card')";
     
     $sql1 = "UPDATE car SET 
             sellStatus = 'Sold' 

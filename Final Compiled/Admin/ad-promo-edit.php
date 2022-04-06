@@ -48,7 +48,7 @@
       <h2>Promocode Detail</h2>
       <div class="edit-car-form">
       <div class="form-header">
-        EDIT PROMOTION DETAILS
+        EDIT PROMOCODE DETAILS
       </div>
     <div class="form-content">
     <form action="ad-promo-update.php" method="POST">

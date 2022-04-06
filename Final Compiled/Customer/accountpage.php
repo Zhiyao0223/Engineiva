@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <head>
 <style>
-body {
-font-family: 'Open Sans', sans-serif;
-padding-top: 50px; /*50px for the height of the navbar + 37px for the offset*/
-padding-bottom: 50px; /*50px for the height of the bottom navbar*/
-}
+
 .section {
 margin-bottom: 15px;
 width:100%;
@@ -35,7 +31,7 @@ box-sizing: border-box;
   position: relative;
 }
 
-button {
+button1 {
   background-color: green;
   border: none;
   color: white;
@@ -111,21 +107,23 @@ span {
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 50px; /*50px for the height of the navbar + 37px for the offset*/
+  padding-bottom: 50px; /*50px for the height of the bottom navbar*/
+    margin: 0;
+    height: 100vh;
+    font-weight: 100;
+    background: radial-gradient(#c3dee1,#5eb0ea,#67def6);
+    -webkit-overflow-Y: hidden;
+    -moz-overflow-Y: hidden;
+    -o-overflow-Y: hidden;
+    overflow-y: hidden;
+    -webkit-animation: fadeIn 1 1s ease-out;
+    -moz-animation: fadeIn 1 1s ease-out;
+    -o-animation: fadeIn 1 1s ease-out;
+    animation: fadeIn 1 1s ease-out;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
 }
 </style>
 </head>
@@ -146,18 +144,18 @@ while($row=mysqli_fetch_array($result)){
     <div class="field">
       <br>
       <center>
-      <button>
+      <button1>
         <div class="signtext">
           <?php echo "<a href=\"edituser.php?id=";
           echo $row['custID'];
           echo "\">Edit</a>";?></a>
         </div>
-      </button>
-      <button>
+      </button1>
+      <button1>
         <div class="signtext">
         <a href="purchase_history.php">Purchase History</a>
         </div>
-      </button>
+      </button1>
       </center>
     </div>
 <br>
