@@ -3,7 +3,13 @@
 <head>
     <link rel="stylesheet" href="ad-modify-remove.css">
 </head>
-
+<script> 
+        function deletePromo(id){
+            if (confirm("Are you sure want to permenently delete the promocode")){
+                window.location.href="ad-modify-remove.php?id="+id;
+            }
+        }
+</script> 
 <body>
     <?php 
         include "ad-session.php";
@@ -52,11 +58,8 @@
                                             <img src='imgAdmin/edit.png'>
                                         </a>
                                     </button>
-                                    <button class='editbtn'>
-                                        <a href='promo-remove.php?id=" .$row['id']."'>
-                                        <img src='imgAdmin/bin.png'>
-                                    </button>
-                                </td>;
+                                    <button class='deletebtn' name='delete-promo' onclick=\"deletePromo('".$row['id']."')\"><img src='imgAdmin/bin.png'></a></button>
+                                </td>
                             </tr>";
                     echo $data;
                 }

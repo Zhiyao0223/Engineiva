@@ -11,7 +11,7 @@
     $id=$_GET['id'];
 
 
-    $result=mysqli_query($con,"DELETE FROM promocode WHERE id=$id");
+    $result=mysqli_query($con,"DELETE FROM promocode WHERE id='$id'");
 
     mysqli_close($con);//close database connection
 
@@ -21,7 +21,7 @@
 
 
   // If the SQL code failed to execute     
-  if (!mysqli_query($con,$promo)) {
+  if (!mysqli_query($con,$result)) {
     // Close engineiva database connection  
     mysqli_close($con);
     // Echo delete failed and direct back to promotion detail page

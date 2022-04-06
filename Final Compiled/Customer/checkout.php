@@ -19,7 +19,7 @@ include('conn.php');
   $car = "SELECT * FROM car WHERE carID='$carID'";
   $record = mysqli_query($con,$car);
   $row = mysqli_fetch_array($record);
-  $total = 0;
+  $total = "";
 
 ?>
 
@@ -171,9 +171,10 @@ include('conn.php');
     //set current date
     $date = date('Y-m-d'); 
     $carID = $_POST['carID'];
-
+    $total = floatval($total);
+    echo $total;
     $sql="INSERT INTO cust_buy (carID, custID, date, secureFee, paymentMethod) 
-        VALUES ('$carID','$custID','$date','$secure','Credit Card')";
+        VALUES ('$carID','$custID','$date','$total','Credit Card')";
     
     $sql1 = "UPDATE car SET 
             sellStatus = 'Sold' 
@@ -183,9 +184,9 @@ include('conn.php');
 
     if ($mysql = mysqli_query($con,$sql)){
       mysqli_query($con,$sql1);
-      echo "<script>alert('Payment Successful!');
-              window.location.href='homepage.php';
-              </script>";
+      // echo "<script>alert('Payment Successful!');
+      //         window.location.href='homepage.php';
+      //         </script>";
     }
     else {
       die('Error: ' . mysqli_error($con));
