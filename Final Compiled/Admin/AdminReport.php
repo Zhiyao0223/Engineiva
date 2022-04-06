@@ -22,22 +22,14 @@
 
     <div class="submenu">   
         <ul class="menu-content">
-<<<<<<< HEAD
             <li><a href="ad-add-new-car.php" >Add New Car</a></li> 
-=======
-            <li><a href="ad-add-new-car.php">Add New Car</a></li> 
->>>>>>> ae31a924d6f19003b2d4556f5f0cd5f4853a5f7e
             <li><a href="ad-modify-remove.php">Modify and Remove</a></li>
             <li><a href="ad-view-customer.php">View Customer Record </a></li>
             <li><a href="ad_view_appointment.php">View Appointment</a></li>
             <li><a href="ad-promotion-detail.php">Promotion Detail </a></li>
             <li><a href="support-ticket.php">Support Ticket</a></li>
             <li><a href="ad_order_history.php">Order History</a></li>
-<<<<<<< HEAD
             <li><a href='AdminReport.php' class="active">Report Generation</a></li>
-=======
-            <li><a href='AdminReport.php'  class="active">Report Generation</a></li>
->>>>>>> ae31a924d6f19003b2d4556f5f0cd5f4853a5f7e
         </ul>
     </div>
 
@@ -163,5 +155,5 @@
             doc.output('datauri');  
             window.open(doc.output('bloburl')) 
         });
-</script>
+    </script>
 </body>
