@@ -63,7 +63,7 @@
     
     <!-- Start of main content -->
     <div class="content-container">
-        <h2>View Customer Record</h2>
+        <h2>Edit Customer Record</h2>
         <!-- Start of edit car section -->
         <div class="edit-car-form">
             <div class="form-header">
