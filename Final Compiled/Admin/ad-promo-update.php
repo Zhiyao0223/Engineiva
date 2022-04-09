@@ -5,8 +5,6 @@
             // Connect engineiva database 
             include("conn.php");
             
-            //how to get promocode id
-            $id = intval($_GET['id']);
 
             // Create SQL code that update the car record
             $sql = "UPDATE promocode SET 
