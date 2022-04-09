@@ -190,7 +190,7 @@
       <div class="inputs">
         <label for="DOB">Date of Birth <span class="required">*</span></label>
         <span>:</span>
-        <input type="text" name="DOB" placeholder="Enter Your Date of Birth" required autocomplete="on" value="<?php echo $row['DOB']; ?>"/>
+        <input type="date" name="DOB" placeholder="Enter Your Date of Birth" required autocomplete="on" value="<?php echo $row['DOB']; ?>"/>
       </div>
       <div class="inputs">
         <label for="phone_num">Phone Number <span class="required">*</span></label>

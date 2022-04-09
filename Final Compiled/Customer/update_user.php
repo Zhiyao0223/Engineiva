@@ -1,7 +1,3 @@
-<?php 
-    include('session.php');
-?>
-
 <?php
     include('conn.php');
     
