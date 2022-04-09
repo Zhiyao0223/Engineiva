@@ -37,4 +37,4 @@
         mysqli_close($con);
         header('Location: accountpage.php');
     }
-?>
+?>  
