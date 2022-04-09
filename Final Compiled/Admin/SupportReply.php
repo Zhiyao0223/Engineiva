@@ -1,7 +1,13 @@
 <?php
+    include "ad-session.php";
+    include 'admin-header.php';
     include("conn.php");
-    // $adminID = $_SESSION['user_id'];
-    $adminID = '1';
+    if (!isset($_SESSION['user_id'])) {
+        echo "<script>alert('Please login to proceed');
+                    window.location.href='adminlogin.php';
+            </script>";
+    }
+    $adminID = $_SESSION['user_id'];
 
     if (isset($_GET['ticketID'])) {
         $ticketID = $_GET['ticketID'];
@@ -42,11 +48,6 @@
     <script src="scriptSupportReply.js"></script>
 </head>
 <body>
-    <?php
-        include "ad-session.php";
-        include 'admin-header.php';
-    ?>
-
     <!-- Modal Box Refund  -->
     <div id='refundModal' class='modal'>
             <div class='modalContent'>
