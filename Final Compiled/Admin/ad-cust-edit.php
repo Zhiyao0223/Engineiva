@@ -14,8 +14,8 @@
     <div class="submenu">   
         <ul class="menu-content">
             <li><a href="ad-add-new-car.php">Add New Car</a></li> 
-            <li><a href="ad-modify-remove.php" class="active">Modify and Remove</a></li>
-            <li><a href="ad-view-customer.php">View Customer Record </a></li>
+            <li><a href="ad-modify-remove.php">Modify and Remove</a></li>
+            <li><a href="ad-view-customer.php"  class="active">View Customer Record </a></li>
             <li><a href="ad_view_appointment.php">View Appointment</a></li>
             <li><a href="ad-promotion-detail.php">Promotion Detail </a></li>
             <li><a href="support-ticket.php">Support Ticket</a></li>
@@ -63,7 +63,7 @@
     
     <!-- Start of main content -->
     <div class="content-container">
-        <h2>View Customer Record</h2>
+        <h2>Edit Customer Record</h2>
         <!-- Start of edit car section -->
         <div class="edit-car-form">
             <div class="form-header">

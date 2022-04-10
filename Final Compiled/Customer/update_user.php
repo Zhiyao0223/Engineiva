@@ -1,7 +1,3 @@
-<?php 
-    include('session.php');
-?>
-
 <?php
     include('conn.php');
     if(!file_exists($_FILES['img']['tmp_name']) || !is_uploaded_file($_FILES['img']['tmp_name'])) {

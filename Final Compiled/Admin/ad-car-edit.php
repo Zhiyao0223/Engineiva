@@ -204,6 +204,7 @@
                                                 <option value="" selected disabled>Please Select</option>
                                                 <option value="Available"'; if ($car["sellStatus"] == "Available") echo' selected="selected" '; echo'>Available</option>
                                                 <option value="Not Available"'; if ($car["sellStatus"] == "Not Available") echo' selected="selected" '; echo'>Not Available</option>
+                                                <option value="Sold"'; if ($car["sellStatus"] == "Sold") echo' selected="selected" '; echo'>Sold</option>
                                             </select>';
                                     ?>
                                     </div>

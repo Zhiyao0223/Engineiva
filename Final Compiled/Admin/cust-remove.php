@@ -7,7 +7,6 @@
 
   // Create SQL code to other record that reference the cust
   $sellap = "DELETE FROM sell_appointment WHERE custID=$custID";
-  $feedback = "DELETE FROM feedback WHERE custID=$custID";
   $buyap = "DELETE FROM buy_appointment WHERE custID=$custID";
   $support = "DELETE FROM support_ticket WHERE custID=$custID";
   $refund = "DELETE FROM refund WHERE custID=$custID";
@@ -16,7 +15,6 @@
   $custbuy = "DELETE FROM cust_buy WHERE custID=$custID";
   
   mysqli_query($con,$sellap); 
-  mysqli_query($con,$feedback);
   mysqli_query($con,$buyap); 
   mysqli_query($con,$support); 
   mysqli_query($con,$refund);  
