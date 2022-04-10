@@ -153,7 +153,7 @@
                 <!-- Start of add car form (Row 4) -->
                 <div class="attribute ">
                     <div class="field">
-                        Mileage (KM): <input type="number" min=0 placeholder="Enter Car Milleage" name="mileage" required>
+                        Mileage (KM): <input type="number" min=0 placeholder="Enter Car Mileage" name="mileage" required>
                     </div>
                 </div>
                 <div class="attribute ">
