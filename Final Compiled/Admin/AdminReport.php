@@ -150,7 +150,6 @@
                 'width' : 522,
                 'elementHandlers': specialElementHandlers
             });
-            // doc.output('save', 'report.pdf');
             doc.output('datauristring');  
             doc.output('datauri');  
             window.open(doc.output('bloburl')) 

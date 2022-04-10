@@ -136,7 +136,8 @@ include('session.php');
 
     $result=mysqli_query($con,"SELECT * FROM customer WHERE custID = '$id'");
    
-while($row=mysqli_fetch_array($result)){
+while($row=mysqli_fetch_assoc($result)){
+  $image = $row['image'];
   ?>
 
 <br>
@@ -160,8 +161,9 @@ while($row=mysqli_fetch_array($result)){
     </div>
 <br>
 <div class="center">
-<input type="hidden" name="id" value=<?php echo $row['custID']?>>
-<?php echo '<img style="width=10px" src="data:image/jpeg;base64,'.base64_encode( $row['image'] ).'"class="image">'?>
+<input type="hidden" name="id" value=<?php echo $row['custID'] ?>>
+<img style='width:150px' src="data:image/jpg;base64, <?php echo $image ?> " class='image'>
+
 </div>
 
 <div class="container1">

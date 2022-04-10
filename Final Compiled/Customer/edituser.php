@@ -205,7 +205,7 @@
       <div class="inputs">
         <label for="Profile Image">Profile Image <span class="required">*</span></label>
         <span>:</span>
-        <input type="file" name="img" value="" >
+        <input type="file" name="img">
       </div>
       <div class="finale">
         
