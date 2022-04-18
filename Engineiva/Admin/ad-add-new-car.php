@@ -136,7 +136,7 @@
                 <!-- Start of add car form (Row 3) -->
                 <div class="attribute ">
                     <div class="field">
-                        Engine: <input type="number" name="engine" placeholder="Enter Car Engine" required>
+                        Engine: <input type="decimal" name="engine" placeholder="Enter Car Engine" required>
                     </div>
                 </div>
                 <div class="attribute ">

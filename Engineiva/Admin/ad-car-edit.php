@@ -256,8 +256,8 @@
                         <p style="text-decoration: underline;">Car Purchase Record</p>
                         <table class='purchase-result'>
                             <tr><td class='title'>Date:</td><td><?php echo $record['date']?></td></tr>
-                            <tr><td class='title'>Price:</td><td><?php echo $record['price']?></td></tr>
-                            <tr><td class='title'>Fees</td><td><?php echo $record['fees']?></td></tr>
+                            <tr><td class='title'>Price:</td><td>RM <?php echo $record['price']?></td></tr>
+                            <tr><td class='title'>Fees:</td><td>RM <?php echo $record['fees']?></td></tr>
                         </table>
                         
                         <!-- Display customer details result -->

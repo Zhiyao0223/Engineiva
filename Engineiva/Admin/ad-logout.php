@@ -3,7 +3,7 @@
 
     session_destroy(); //destroy the session
 
-    header("location:adminlogin.php"); //to redirect back to admin login page after logging out
+    header("location:../Customer/homepage.php"); //to redirect back to admin login page after logging out
 
 exit();
 

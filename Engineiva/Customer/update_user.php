@@ -16,7 +16,7 @@
     }
     else {
         $image = $_FILES['img']['tmp_name'];
-        $file = base64_encode(file_get_contents(addslashes($image)));
+        $file = file_get_contents(addslashes($image));
         $sql = "UPDATE customer SET
                 firstName = '" .$_POST['FirstName'] ."',
                 lastName = '" .$_POST['LastName'] ."',
@@ -31,7 +31,7 @@
     }
     
     // echo "<script>alert('" .$file ."')</script>";
-    // echo $sql;
+
     if(mysqli_query($con, $sql)){
 
         echo "<script>alert('Update Success');
