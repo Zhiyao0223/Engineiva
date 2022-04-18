@@ -55,7 +55,7 @@ button {
             <tr class="table-title">
                 <th>ID</th>
                 <th>Promocode</th>
-                <th>Offer</th>
+                <th>Offer (RM)</th>
                 <th></th>
             </tr>
             

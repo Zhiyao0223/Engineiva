@@ -96,7 +96,7 @@ include("session.php");
 				Phone Number
 			</div>
 			<div class="field">
-				<input id="partitioned" type="text" name="phoneNum" maxlength='11' placeholder='01X-XXXXXXX' required>
+				<input id="partitioned" type="text" name="phoneNum" maxlength='11' placeholder='01XXXXXXXX' required>
 			</div>
 		</div>
 		<div class="section">

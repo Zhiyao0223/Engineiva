@@ -162,7 +162,8 @@ while($row=mysqli_fetch_assoc($result)){
 <br>
 <div class="center">
 <input type="hidden" name="id" value=<?php echo $row['custID'] ?>>
-<img style='width:150px' src="data:image/jpg;base64, <?php echo $image ?> " class='image'>
+<img style='width:150px' src="data:image/jpg;base64, <?php echo base64_encode($image) ?> " class='image'>
+
 
 </div>
 

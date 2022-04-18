@@ -1,7 +1,6 @@
 <?php
     include('conn.php');
     if(!file_exists($_FILES['img']['tmp_name']) || !is_uploaded_file($_FILES['img']['tmp_name'])) {
-        echo 'No upload';
         $sql = "UPDATE customer SET
         firstName = '$_POST[FirstName]',
         lastName = '$_POST[LastName]',

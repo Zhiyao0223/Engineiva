@@ -29,7 +29,7 @@ if(isset($_SESSION['mysession'])) {
 <input type = "hidden" name = "custID" value = "<?php echo $id ?>">
 
 
-<?php echo $id?>
+
 <div class = search_box>
   <h1> SELL YOUR CAR </h1>
   <div class = search_box_divider1>
@@ -106,7 +106,7 @@ if(isset($_SESSION['mysession'])) {
           <h4> Engine </h4>
       </div>
 
-          <input class = "sell1" type = "number" name = "engine" required = "required">
+          <input class = "sell1" type = "decimal" name = "engine" required = "required">
 
       <div class = "label">
           <h4> Booking Date </h4>
