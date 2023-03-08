@@ -1,14 +1,24 @@
-# SDP-Assignment
+# Simple Buy and Sell Car Website
 
-A Buy and Sell Car Website
+This is a website for buying and selling cars developed by a team of 4 members. The website allows users to create an account, list their cars for sale, and browse and search for cars to buy.
 
-Im Jian Wei What's UPPPPPP
+Features:
++ User authentication and authorization
++ Car listing and browsing
++ Search functionality
++ Contact form for car sellers
++ User profile management
++ Responsive design
 
-<<<<<<< HEAD
-heyyyyy
+Technologies Used:
+HTML, CSS, JavaScript
+PHP
+MySQL
 
-=======
+Contributions:
+This website was developed by the following team members:
 
-> > > > > > > 2cc599dece32202770a9a22c24dd77cc7030a8e2
-ggwp
-hihi
+- Zhi Yao
+- Jian Wei
+- Nelo Luwe
+- Eric Ng
