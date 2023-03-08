@@ -11,13 +11,12 @@ Features:
 + Responsive design
 
 Technologies Used:
-HTML, CSS, JavaScript
-PHP
-MySQL
+- HTML, CSS, JavaScript
+- PHP
+- MySQL
 
 Contributions:
 This website was developed by the following team members:
-
 - Zhi Yao
 - Jian Wei
 - Nelo Luwe
